@@ -4,11 +4,13 @@
   "description": "A storefront web application for K.K. Peas",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-server": "nodemon server/index.js"
   },
   "author": "GreenfieldOfIbexes",
   "license": " GPL-3.0-or-later",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^1.19.4"
   }
 }
