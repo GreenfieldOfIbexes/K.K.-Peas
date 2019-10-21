@@ -1,0 +1,11 @@
+{
+  "name": "k.k.-peas",
+  "version": "1.0.0",
+  "description": "A storefront web application for K.K. Peas",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "GreenfieldOfIbexes",
+  "license": " GPL-3.0-or-later"
+}
