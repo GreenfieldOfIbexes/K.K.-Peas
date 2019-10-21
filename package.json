@@ -1,18 +1,19 @@
 {
-  "name": "k.k.-peas",
-  "version": "1.0.0",
-  "description": "A storefront web application for K.K. Peas",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-server": "nodemon server/index.js"
-  },
-  "author": "GreenfieldOfIbexes",
-  "license": " GPL-3.0-or-later",
-  "dependencies": {
-    "express": "^4.17.1",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "nodemon": "^1.19.4"
-  }
+	"name": "k.k.-peas",
+	"version": "1.0.0",
+	"description": "A storefront web application for K.K. Peas",
+	"main": "src/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon server/index.js",
+		"build": "webpack --watch --mode development"
+	},
+	"author": "GreenfieldOfIbexes",
+	"license": " GPL-3.0-or-later",
+	"dependencies": {
+		"express": "^4.17.1",
+		"react": "^16.10.2",
+		"react-dom": "^16.10.2",
+		"nodemon": "^1.19.4"
+	}
 }
