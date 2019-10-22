@@ -1,5 +1,6 @@
 import React from 'react'
 import StarRatings from 'react-star-ratings'
+import {DEFAULT_RATING, DEFAULT_SIZE, DEFAULT_SPACING} from "./constants.js"
 
 // give prop rating (#) for how many stars are filled
 // give prop size ("#px") for how large you want the stars
@@ -8,9 +9,9 @@ import StarRatings from 'react-star-ratings'
 const Stars = props => {
     return (
         <StarRatings
-            rating={props.rating || 3.653}
-            starDimension={props.size || "20px"}
-            starSpacing={props.spacing || "5px"}
+            rating={props.rating || DEFAULT_RATING}
+            starDimension={props.size || DEFAULT_SIZE}
+            starSpacing={props.spacing || DEFAULT_SPACING}
             starRatedColor="black" 
             numberOfStars={5}
 
