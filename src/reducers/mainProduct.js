@@ -8,8 +8,9 @@ const getAvgRating = (ratings) => {
 		ratings[3] * 3 +
 		ratings[4] * 4 +
 		ratings[5] * 5;
-	const totalVotes =
-		ratings[0] + ratings[1] + ratings[2] + ratings[3] + ratings[4] + ratings[5];
+	const totalVotes =  
+	ratings[1] + ratings[2] + ratings[3] + ratings[4] + ratings[5];
+	
 	return totalStars / totalVotes;
 };
 
