@@ -20,6 +20,8 @@ const mainProduct = (state = initialState.mainProduct, action) => {
 				...action.productObj,
 				styles: action.styles.results,
 				avg_review: getAvgRating(action.reviewMetaData.ratings),
+				reviews: action.reviews,
+				reviewMetaData: action.reviewMetaData
 			});
 		default:
 			return state;

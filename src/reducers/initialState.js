@@ -32,6 +32,8 @@ const emptyProduct = {
 
 const mainProduct = Object.assign({}, emptyProduct, {
 	avg_review: 0,
+	reviews: {},
+	reviewMetaData: {}
 });
 
 const view = {
