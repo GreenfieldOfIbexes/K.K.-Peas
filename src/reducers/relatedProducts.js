@@ -3,8 +3,8 @@ import initialState from "./initialState";
 
 const relatedProducts = (state = [initialState.emptyProduct], action) => {
 	switch (action.type) {
-		case "":
-			return;
+		case "UPDATE_RELATED_PRODUCTS":
+			return action.relatedProducts;
 		default:
 			return state;
 	}

@@ -41,7 +41,7 @@ const view = {
 
 const initialState = {
 	mainProduct,
-	relatedProduct,
+	emptyProduct,
 	view,
 };
 
