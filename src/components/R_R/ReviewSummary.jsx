@@ -15,6 +15,7 @@ class ReviewSummary extends React.Component {
                 <Stars rating={this.props.avg_review}/>
             </Col>
         </Row>
+        
     </Container>
     )}
 }
