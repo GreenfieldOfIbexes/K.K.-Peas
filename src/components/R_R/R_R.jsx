@@ -1,6 +1,6 @@
 import React from 'react'
 import ReviewList from './ReviewList.jsx'
-import ReviewSummary from './ReviewSummary.jsx'
+import SummaryContainer from '../containers/ReviewSummaryContainer.js'
 import {Container, Row, Col} from 'react-bootstrap'
 
 const R_R = () => (
@@ -8,7 +8,7 @@ const R_R = () => (
         <Container>
             <Row>
                 <Col>
-                    <ReviewSummary />
+                    <SummaryContainer />
                 </Col>
                 <Col>
                     <ReviewList />
