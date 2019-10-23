@@ -20,6 +20,7 @@ const getProductInfo = async (productId) => {
 	productPromises.push(
 		axios.get(`${constants.API_URL}/products/${productId}/related`),
 	);
+	productPromises.push(axios.get(`${constants.API_URL}/qa/${productId}`));
 
 	const productInfo = await Promise.all(productPromises);
 	try {
@@ -29,6 +30,7 @@ const getProductInfo = async (productId) => {
 			reviews: productInfo[2].data,
 			reviewMetaData: productInfo[3].data,
 			related: productInfo[4].data,
+			questions: productInfo[5].data.results,
 		};
 	} catch (err) {
 		console.error(err);
