@@ -8,7 +8,7 @@ const R_R = () => (
     <div id="R_R">
         <Container>
             <Row>
-                <Col md="auto">
+                <Col md={10}>
                     <SummaryContainer />
                 </Col>
                 <Col md="auto">
