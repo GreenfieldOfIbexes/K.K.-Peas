@@ -8,10 +8,10 @@ class ReviewSummary extends React.Component {
     return (
     <Container>
         <Row>
-            <Col>
+            <Col md="auto">
                 {this.props.avg_review}
             </Col>
-            <Col>
+            <Col md="auto">
                 <Stars rating={this.props.avg_review}/>
             </Col>
         </Row>
