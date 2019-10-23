@@ -1,0 +1,23 @@
+
+.rectangle {
+     height: 5px;
+     width: 200px;
+     border-radius: 50px;
+     flex-shrink: 1;
+     background-color: #555;
+}
+
+.triangle {
+    height: 10px;
+    width: 10px;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    position: relative;
+    flex-shrink:1;
+    background: red;
+}
+
+.gauge{
+    height: 5px;
+    width: 200px;
+    display: flex;
+}

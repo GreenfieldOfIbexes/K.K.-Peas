@@ -4,7 +4,7 @@ import {DEFAULT_RATING, DEFAULT_SIZE, DEFAULT_SPACING} from "./constants.js"
 
 // give prop rating (#) for how many stars are filled
 // give prop size ("#px") for how large you want the stars
-// give prop spacing for ("#px") distance between stars
+// give prop spacing ("#px") for distance between stars
 
 const Stars = props => {
     return (

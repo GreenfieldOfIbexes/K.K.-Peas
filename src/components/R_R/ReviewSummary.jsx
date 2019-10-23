@@ -1,12 +1,11 @@
 import React from 'react'
 import {Container, Row, Col, ProgressBar} from "react-bootstrap"
 import Stars from './Stars.jsx'
+import Gauge from "./Gauge/Gauge.jsx"
 
-class ReviewSummary extends React.Component {
 
-    
+class ReviewSummary extends React.Component {    
     render() {
-        console.log(this.props.reviewMetaData)
        const ratings = this.props.reviewMetaData.ratings
        const ratingsArray = [];
        var total = 0;
@@ -40,8 +39,10 @@ class ReviewSummary extends React.Component {
                 </Row>)
                 }                    
             )}
-            <Row>
-                
+            <Row style={{marginTop: "20px"}}>
+                <Col md={{span: "auto", offset: 1}}>
+                    <Gauge />
+                </Col>
             </Row>
 
         </Container>
