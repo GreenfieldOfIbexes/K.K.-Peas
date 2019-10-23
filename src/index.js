@@ -5,7 +5,7 @@ import store from "./store";
 import newMainProduct from "./actions/newMainProduct";
 import { Provider } from "react-redux";
 
-store.dispatch(newMainProduct(1));
+store.dispatch(newMainProduct(3));
 
 ReactDOM.render(
 	<Provider store={store}>

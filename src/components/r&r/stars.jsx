@@ -14,7 +14,6 @@ const Stars = props => {
             starSpacing={props.spacing || DEFAULT_SPACING}
             starRatedColor="black" 
             numberOfStars={5}
-
         />
     )
 }
