@@ -1,10 +1,10 @@
 import React from 'react'
 import ReviewList from './ReviewList.jsx'
-import ReviewSummery from './ReviewSummery.jsx'
+import ReviewSummary from './ReviewSummary.jsx'
 
 const R_R = () => (
     <div id="R_R">
-        <ReviewSummery />
+        <ReviewSummary />
         <ReviewList />
     </div>
 )
