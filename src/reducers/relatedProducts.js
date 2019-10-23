@@ -1,7 +1,7 @@
 import Redux from "redux";
 import initialState from "./initialState";
 
-const relatedProducts = (state = [initialState.relatedProduct], action) => {
+const relatedProducts = (state = [initialState.emptyProduct], action) => {
 	switch (action.type) {
 		case "":
 			return;

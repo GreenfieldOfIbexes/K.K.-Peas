@@ -1,4 +1,4 @@
-const relatedProduct = {
+const emptyProduct = {
 	id: 0,
 	name: "",
 	slogan: "",
@@ -31,13 +31,18 @@ const relatedProduct = {
 	],
 };
 
-const mainProduct = Object.assign({}, relatedProduct, {
-	avgReview: 0,
+const mainProduct = Object.assign({}, emptyProduct, {
+	avg_review: 0,
 });
+
+const view = {
+	thumbnail_index: 0,
+};
 
 const initialState = {
 	mainProduct,
 	relatedProduct,
+	view,
 };
 
 export default initialState;

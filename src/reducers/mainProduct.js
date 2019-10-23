@@ -19,7 +19,7 @@ const mainProduct = (state = initialState.mainProduct, action) => {
 			return Object.assign({}, state, {
 				...action.productObj,
 				styles: action.styles.results,
-				avgReview: getAvgRating(action.reviewMetaData.ratings),
+				avg_review: getAvgRating(action.reviewMetaData.ratings),
 			});
 		default:
 			return state;

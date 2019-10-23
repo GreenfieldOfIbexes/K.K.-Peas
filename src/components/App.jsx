@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import Overview from "./Overview/Overview.jsx";
 
 export class App extends Component {
 	render() {
 		return (
 			<div>
-				<h1>Hello World!</h1>
+				<Overview />
 			</div>
 		);
 	}
