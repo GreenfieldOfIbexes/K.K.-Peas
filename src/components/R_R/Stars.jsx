@@ -12,7 +12,7 @@ const Stars = props => {
             rating={props.rating || DEFAULT_RATING}
             starDimension={props.size || DEFAULT_SIZE}
             starSpacing={props.spacing || DEFAULT_SPACING}
-            starRatedColor="black" 
+            starRatedColor="gold" 
             numberOfStars={5}
         />
     )

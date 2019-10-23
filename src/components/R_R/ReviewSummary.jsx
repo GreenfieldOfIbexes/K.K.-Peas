@@ -40,7 +40,9 @@ class ReviewSummary extends React.Component {
                 </Row>)
                 }                    
             )}
-            
+            <Row>
+                
+            </Row>
 
         </Container>
         )}
