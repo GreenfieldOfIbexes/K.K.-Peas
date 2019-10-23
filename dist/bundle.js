@@ -1057,7 +1057,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var axio
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"App\", function() { return App; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Overview_Overview_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Overview/Overview.jsx */ \"./src/components/Overview/Overview.jsx\");\n\n\nclass App extends react__WEBPACK_IMPORTED_MODULE_0__[\"Component\"] {\n  render() {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Overview_Overview_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null));\n  }\n\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (App);\n\n//# sourceURL=webpack:///./src/components/App.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"App\", function() { return App; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Overview_Overview_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Overview/Overview.jsx */ \"./src/components/Overview/Overview.jsx\");\n\n\nclass App extends react__WEBPACK_IMPORTED_MODULE_0__[\"Component\"] {\n  render() {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Overview_Overview_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n  }\n\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (App);\n\n//# sourceURL=webpack:///./src/components/App.jsx?");
 
 /***/ }),
 
@@ -1065,10 +1065,45 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!**********************************************!*\
   !*** ./src/components/Overview/Overview.jsx ***!
   \**********************************************/
-/*! no exports provided */
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _containers_PicturesContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../containers/PicturesContainer */ \"./src/containers/PicturesContainer.js\");\n/* harmony import */ var _ProductDashboard_ProductDashboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProductDashboard/ProductDashboard */ \"./src/components/Overview/ProductDashboard/ProductDashboard.jsx\");\n/* harmony import */ var _ProductDashboard_ProductDashboard__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_ProductDashboard_ProductDashboard__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _ProductDescription_ProductDescription__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ProductDescription/ProductDescription */ \"./src/components/Overview/ProductDescription/ProductDescription.jsx\");\n/* harmony import */ var _ProductDescription_ProductDescription__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_ProductDescription_ProductDescription__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\nconst Overview = () => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n  id: \"Overview\"\n}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_PicturesContainer__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ProductDashboard_ProductDashboard__WEBPACK_IMPORTED_MODULE_2___default.a, null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ProductDescription_ProductDescription__WEBPACK_IMPORTED_MODULE_3___default.a, null));\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Overview);\n\n//# sourceURL=webpack:///./src/components/Overview/Overview.jsx?");
+
+/***/ }),
+
+/***/ "./src/components/Overview/Pictures/Pictures.jsx":
+/*!*******************************************************!*\
+  !*** ./src/components/Overview/Pictures/Pictures.jsx ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst Pictures = props => React.createElement(\"div\", {\n  className: \"pictures-container\"\n});\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Pictures);\n\n//# sourceURL=webpack:///./src/components/Overview/Pictures/Pictures.jsx?");
+
+/***/ }),
+
+/***/ "./src/components/Overview/ProductDashboard/ProductDashboard.jsx":
+/*!***********************************************************************!*\
+  !*** ./src/components/Overview/ProductDashboard/ProductDashboard.jsx ***!
+  \***********************************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nSyntaxError: /Users/harryshapiro/hrnyc/K.K.-Peas/src/components/Overview/Overview.jsx: 'return' outside of function (14:0)\\n\\n\\u001b[0m \\u001b[90m 12 | \\u001b[39m)\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m 13 | \\u001b[39m\\u001b[0m\\n\\u001b[0m\\u001b[31m\\u001b[1m>\\u001b[22m\\u001b[39m\\u001b[90m 14 | \\u001b[39m\\u001b[36mreturn\\u001b[39m \\u001b[33mOverview\\u001b[39m\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m    | \\u001b[39m\\u001b[31m\\u001b[1m^\\u001b[22m\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m 15 | \\u001b[39m\\u001b[0m\\n    at Object.raise (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/parser/lib/index.js:6420:17)\\n    at Object.parseReturnStatement (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/parser/lib/index.js:10370:12)\\n    at Object.parseStatementContent (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/parser/lib/index.js:10057:21)\\n    at Object.parseStatement (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/parser/lib/index.js:10009:17)\\n    at Object.parseBlockOrModuleBlockBody (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/parser/lib/index.js:10585:25)\\n    at Object.parseBlockBody (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/parser/lib/index.js:10572:10)\\n    at Object.parseTopLevel (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/parser/lib/index.js:9940:10)\\n    at Object.parse (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/parser/lib/index.js:11447:17)\\n    at parse (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/parser/lib/index.js:11483:38)\\n    at parser (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/transformation/normalize-file.js:168:34)\\n    at normalizeFile (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/transformation/normalize-file.js:102:11)\\n    at runSync (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/transformation/index.js:44:43)\\n    at runAsync (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/transformation/index.js:35:14)\\n    at process.nextTick (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/transform.js:34:34)\\n    at process._tickCallback (internal/process/next_tick.js:61:11)\");\n\n//# sourceURL=webpack:///./src/components/Overview/Overview.jsx?");
+eval("\n\n//# sourceURL=webpack:///./src/components/Overview/ProductDashboard/ProductDashboard.jsx?");
+
+/***/ }),
+
+/***/ "./src/components/Overview/ProductDescription/ProductDescription.jsx":
+/*!***************************************************************************!*\
+  !*** ./src/components/Overview/ProductDescription/ProductDescription.jsx ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("\n\n//# sourceURL=webpack:///./src/components/Overview/ProductDescription/ProductDescription.jsx?");
 
 /***/ }),
 
@@ -1081,6 +1116,18 @@ eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/li
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\nconst constants = {\n  API_URL: \"http://18.223.1.30\"\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (constants);\n\n//# sourceURL=webpack:///./src/constants.js?");
+
+/***/ }),
+
+/***/ "./src/containers/PicturesContainer.js":
+/*!*********************************************!*\
+  !*** ./src/containers/PicturesContainer.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_Overview_Pictures_Pictures__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Overview/Pictures/Pictures */ \"./src/components/Overview/Pictures/Pictures.jsx\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\n\n\nconst mapStateToProps = (state, ownProps) => ({});\n\nconst mapDispatchToProps = (dispatch, ownProps) => ({});\n\nconst PicturesContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[\"connect\"])(mapStateToProps, mapDispatchToProps)(_components_Overview_Pictures_Pictures__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n/* harmony default export */ __webpack_exports__[\"default\"] = (PicturesContainer);\n\n//# sourceURL=webpack:///./src/containers/PicturesContainer.js?");
 
 /***/ }),
 
@@ -1116,7 +1163,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redu
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nconst relatedProduct = {\n  id: 0,\n  name: \"\",\n  slogan: \"\",\n  description: \"\",\n  category: \"\",\n  default_price: 0,\n  features: [{\n    feature: \"\",\n    value: \"\"\n  }],\n  styles: [{\n    style_id: 0,\n    name: \"\",\n    original_price: \"\",\n    sale_price: \"\",\n    \"default?\": 0,\n    photos: [{\n      thumbnail_url: \"\",\n      url: \"\"\n    }],\n    skus: {\n      XS: 0\n    }\n  }]\n};\nconst mainProduct = Object.assign({}, relatedProduct, {\n  avg_review: 0\n});\nconst view = {\n  thumbnail_index: 0\n};\nconst initialState = {\n  mainProduct,\n  relatedProduct,\n  view\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (initialState);\n\n//# sourceURL=webpack:///./src/reducers/initialState.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconst emptyProduct = {\n  id: 0,\n  name: \"\",\n  slogan: \"\",\n  description: \"\",\n  category: \"\",\n  default_price: 0,\n  features: [{\n    feature: \"\",\n    value: \"\"\n  }],\n  styles: [{\n    style_id: 0,\n    name: \"\",\n    original_price: \"\",\n    sale_price: \"\",\n    \"default?\": 0,\n    photos: [{\n      thumbnail_url: \"\",\n      url: \"\"\n    }],\n    skus: {\n      XS: 0\n    }\n  }]\n};\nconst mainProduct = Object.assign({}, emptyProduct, {\n  avg_review: 0\n});\nconst view = {\n  thumbnail_index: 0\n};\nconst initialState = {\n  mainProduct,\n  emptyProduct,\n  view\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (initialState);\n\n//# sourceURL=webpack:///./src/reducers/initialState.js?");
 
 /***/ }),
 
@@ -1140,7 +1187,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redu
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./initialState */ \"./src/reducers/initialState.js\");\n\n\n\nconst relatedProducts = (state = [_initialState__WEBPACK_IMPORTED_MODULE_1__[\"default\"].relatedProduct], action) => {\n  switch (action.type) {\n    case \"\":\n      return;\n\n    default:\n      return state;\n  }\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (relatedProducts);\n\n//# sourceURL=webpack:///./src/reducers/relatedProducts.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./initialState */ \"./src/reducers/initialState.js\");\n\n\n\nconst relatedProducts = (state = [_initialState__WEBPACK_IMPORTED_MODULE_1__[\"default\"].emptyProduct], action) => {\n  switch (action.type) {\n    case \"\":\n      return;\n\n    default:\n      return state;\n  }\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (relatedProducts);\n\n//# sourceURL=webpack:///./src/reducers/relatedProducts.js?");
 
 /***/ }),
 

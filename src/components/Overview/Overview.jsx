@@ -1,7 +1,7 @@
 import React from "react";
-import PictureContainer from "../PictureContainer/PictureContainer.jsx";
-import ProductDashboard from "./ProductDashboard/ProductDashboard.jsx.js";
-import ProductDescription from "../ProductDescription/ProductDescription.jsx";
+import PicturesContainer from "../../containers/PicturesContainer";
+import ProductDashboard from "./ProductDashboard/ProductDashboard";
+import ProductDescription from "./ProductDescription/ProductDescription";
 
 const Overview = () => (
 	<div id="Overview">
@@ -11,4 +11,4 @@ const Overview = () => (
 	</div>
 );
 
-return Overview;
+export default Overview;
