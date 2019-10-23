@@ -16,7 +16,6 @@ const emptyProduct = {
 			style_id: 0,
 			name: "",
 			original_price: "",
-			sale_price: "",
 			"default?": 0,
 			photos: [
 				{
@@ -37,6 +36,7 @@ const mainProduct = Object.assign({}, emptyProduct, {
 
 const view = {
 	thumbnail_index: 0,
+	style_index: 0,
 };
 
 const initialState = {
