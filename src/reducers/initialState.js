@@ -36,6 +36,16 @@ const mainProduct = Object.assign({}, emptyProduct, {
 	reviewMetaData: {},
 });
 
+const productQuestion = {
+	question_id: 0,
+	question_body: "",
+	question_date: "",
+	asker_name: "",
+	question_helpfulness: 0,
+	reported: 0,
+	answers: {},
+};
+
 const view = {
 	picture_index: 0,
 	style_index: 0,
@@ -44,6 +54,7 @@ const view = {
 
 const initialState = {
 	mainProduct,
+	productQuestion,
 	emptyProduct,
 	view,
 };
