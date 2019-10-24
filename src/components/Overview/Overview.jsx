@@ -1,13 +1,13 @@
 import React from "react";
-import PicturesContainer from "../../containers/PicturesContainer";
-import ProductDashboard from "./ProductDashboard/ProductDashboard";
-import ProductDescription from "./ProductDescription/ProductDescription";
+import PicturesContainer from "../../containers/Overview/PicturesContainer";
+import ProductDashboardContainer from "../../containers/Overview/ProductDashboardContainer";
+// import ProductDescription from "./ProductDescription/ProductDescription";
 
 const Overview = () => (
 	<div id="Overview">
 		<PicturesContainer />
-		<ProductDashboard />
-		<ProductDescription />
+		<ProductDashboardContainer />
+		{/* <ProductDescription /> */}
 	</div>
 );
 

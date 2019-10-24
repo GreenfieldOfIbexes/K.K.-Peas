@@ -7,12 +7,9 @@ export class App extends Component {
 	render() {
 		return (
 			<div>
-				{/* <Overview /> */}
-
-				
+				<Overview />
 				<R_R />
 			</div>
-			
 		);
 	}
 }

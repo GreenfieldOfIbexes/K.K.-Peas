@@ -3456,6 +3456,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var axio
   !*** ./src/components/App.jsx ***!
   \********************************/
 /*! exports provided: App, default */
+<<<<<<< HEAD
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3503,9 +3504,11 @@ eval("\n\n//# sourceURL=webpack:///./src/components/Overview/ProductDashboard/Pr
   !*** ./src/components/Overview/ProductDescription/ProductDescription.jsx ***!
   \***************************************************************************/
 /*! no static exports found */
+=======
+>>>>>>> master
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./src/components/Overview/ProductDescription/ProductDescription.jsx?");
+eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nSyntaxError: /Users/harryshapiro/hrnyc/K.K.-Peas/package.json: Error while parsing JSON - Unexpected token < in JSON at position 481\\n    at JSON.parse (<anonymous>)\\n    at readConfigPackage (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/files/package.js:57:20)\\n    at /Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/files/utils.js:29:12\\n    at cachedFunction (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/caching.js:33:19)\\n    at findPackageData (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/files/package.js:33:11)\\n    at buildRootChain (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/config-chain.js:105:85)\\n    at loadPrivatePartialConfig (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/partial.js:85:55)\\n    at Object.loadPartialConfig (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/partial.js:110:18)\\n    at Object.<anonymous> (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:144:26)\\n    at Generator.next (<anonymous>)\\n    at asyncGeneratorStep (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:3:103)\\n    at _next (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:5:194)\\n    at /Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:5:364\\n    at new Promise (<anonymous>)\\n    at Object.<anonymous> (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:5:97)\\n    at Object.loader (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:60:18)\\n    at Object.<anonymous> (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:55:12)\");\n\n//# sourceURL=webpack:///./src/components/App.jsx?");
 
 /***/ }),
 
@@ -3603,6 +3606,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst constants = {\n  API_UR
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./src/containers/PicturesContainer.js":
 /*!*********************************************!*\
   !*** ./src/containers/PicturesContainer.js ***!
@@ -3627,6 +3631,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
 
 /***/ }),
 
+=======
+>>>>>>> master
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -3635,7 +3641,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_App_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/App.jsx */ \"./src/components/App.jsx\");\n/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store */ \"./src/store.js\");\n/* harmony import */ var _actions_newMainProduct__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/newMainProduct */ \"./src/actions/newMainProduct.js\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\n\n\n\n\n\n_store__WEBPACK_IMPORTED_MODULE_3__[\"default\"].dispatch(Object(_actions_newMainProduct__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(1));\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_5__[\"Provider\"], {\n  store: _store__WEBPACK_IMPORTED_MODULE_3__[\"default\"]\n}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_App_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null)), document.getElementById(\"app\"));\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_App_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/App.jsx */ \"./src/components/App.jsx\");\n/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store */ \"./src/store.js\");\n/* harmony import */ var _actions_newMainProduct__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/newMainProduct */ \"./src/actions/newMainProduct.js\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\n\n\n\n\n\n_store__WEBPACK_IMPORTED_MODULE_3__[\"default\"].dispatch(Object(_actions_newMainProduct__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(3));\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_5__[\"Provider\"], {\n  store: _store__WEBPACK_IMPORTED_MODULE_3__[\"default\"]\n}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_App_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null)), document.getElementById(\"app\"));\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -3656,10 +3662,14 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redu
   !*** ./src/reducers/initialState.js ***!
   \**************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
+<<<<<<< HEAD
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\nconst emptyProduct = {\n  id: 0,\n  name: \"\",\n  slogan: \"\",\n  description: \"\",\n  category: \"\",\n  default_price: 0,\n  features: [{\n    feature: \"\",\n    value: \"\"\n  }],\n  styles: [{\n    style_id: 0,\n    name: \"\",\n    original_price: \"\",\n    sale_price: \"\",\n    \"default?\": 0,\n    photos: [{\n      thumbnail_url: \"\",\n      url: \"\"\n    }],\n    skus: {\n      XS: 0\n    }\n  }]\n};\nconst mainProduct = Object.assign({}, emptyProduct, {\n  avg_review: 0,\n  reviews: {},\n  reviewMetaData: {}\n});\nconst view = {\n  thumbnail_index: 0\n};\nconst initialState = {\n  mainProduct,\n  emptyProduct,\n  view\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (initialState);\n\n//# sourceURL=webpack:///./src/reducers/initialState.js?");
+=======
+eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nSyntaxError: /Users/harryshapiro/hrnyc/K.K.-Peas/package.json: Error while parsing JSON - Unexpected token < in JSON at position 481\\n    at JSON.parse (<anonymous>)\\n    at readConfigPackage (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/files/package.js:57:20)\\n    at /Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/files/utils.js:29:12\\n    at cachedFunction (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/caching.js:33:19)\\n    at findPackageData (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/files/package.js:33:11)\\n    at buildRootChain (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/config-chain.js:105:85)\\n    at loadPrivatePartialConfig (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/partial.js:85:55)\\n    at Object.loadPartialConfig (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/partial.js:110:18)\\n    at Object.<anonymous> (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:144:26)\\n    at Generator.next (<anonymous>)\\n    at asyncGeneratorStep (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:3:103)\\n    at _next (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:5:194)\\n    at /Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:5:364\\n    at new Promise (<anonymous>)\\n    at Object.<anonymous> (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:5:97)\\n    at Object.loader (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:60:18)\\n    at Object.<anonymous> (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:55:12)\");\n\n//# sourceURL=webpack:///./src/reducers/initialState.js?");
+>>>>>>> master
 
 /***/ }),
 
@@ -3668,10 +3678,14 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst emptyProduct = {\n  id:
   !*** ./src/reducers/mainProduct.js ***!
   \*************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
+<<<<<<< HEAD
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./initialState */ \"./src/reducers/initialState.js\");\n\n\n\nconst getAvgRating = ratings => {\n  const totalStars = ratings[1] + ratings[2] * 2 + ratings[3] * 3 + ratings[4] * 4 + ratings[5] * 5;\n  const totalVotes = ratings[1] + ratings[2] + ratings[3] + ratings[4] + ratings[5];\n  return totalStars / totalVotes;\n};\n\nconst mainProduct = (state = _initialState__WEBPACK_IMPORTED_MODULE_1__[\"default\"].mainProduct, action) => {\n  switch (action.type) {\n    case \"NEW_MAIN_PRODUCT\":\n      return Object.assign({}, state, { ...action.productObj,\n        styles: action.styles.results,\n        avg_review: getAvgRating(action.reviewMetaData.ratings),\n        reviews: action.reviews,\n        reviewMetaData: action.reviewMetaData\n      });\n\n    default:\n      return state;\n  }\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (mainProduct);\n\n//# sourceURL=webpack:///./src/reducers/mainProduct.js?");
+=======
+eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nSyntaxError: /Users/harryshapiro/hrnyc/K.K.-Peas/package.json: Error while parsing JSON - Unexpected token < in JSON at position 481\\n    at JSON.parse (<anonymous>)\\n    at readConfigPackage (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/files/package.js:57:20)\\n    at /Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/files/utils.js:29:12\\n    at cachedFunction (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/caching.js:33:19)\\n    at findPackageData (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/files/package.js:33:11)\\n    at buildRootChain (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/config-chain.js:105:85)\\n    at loadPrivatePartialConfig (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/partial.js:85:55)\\n    at Object.loadPartialConfig (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/@babel/core/lib/config/partial.js:110:18)\\n    at Object.<anonymous> (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:144:26)\\n    at Generator.next (<anonymous>)\\n    at asyncGeneratorStep (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:3:103)\\n    at _next (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:5:194)\\n    at /Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:5:364\\n    at new Promise (<anonymous>)\\n    at Object.<anonymous> (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:5:97)\\n    at Object.loader (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:60:18)\\n    at Object.<anonymous> (/Users/harryshapiro/hrnyc/K.K.-Peas/node_modules/babel-loader/lib/index.js:55:12)\");\n\n//# sourceURL=webpack:///./src/reducers/mainProduct.js?");
+>>>>>>> master
 
 /***/ }),
 
@@ -3695,7 +3709,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redu
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./initialState */ \"./src/reducers/initialState.js\");\n\n\n\nconst view = (state = [_initialState__WEBPACK_IMPORTED_MODULE_1__[\"default\"].view], action) => {\n  switch (action.type) {\n    case \"THUMBNAIL_CLICK\":\n      return Object.assign({}, state, {\n        thumbnail_index: action.thumbnail_index\n      });\n\n    default:\n      return state;\n  }\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (view);\n\n//# sourceURL=webpack:///./src/reducers/view.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./initialState */ \"./src/reducers/initialState.js\");\n\n\n\nconst view = (state = _initialState__WEBPACK_IMPORTED_MODULE_1__[\"default\"].view, action) => {\n  switch (action.type) {\n    case \"NEW_MAIN_PRODUCT\":\n      const newState = Object.create(state);\n      newState.style_index = 0;\n      return newState;\n\n    case \"THUMBNAIL_CLICK\":\n      return Object.assign({}, state, {\n        thumbnail_index: action.thumbnail_index\n      });\n\n    case \"NEW_STYLE\":\n      return Object.assign({}, state, {\n        style_index: action.style_index\n      });\n\n    default:\n      return state;\n  }\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (view);\n\n//# sourceURL=webpack:///./src/reducers/view.js?");
 
 /***/ }),
 

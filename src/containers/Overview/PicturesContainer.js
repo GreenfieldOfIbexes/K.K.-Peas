@@ -1,4 +1,4 @@
-import Pictures from "../components/Overview/Pictures/Pictures";
+import Pictures from "../../components/Overview/Pictures/Pictures";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state, ownProps) => ({});
