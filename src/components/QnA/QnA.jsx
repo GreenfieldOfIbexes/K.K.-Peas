@@ -7,7 +7,7 @@ export class QnA extends Component {
 		return (
 			<div>
 				<br />
-				<h2>QUESTIONS AND ANSWERS</h2>
+				<h5>QUESTIONS AND ANSWERS</h5>
 				<SearchBar />
 				<QuestionsContainer />
 			</div>

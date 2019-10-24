@@ -4,7 +4,8 @@ import initialState from "./initialState";
 const productQuestions = (state = [initialState.productQuestion], action) => {
 	switch (action.type) {
 		case "NEW_MAIN_PRODUCT":
-			return Object.assign({}, state, action.questions);
+			return action.questions;
+		// return Object.assign({}, state, action.questions);
 		default:
 			return state;
 	}
