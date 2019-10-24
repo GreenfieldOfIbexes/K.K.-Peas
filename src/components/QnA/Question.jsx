@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import AnswersList from './AnswersList';
+import React, { Component } from "react";
+import AnswersList from "./AnswersList";
 
 export class Question extends Component {
 	render() {
 		return (
 			<div>
-				<h1>Single Question!</h1>
+				<p>Q: {this.props.question.question_body}</p>
+				<AnswersList answers={this.props.question.answers} />
 			</div>
 		);
 	}
