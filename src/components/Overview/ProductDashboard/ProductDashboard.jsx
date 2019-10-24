@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProductDashboard.css";
-import Stars from "../../R_R/Stars.jsx";
+import Stars from "../../R_R/stars";
 import ProductInteractionContainer from "../../../containers/Overview/ProductInteractionContainer";
 
 // TODO: get reviews from store (should be done in the container) and add in the "read all # reviews" <p></p>
