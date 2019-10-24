@@ -28,6 +28,7 @@ const config = {
 			},
 		],
 	},
+	
 	watch: true,
 	watchOptions: {
 		ignored: /node_modules/,

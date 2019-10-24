@@ -1,0 +1,15 @@
+.style-selectors {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.style-image {
+	height: 100px;
+	width: 100px;
+	border-radius: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
