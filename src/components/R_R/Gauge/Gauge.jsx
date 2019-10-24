@@ -1,22 +1,21 @@
 import React from "react"
-import {Container, Row, Col} from "react-bootstrap"
 import './Gauge.css'
 
 const Gauge = props => {
+    const percent = "" + (props.value / 5) * 100 + "%"
     return(
-        <Container>
-            <div className="gauge">
-                <Row>
-                    {/* {props.names.map((name) => { */}
-                        <Col>names</Col>
-                    {/* })} */}
-                </Row>
-                <Row>
-                    <div className="triangle" style={{left: props.percent || "60%", top: '-10px'}}/>
-                    <div className="rectangle" />
-                </Row>
-            </div>
-        </Container>
+        <>
+        <h6>{props.characteristic}</h6>
+        <div className="labels">
+            {props.labels.map((label) => {
+                return <div className="label" >{label}</div>
+            })}
+        </div>
+        <div className="gauge">
+            <div className="triangle" style={{left: percent || "60%"}}/>
+            <div className="rectangle" />
+        </div>
+        </>
     )
 }
 

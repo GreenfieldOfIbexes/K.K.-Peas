@@ -1,5 +1,5 @@
 import React from 'react'
-import ReviewList from './ReviewList.jsx'
+import ReviewList from './ReviewList/ReviewList.jsx'
 import SummaryContainer from '../../containers/ReviewSummaryContainer.js'
 import {Container, Row, Col} from 'react-bootstrap'
 

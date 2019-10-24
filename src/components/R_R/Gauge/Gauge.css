@@ -1,8 +1,9 @@
 
 .rectangle {
      height: 5px;
-     width: 200px;
+     width: 100%;
      border-radius: 50px;
+     position: relative;
      flex-shrink: 1;
      background-color: #555;
 }
@@ -16,8 +17,30 @@
     background: red;
 }
 
+.label {
+    font-size: 10px;
+    position: relative;
+    flex-shrink: 1;
+    top: "30px"
+}
+.labels{
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    
+}
+
 .gauge{
-    height: 5px;
-    width: 200px;
+    height: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+h6{
+    font-weight: bold;
+    justify-content: center;
+    width: 100%;
     display: flex;
 }
