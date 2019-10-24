@@ -6,7 +6,7 @@ const view = (state = initialState.view, action) => {
 		case "NEW_MAIN_PRODUCT":
 			return Object.assign({}, state, {
 				style_index: 0,
-				max_picture_index: action.styles.results.length,
+				max_picture_index: action.styles.results.length - 1,
 			});
 		case "THUMBNAIL_CLICK":
 			return Object.assign({}, state, {

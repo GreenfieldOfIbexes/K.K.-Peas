@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "./Pictures.css";
 import mainProduct from "../../../reducers/mainProduct";
 import $ from "jquery";
+import _ from "lodash";
 
 const carouselSettings = {
 	dots: true,
@@ -19,13 +20,14 @@ class Pictures extends React.Component {
 	componentDidMount() {
 		const { changePicture } = this.props;
 		setTimeout(function() {
-			console.log(this.props);
-			$(".slick-prev").on("click tap", function() {
-				changePicture("left");
-			});
-			$(".slick-next").on("click tap", function() {
-				changePicture("right");
-			});
+			$(".slick-prev").on(
+				"click tap",
+				_.debounce(() => changePicture("left"), 500),
+			);
+			$(".slick-next").on(
+				"click tap",
+				_.debounce(() => changePicture("right"), 500),
+			);
 		}, 200);
 	}
 	render() {
