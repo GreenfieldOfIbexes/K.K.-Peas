@@ -1,0 +1,8 @@
+.review-header {
+    justify-content: space-between;
+}
+
+.no-review {
+    justify-content: center;
+    font-weight: bold;
+}
