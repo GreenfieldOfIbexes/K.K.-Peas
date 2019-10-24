@@ -21,7 +21,7 @@ const mainProduct = (state = initialState.mainProduct, action) => {
 				styles: action.styles.results,
 				avg_review: getAvgRating(action.reviewMetaData.ratings),
 				reviews: action.reviews,
-				reviewMetaData: action.reviewMetaData
+				reviewMetaData: action.reviewMetaData,
 			});
 		default:
 			return state;

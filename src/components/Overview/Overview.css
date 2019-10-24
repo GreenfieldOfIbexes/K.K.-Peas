@@ -1,3 +1,9 @@
 #Overview {
 	display: flex;
 }
+.pictures-container {
+	width: 50%;
+}
+.product-dashboard {
+	width: 50%;
+}

@@ -6,7 +6,7 @@ const newMainProduct = (productId) => async (dispatch) => {
 	const productInfo = await getProductInfo(productId);
 	dispatch({
 		type: "NEW_MAIN_PRODUCT",
-		productInfo: productInfo,
+		...productInfo
 	});
 };
 

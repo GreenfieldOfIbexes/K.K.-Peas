@@ -4,12 +4,17 @@ import initialState from "./initialState";
 const view = (state = initialState.view, action) => {
 	switch (action.type) {
 		case "NEW_MAIN_PRODUCT":
-			const newState = Object.create(state);
-			newState.style_index = 0;
-			return newState;
+			return Object.assign({}, state, {
+				style_index: 0,
+				max_picture_index: action.styles.results.length - 1,
+			});
 		case "THUMBNAIL_CLICK":
 			return Object.assign({}, state, {
-				thumbnail_index: action.thumbnail_index,
+				picture_index: action.picture_index,
+			});
+		case "PICTURE_INDEX_CHANGE":
+			return Object.assign({}, state, {
+				picture_index: action.newIndex,
 			});
 		case "NEW_STYLE":
 			return Object.assign({}, state, {

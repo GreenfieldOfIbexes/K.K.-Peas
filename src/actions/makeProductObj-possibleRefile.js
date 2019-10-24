@@ -1,4 +1,4 @@
-import { emptyProduct } from "../reducers/initialState.js";
+import initialState from "../reducers/initialState.js";
 import axios from "axios";
 import constants from "../constants.js";
 
@@ -21,7 +21,6 @@ const getProductInfo = async (productId) => {
 		axios.get(`${constants.API_URL}/products/${productId}/related`),
 	);
 	productPromises.push(axios.get(`${constants.API_URL}/qa/${productId}`));
-
 	const productInfo = await Promise.all(productPromises);
 	try {
 		product = {
@@ -34,7 +33,7 @@ const getProductInfo = async (productId) => {
 		};
 	} catch (err) {
 		console.error(err);
-		product = emptyProduct;
+		product = initialState.emptyProduct;
 	}
 	return product;
 };
