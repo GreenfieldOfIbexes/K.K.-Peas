@@ -5,7 +5,11 @@ import store from "./store";
 import newMainProduct from "./actions/newMainProduct";
 import { Provider } from "react-redux";
 
-store.dispatch(newMainProduct(3));
+store.dispatch(newMainProduct(1));
+
+if (!window.localStorage.getItem("user_session")) {
+	window.localStorage.setItem("user_session", Math.random());
+}
 
 ReactDOM.render(
 	<Provider store={store}>
