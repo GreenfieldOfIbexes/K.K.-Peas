@@ -14,12 +14,15 @@ const newMainProduct = (productId) => async (dispatch) => {
 	let reviewMetaData = await axios.get(
 		`${constants.API_URL}/reviews/${productId}/meta`,
 	);
+	let questions = await axios.get(`${constants.API_URL}/qa/${productId}`);
+
 	dispatch({
 		type: "NEW_MAIN_PRODUCT",
 		productObj: productObj.data,
 		styles: styles.data,
 		reviews: reviews.data,
 		reviewMetaData: reviewMetaData.data,
+		questions: questions.data,
 	});
 };
 

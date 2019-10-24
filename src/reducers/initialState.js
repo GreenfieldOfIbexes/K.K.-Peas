@@ -35,9 +35,20 @@ const mainProduct = Object.assign({}, relatedProduct, {
 	avgReview: 0,
 });
 
+const productQuestion = {
+	question_id: 0,
+	question_body: "",
+	question_date: "",
+	asker_name: "",
+	question_helpfulness: 0,
+	reported: 0,
+	answers: {},
+};
+
 const initialState = {
 	mainProduct,
 	relatedProduct,
+	productQuestion,
 };
 
 export default initialState;
