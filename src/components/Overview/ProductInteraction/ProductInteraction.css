@@ -5,6 +5,10 @@
 	align-items: center;
 }
 
+.style-selector {
+	margin: 0 0 10px;
+}
+
 .style-image {
 	height: 100px;
 	width: 100px;

@@ -1,0 +1,19 @@
+.carousel {
+	width: 90%;
+	max-width: 500px;
+	margin: 0 auto;
+}
+.slick-next:before,
+.slick-prev:before {
+	color: black;
+}
+.picture {
+	height: 500px;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.hidden {
+	display: none;
+}

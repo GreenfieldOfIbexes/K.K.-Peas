@@ -47,8 +47,9 @@ const productQuestion = {
 };
 
 const view = {
-	thumbnail_index: 0,
+	picture_index: 0,
 	style_index: 0,
+	max_picture_index: 0,
 };
 
 const initialState = {

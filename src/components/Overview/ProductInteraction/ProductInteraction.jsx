@@ -7,8 +7,14 @@ import FormControl from "@material-ui/core/FormControl";
 
 import "./ProductInteraction.css";
 
-const ProductInteraction = ({ mainProduct: { styles }, view, updateStyle }) => {
-	const currentStyle = styles[view.style_index];
+const ProductInteraction = ({
+	mainProduct,
+	view,
+	updateStyle,
+	cartHandler,
+	addToOutfitHandler,
+}) => {
+	const currentStyle = mainProduct.styles[view.style_index];
 
 	const [choice, setChoice] = React.useState({
 		size: "Select Size",
@@ -37,17 +43,25 @@ const ProductInteraction = ({ mainProduct: { styles }, view, updateStyle }) => {
 		}));
 	};
 
+	const changeState = (event, prop) => {
+		setChoice((oldValues) => {
+			const newValues = Object.create(oldValues);
+			newValues[prop] = event.target.value;
+			return newValues;
+		});
+	};
+
 	return (
 		<div className="product-interaction">
 			<div className="style-name">Style: {currentStyle.name}</div>
-			<div className="style-selectors container">
-				{styles.map((style, index) => {
+			<div className="style-selectors wrapper">
+				{mainProduct.styles.map((style, index) => {
 					const backgroundImageStyle = {
 						backgroundImage: `url(${style.photos[0].thumbnail_url})`,
 					};
 					return (
 						<div
-							className="style-selector container"
+							className="style-selector wrapper"
 							key={index}
 							onClick={() => {
 								updateStyle(index);
@@ -58,7 +72,7 @@ const ProductInteraction = ({ mainProduct: { styles }, view, updateStyle }) => {
 					);
 				})}
 			</div>
-			<div className="size-quantity container">
+			<div className="size-quantity wrapper">
 				<Select
 					value={choice.size}
 					displayEmpty={true}
@@ -80,7 +94,9 @@ const ProductInteraction = ({ mainProduct: { styles }, view, updateStyle }) => {
 				<Select
 					value={choice.count}
 					displayEmpty={true}
-					onChange={countChangeToState}
+					onChange={(event) => {
+						changeState(event, "count");
+					}}
 					className="count select">
 					{(() => {
 						var menuItems = [];
@@ -99,7 +115,22 @@ const ProductInteraction = ({ mainProduct: { styles }, view, updateStyle }) => {
 					})()}
 				</Select>
 			</div>
-			<div className="cart-outfit container"></div>
+			<div className="cart-outfit wrapper">
+				<div
+					className="add-to-cart"
+					onClick={() => {
+						cartHandler({ product_id: mainProduct.id });
+					}}>
+					Add to Cart
+				</div>
+				<div
+					className="add-to-outfit"
+					onClick={() => {
+						addToOutfitHandler(mainProduct);
+					}}>
+					Add to Outfit
+				</div>
+			</div>
 		</div>
 	);
 };

@@ -1,6 +1,6 @@
-import React from 'react'
-import StarRatings from 'react-star-ratings'
-import {DEFAULT_RATING, DEFAULT_SIZE, DEFAULT_SPACING} from "./constants.js"
+import React from "react";
+import StarRatings from "react-star-ratings";
+import { DEFAULT_RATING, DEFAULT_SIZE, DEFAULT_SPACING } from "./constants.js";
 
 // give prop rating (#) for how many stars are filled
 // give prop size ("#px") for how large you want the stars
@@ -17,6 +17,5 @@ const Stars = props => {
         />
     )
 }
-
 
 export default Stars;
