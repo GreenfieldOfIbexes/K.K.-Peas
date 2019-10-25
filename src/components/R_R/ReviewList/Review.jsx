@@ -4,10 +4,9 @@ import './Review.css'
 
 
 const Review = props => {
-    console.log(props.review)
     return (
         <>
-        <div className='review-header-container'>
+        <div key={props.review.product_id} className='review-header-container'>
             <div>
                 <Stars rating={props.review.rating} />
             </div>

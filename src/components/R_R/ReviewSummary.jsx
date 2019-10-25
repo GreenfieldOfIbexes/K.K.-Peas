@@ -6,7 +6,6 @@ import './ReviewSummary.css'
 
 class ReviewSummary extends React.Component {    
     render() {
-        console.log("props: ",this.props)
        const ratings = this.props.reviewMetaData.ratings
        const ratingsArray = [];
        var total = 0;
@@ -47,7 +46,7 @@ class ReviewSummary extends React.Component {
             
             {ratingsArray.map((rating) =>{
                 return (
-                <div className='summary-row' key={rating[0]}>
+                <div key={rating[0]} className='summary-row' key={rating[0]}>
                     <div className="item" style={{margin: "0px 2px 4px 0px"}}>
                         {rating[0]} Stars  
                     </div>
@@ -63,7 +62,7 @@ class ReviewSummary extends React.Component {
             )}
             {charArray.map((char) => {
                 return (
-                <div className='summary-row' style={{marginTop: "20px"}}>
+                <div key={char[0]} className='summary-row' style={{marginTop: "20px"}}>
                     <div className="item-graph" >
                         <Gauge labels={char[2]} characteristic={char[1]} value={char[0]}/>
                     </div>
