@@ -6,12 +6,14 @@ import './ReviewSummary.css'
 
 class ReviewSummary extends React.Component {    
     render() {
-       const ratings = this.props.reviewMetaData.ratings
+       const ratings = this.props.reviewMetaData.ratings;
        const ratingsArray = [];
        var total = 0;
        for(var keys in ratings){
-           ratingsArray.push([keys, ratings[keys]]);
-           total += ratings[keys];
+          
+               ratingsArray.push([keys, ratings[keys]]);
+               total += ratings[keys];
+           
        }
        const characteristics = this.props.reviewMetaData.characteristics
        const charArray = []
