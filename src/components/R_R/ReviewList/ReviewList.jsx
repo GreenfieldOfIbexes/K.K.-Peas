@@ -1,5 +1,6 @@
 import React from 'react'
 import Review from './Review.jsx'
+import {Row} from 'react-bootstrap'
 
 class ReviewList extends React.Component{
     render() {
@@ -9,9 +10,9 @@ class ReviewList extends React.Component{
             var review = this.props.reviews.results[0]
         }
     return (
-        <div>
+        <Row className="justify-content-md-space-between">
             <Review review={review}/>
-        </div>
+        </Row>
     )
     }
 }

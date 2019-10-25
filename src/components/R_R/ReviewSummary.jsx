@@ -35,7 +35,7 @@ class ReviewSummary extends React.Component {
             } 
        }
         return (
-        <Container>
+        <>
             <Row style={{margin: "0px 0px 20px 0px"}}>
                 <Col md="auto" style={{margin: "2px 20px 2px 2px", fontSize: "50px", fontWeight: "bold"}}>
                     {this.props.avg_review}
@@ -46,11 +46,12 @@ class ReviewSummary extends React.Component {
             </Row>
             
             {ratingsArray.map((rating) =>{
-                return (<Row key={rating[0]}>
+                return (
+                <Row key={rating[0]}>
                     <Col md="auto" style={{margin: "0px 2px 4px 0px"}}>
                         {rating[0]} Stars  
                     </Col>
-                    <Col md={6} style={{margin: "4px 0px 4px 4px"}}>
+                    <Col md={4} style={{margin: "4px 0px 4px 4px"}}>
                         <ProgressBar now={(rating[1]/total) * 100} variant="success"/>
                     </Col>
                     
@@ -63,13 +64,13 @@ class ReviewSummary extends React.Component {
             {charArray.map((char) => {
                 return (
                 <Row style={{marginTop: "20px"}}>
-                    <Col md={{span: 8}}>
+                    <Col md={6}>
                         <Gauge labels={char[2]} characteristic={char[1]} value={char[0]}/>
                     </Col>
                 </Row>
                 )
                     })}
-        </Container>
+        </>
         )}
 }
 
