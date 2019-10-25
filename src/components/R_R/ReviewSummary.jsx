@@ -7,11 +7,12 @@ import './ReviewSummary.css'
 class ReviewSummary extends React.Component {    
     render() {
         console.log("props: ",this.props)
-       const ratings = this.props.reviewMetaData.ratings
+	   const ratings = this.props.reviewMetaData.ratings
+	   const keys = Object.keys(ratings);
        const ratingsArray = [];
        var total = 0;
        for(var i=1; i <= 5; i++){
-		   if(!(ratings[i])){
+		   if(!keys.contains(i)){
 			   ratingsArray.push([i, 0])
 		   } else {
 			   ratingsArray.push([i, ratings[i]]);
