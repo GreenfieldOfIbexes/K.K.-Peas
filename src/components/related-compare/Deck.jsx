@@ -12,7 +12,6 @@ const Deck = (props) => {
 			</button>
 		);
 	}
-	console.log(props.products);
 	return (
 		<>
 			<button

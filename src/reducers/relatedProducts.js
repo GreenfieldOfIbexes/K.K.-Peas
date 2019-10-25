@@ -4,7 +4,7 @@ import initialState from "./initialState";
 const relatedProducts = (state = [initialState.emptyProduct], action) => {
 	switch (action.type) {
 		case "UPDATE_RELATED_PRODUCTS":
-			const products = state.slice();
+			let products = state.slice();
 			if (products[0].name === "") {
 				products = [];
 			}

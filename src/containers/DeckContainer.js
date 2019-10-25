@@ -7,13 +7,14 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-	updateRelated: (productIDs) => {
-		dispatch(updateRelatedProducts(productIDs));
+	updateRelated: () => {
+		dispatch(updateRelatedProducts([2, 3, 8, 7]));
 	},
 });
 
-const DeckContainer = connect()(Deck);
-// mapStateToProps,
-// mapDispatchToProps,
+const DeckContainer = connect(
+	mapStateToProps,
+	mapDispatchToProps,
+)(Deck);
 
 export default DeckContainer;

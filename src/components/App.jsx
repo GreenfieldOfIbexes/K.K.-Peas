@@ -13,7 +13,7 @@ export class App extends Component {
 				<Overview />
 				<R_R />
 				<QnA />
-				<DeckContainer products={testRelatedProducts} />
+				<DeckContainer />
 			</div>
 		);
 	}
