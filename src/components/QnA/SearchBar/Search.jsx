@@ -20,9 +20,9 @@ export class Search extends Component {
 						value={this.state.value}
 						placeholder="HAVE A QUESTION? SEARCH FOR ANSWER..."
 					/>
-					<input type="submit">
+					<div>
 						<i className="material-icons">search</i>
-					</input>
+					</div>
 				</form>
 			</div>
 		);
