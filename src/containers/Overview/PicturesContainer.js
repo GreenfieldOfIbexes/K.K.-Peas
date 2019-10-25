@@ -16,7 +16,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 	changePicture: (change) => {
 		const currentIndex = store.getState().view.picture_index;
 		const maxIndex = store.getState().view.max_picture_index;
-		console.log("changing picture");
 		if (change === "right") {
 			const newIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
 			dispatch(pictureIndexChange(newIndex));
@@ -28,11 +27,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 		}
 	},
 	fullScreenHandler: () => {
-		console.log("full screen getting toggled!");
 		dispatch(fullScreenToggle());
 	},
 	fullscreenPictureClickHandler: (e) => {
-		console.log("click on pictures", e);
 		if (store.getState().view.fullscreen_picture) {
 			dispatch(zoomedIn());
 			if (store.getState().view.zoomed_in) {
@@ -45,6 +42,12 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 					const topPercentage = (e.pageY / window.innerHeight) * 100;
 					// change the currently viewed photo's background-position to mimic that
 					e.target.style.backgroundPosition = `${leftPercentage}% ${topPercentage}%`;
+				});
+				// TODO: need to make this a dispatching situation, I think
+				$(".fullscreen-button .close").on("click tap", () => {
+					$(".picture")
+						.off("mousemove")
+						.css("background-position", "center");
 				});
 			} else {
 				$(".picture")

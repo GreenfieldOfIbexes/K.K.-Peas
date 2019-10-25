@@ -25,7 +25,6 @@ const getAvgRating = (ratings) => {
 	const totalRatings = ratingsCount(ratings);
 	return totalStars / totalRatings;
 };
-
 const mainProduct = (state = initialState.mainProduct, action) => {
 	switch (action.type) {
 		case "NEW_MAIN_PRODUCT":

@@ -1,12 +1,13 @@
 import Redux from "redux";
 import initialState from "./initialState";
+import store from "../store";
 
 const view = (state = initialState.view, action) => {
 	switch (action.type) {
 		case "NEW_MAIN_PRODUCT":
 			return Object.assign({}, state, {
 				style_index: 0,
-				max_picture_index: action.styles.results.length - 1,
+				max_picture_index: action.styles.results[0].photos.length - 1,
 			});
 		case "THUMBNAIL_CLICK":
 			return Object.assign({}, state, {
@@ -19,6 +20,7 @@ const view = (state = initialState.view, action) => {
 		case "NEW_STYLE":
 			return Object.assign({}, state, {
 				style_index: action.style_index,
+				max_picture_index: action.max_picture_index,
 			});
 		case "FULL_SCREEN_TOGGLE":
 			return Object.assign({}, state, {

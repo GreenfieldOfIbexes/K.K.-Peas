@@ -6,18 +6,14 @@ import './ReviewSummary.css'
 
 class ReviewSummary extends React.Component {    
     render() {
-        console.log("props: ",this.props)
-	   const ratings = this.props.reviewMetaData.ratings
-	   const keys = Object.keys(ratings);
+       const ratings = this.props.reviewMetaData.ratings;
        const ratingsArray = [];
        var total = 0;
-       for(var i=1; i <= 5; i++){
-		   if(!keys.contains(i)){
-			   ratingsArray.push([i, 0])
-		   } else {
-			   ratingsArray.push([i, ratings[i]]);
-			   total += ratings[i];
-		   }
+       for(var keys in ratings){
+          
+               ratingsArray.push([keys, ratings[keys]]);
+               total += ratings[keys];
+           
        }
        const characteristics = this.props.reviewMetaData.characteristics
        const charArray = []
@@ -52,7 +48,7 @@ class ReviewSummary extends React.Component {
             
             {ratingsArray.map((rating) =>{
                 return (
-                <div className='summary-row' key={rating[0]}>
+                <div key={rating[0]} className='summary-row' key={rating[0]}>
                     <div className="item" style={{margin: "0px 2px 4px 0px"}}>
                         {rating[0]} Stars  
                     </div>
@@ -68,7 +64,7 @@ class ReviewSummary extends React.Component {
             )}
             {charArray.map((char) => {
                 return (
-                <div className='summary-row' style={{marginTop: "20px"}}>
+                <div key={char[0]} className='summary-row' style={{marginTop: "20px"}}>
                     <div className="item-graph" >
                         <Gauge labels={char[2]} characteristic={char[1]} value={char[0]}/>
                     </div>
