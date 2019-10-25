@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import SearchBar from './SearchBar';
-import QuestionsList from './QuestionsList';
+import React, { Component } from "react";
+import SearchBar from "./SearchBar";
+import QuestionsContainer from "../../containers/questionsListContainer.js";
 
 export class QnA extends Component {
 	render() {
 		return (
 			<div>
-				<h2>QUESTIONS AND ANSWERS</h2>
+				<br />
+				<h5>QUESTIONS AND ANSWERS</h5>
 				<SearchBar />
-				<QuestionsList />
+				<QuestionsContainer />
 			</div>
 		);
 	}

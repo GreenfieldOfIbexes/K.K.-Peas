@@ -38,7 +38,7 @@ const mainProduct = Object.assign({}, emptyProduct, {
 
 const productQuestion = {
 	question_id: 0,
-	question_body: "",
+	question_body: "???",
 	question_date: "",
 	asker_name: "",
 	question_helpfulness: 0,
@@ -47,8 +47,9 @@ const productQuestion = {
 };
 
 const view = {
-	thumbnail_index: 0,
+	picture_index: 0,
 	style_index: 0,
+	max_picture_index: 0,
 };
 
 const initialState = {

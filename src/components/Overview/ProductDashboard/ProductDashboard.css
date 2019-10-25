@@ -1,0 +1,12 @@
+.prices {
+	display: flex;
+}
+
+.sale-price {
+	color: red;
+	margin: 0 20px 0 0;
+}
+
+.struckthrough {
+	text-decoration: line-through;
+}

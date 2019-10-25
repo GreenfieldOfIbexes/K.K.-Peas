@@ -1,25 +1,24 @@
-// import ComponentName from "../components/YourWidget/ComponentName.jsx";
 import QuestionsList from "../components/QnA/QuestionsList.jsx";
 import { connect } from "react-redux";
 
-const mapStateToProps = (state, ownProps) => ({
-	// intendedPropNameInComponent: state.nameOfPropInStore,
-	productQuestions: state.productQuestions,
-});
+const mapStateToProps = (state, ownProps) => {
+	return {
+		productQuestions: state.productQuestions,
+	};
+};
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-	intendedMethodNameInComponent: (someInfoFromComponent) => {
-		dispatch(someActionObject(someInfoFromComponent));
-	},
-});
+// const mapDispatchToProps = (dispatch, ownProps) => ({
+// 	intendedMethodNameInComponent: (someInfoFromComponent) => {
+// 		dispatch(someActionObject(someInfoFromComponent));
+// 	},
+// });
 
-const ContainerName = connect(
-	//
+const QuestionsContainer = connect(
 	mapStateToProps,
-	mapDispatchToProps,
-)(ComponentName); //
+	// mapDispatchToProps,
+)(QuestionsList);
 
-export default ContainerName; //
+export default QuestionsContainer;
 
 // send store to component
 // manipulate store
