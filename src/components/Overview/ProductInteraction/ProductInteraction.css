@@ -1,12 +1,12 @@
 .style-selectors {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
 }
 
 .style-selector {
-	margin: 0 0 10px;
+	margin: 0 20px 10px 0;
 }
 
 .style-image {
@@ -16,4 +16,17 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+}
+.cart-outfit.wrapper {
+	display: flex;
+	margin: 20px 0 0;
+}
+.add-to-cart,
+.add-to-outfit {
+	padding: 10px 0;
+	width: 180px;
+	border: 1.5px solid black;
+	text-align: center;
+	margin: 0 20px 0 0;
+	cursor: pointer;
 }
