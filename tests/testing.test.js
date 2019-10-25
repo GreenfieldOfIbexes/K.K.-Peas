@@ -1,3 +1,6 @@
-test("adds 1 + 2 to equal 3", () => {
-	expect(2 + 1).toBe(3);
+import makeProductObj from "../src/actions/makeProductObj-possibleRefile.js";
+const util = require("util");
+test("", async () => {
+	// let product = await makeProductObj(2);
+	// console.log(util.inspect(product, { depth: null }));
 });

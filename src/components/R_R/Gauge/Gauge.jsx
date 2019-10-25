@@ -5,7 +5,7 @@ const Gauge = props => {
     const percent = "" + (props.value / 5) * 100 + "%"
     return(
         <>
-        <h6>{props.characteristic}</h6>
+        <h6 className="char">{props.characteristic}</h6>
         <div className="labels">
             {props.labels.map((label) => {
                 return <div className="label" >{label}</div>

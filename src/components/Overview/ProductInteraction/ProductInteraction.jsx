@@ -22,24 +22,10 @@ const ProductInteraction = ({
 		style_index: 0,
 	});
 
-	const sizeChangeToState = (event) => {
-		setChoice((oldValues) => ({
-			...oldValues,
-			size: event.target.value,
-		}));
-	};
-
 	const styleChangeToState = (index) => {
 		setChoice((oldValues) => ({
 			...oldValues,
 			style_index: index,
-		}));
-	};
-
-	const countChangeToState = (event) => {
-		setChoice((oldValues) => ({
-			...oldValues,
-			count: event.target.value,
 		}));
 	};
 
@@ -50,6 +36,8 @@ const ProductInteraction = ({
 			return newValues;
 		});
 	};
+
+	const noProducts = Object.keys(currentStyle.skus).length > 0 ? false : true;
 
 	return (
 		<div className="product-interaction">
@@ -73,24 +61,58 @@ const ProductInteraction = ({
 				})}
 			</div>
 			<div className="size-quantity wrapper">
-				<Select
-					value={choice.size}
-					displayEmpty={true}
-					onChange={sizeChangeToState}
-					className="size select">
-					<MenuItem value="Select Size" disabled>
-						Select Size
-					</MenuItem>
-					{["XXS", "XS", "S", "M", "L", "XL", "XXL"].map((size) => {
-						if (currentStyle.skus[size]) {
-							return (
-								<MenuItem name="size" value={size} key={size}>
-									{size}
-								</MenuItem>
-							);
-						}
-					})}
-				</Select>
+				<FormControl error={noProducts}>
+					<Select
+						value={choice.size}
+						displayEmpty={true}
+						onChange={(event) => {
+							changeState(event, "size");
+							if (choice.count === "") choice.count = 1;
+						}}
+						className="size select">
+						<MenuItem value="Select Size" disabled>
+							Select Size
+						</MenuItem>
+						{[
+							"XXS",
+							"XS",
+							"S",
+							"M",
+							"L",
+							"XL",
+							"XXL",
+							"6",
+							"6.5",
+							"7",
+							"7.5",
+							"8",
+							"8.5",
+							"9",
+							"9.5",
+							"10",
+							"10.5",
+							"11",
+							"11.5",
+							"12",
+							"12.5",
+							"13",
+							"13.5",
+							"14",
+							"14.5",
+							"15",
+							"15.5",
+						].map((size) => {
+							if (currentStyle.skus[size]) {
+								return (
+									<MenuItem name="size" value={size} key={size}>
+										{size}
+									</MenuItem>
+								);
+							}
+						})}
+					</Select>
+					{noProducts && <FormHelperText>Out of stock</FormHelperText>}
+				</FormControl>
 				<Select
 					value={choice.count}
 					displayEmpty={true}
