@@ -11,9 +11,9 @@ export class App extends Component {
 		return (
 			<div>
 				<Overview />
-				<R_R />
-				<QnA />
 				<Card product={testProduct} />
+				<QnA />
+				<R_R />
 			</div>
 		);
 	}
