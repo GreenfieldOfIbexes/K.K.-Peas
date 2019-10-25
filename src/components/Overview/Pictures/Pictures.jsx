@@ -64,7 +64,7 @@ class Pictures extends React.Component {
 						console.log("initial register of full screen click");
 						fullScreenHandler();
 					}}>
-					<i class="material-icons">fullscreen</i>
+					<i className="material-icons">fullscreen</i>
 				</div>
 				<Slider {...carouselSettings} className="carousel">
 					{mainProduct.styles[view.style_index].photos.map((picture, index) => {
@@ -72,7 +72,7 @@ class Pictures extends React.Component {
 							backgroundImage: `url('${picture.url}')`,
 						};
 						return (
-							<div className="picture-container">
+							<div className="picture-container" key={index}>
 								<div
 									className={[
 										"picture",
@@ -113,6 +113,7 @@ class Pictures extends React.Component {
 								return (
 									<div
 										className={classes}
+										key={index}
 										style={backgroundImageStyle}
 										onClick={() => {
 											changePicture(index);
@@ -137,7 +138,7 @@ class Pictures extends React.Component {
 								300,
 							);
 						}}>
-						<i class="material-icons">keyboard_arrow_down</i>
+						<i className="material-icons">keyboard_arrow_down</i>
 					</div>
 				</div>
 			</div>
