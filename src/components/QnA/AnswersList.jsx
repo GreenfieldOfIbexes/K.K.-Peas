@@ -6,6 +6,7 @@ export class Answers extends Component {
 		super(props);
 
 		this.state = {};
+		this.arrayfyObject = this.arrayfyObject.bind(this);
 	}
 
 	arrayfyObject(obj) {
@@ -14,7 +15,7 @@ export class Answers extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="answersList_container">
 				{this.arrayfyObject(this.props.answers).map((answer, index) => {
 					return <Answer key={index} answer={answer[1]} />;
 				})}
