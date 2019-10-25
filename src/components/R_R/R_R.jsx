@@ -5,16 +5,12 @@ import {Container, Row, Col} from 'react-bootstrap'
 
 const R_R = () => (
 	<div id="R_R">
-		<Container fluid={true}>
-			<Row >
-				<Col lg={6}>
-					<SummaryContainer />
-				</Col>
-				<Col lg={15}>
-					<ReviewListContainer />
-				</Col>
-			</Row>
-		</Container>
+		<div className="summary-container">
+			<SummaryContainer />	
+		</div>
+		<div className="list-container">
+			<ReviewListContainer />
+		</div>
 	</div>
 );
 
