@@ -13,12 +13,17 @@ export class Search extends Component {
 	render() {
 		return (
 			<div className="searchContainer">
-				<input
-					className="searchContainer_searchBar"
-					type="text"
-					value={this.state.value}
-					placeholder="HAVE A QUESTION? SEARCH FOR ANSWER..."
-				/>
+				<form action="">
+					<input
+						className="searchContainer_searchBar"
+						type="text"
+						value={this.state.value}
+						placeholder="HAVE A QUESTION? SEARCH FOR ANSWER..."
+					/>
+					<input type="submit">
+						<i className="material-icons">search</i>
+					</input>
+				</form>
 			</div>
 		);
 	}
