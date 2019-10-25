@@ -1,4 +1,4 @@
-import ReviewSummary from "../components/R_R/ReviewSummary.jsx";
+import ReviewSummary from "../../components/R_R/ReviewSummary.jsx";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state, ownProps) => ({

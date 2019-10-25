@@ -10,3 +10,9 @@
 .struckthrough {
 	text-decoration: line-through;
 }
+
+a.all-reviews {
+	text-decoration: underline;
+	color: unset;
+	cursor: pointer;
+}
