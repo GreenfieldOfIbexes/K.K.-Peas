@@ -1,11 +1,40 @@
-.carousel {
-	width: 90%;
+.pictures-container {
+	position: relative;
 	max-width: 500px;
+}
+.pictures-container.fullscreen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	max-width: unset;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.carousel {
+	width: 100%;
 	margin: 0 auto;
+}
+.pictures-container.fullscreen .carousel {
+	height: 90vh;
+	width: 90vw;
 }
 .slick-next:before,
 .slick-prev:before {
-	color: black;
+	color: white;
+	text-shadow: 0 0 5px black;
+}
+.slick-prev {
+	left: 25px;
+	z-index: 2;
+}
+.slick-next {
+	right: 25px;
+	z-index: 2;
 }
 .picture {
 	height: 500px;
@@ -13,7 +42,75 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	transition: 0.2s;
+}
+.picture.zoomed-in {
+	transform: scale(2.5);
+}
+.pictures-container.fullscreen .picture {
+	height: 90vh;
+	width: 90vw;
+	background-size: contain;
 }
 .hidden {
 	display: none;
+}
+:root {
+	--thumbnail-height: 50px;
+	--thumbnail-margin-top-bottom: 10px;
+}
+.thumbnails-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.pictures-container.fullscreen .thumbnails-wrapper {
+	display: none;
+}
+.thumbnails-container {
+	max-height: calc(
+		(var(--thumbnail-height) * 7) + (var(--thumbnail-margin-top-bottom) * 7) +
+			var(--thumbnail-margin-top-bottom)
+	);
+	overflow: hidden;
+	width: calc(var(--thumbnail-height) + 20px);
+}
+.thumbnail {
+	height: var(--thumbnail-height);
+	width: var(--thumbnail-height);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: 0.3s;
+	margin: var(--thumbnail-margin-top-bottom);
+	cursor: pointer;
+}
+
+.thumbnail.active {
+	transform: translatex(5px);
+}
+.down-arrow,
+.top-arrow {
+	height: 30px;
+	width: 30px;
+	visibility: visible;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	text-shadow: 0 0 5px white;
+}
+.fullscreen-button {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	z-index: 3;
+}
+.pictures-container.fullscreen .fullscreen-button {
+	display: none;
+}
+
+.fullscreen-button i {
+	text-shadow: 0 0 5px black;
+	color: white;
 }

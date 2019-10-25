@@ -20,6 +20,15 @@ const view = (state = initialState.view, action) => {
 			return Object.assign({}, state, {
 				style_index: action.style_index,
 			});
+		case "FULL_SCREEN_TOGGLE":
+			return Object.assign({}, state, {
+				fullscreen_picture: !state.fullscreen_picture,
+				zoomed_in: false,
+			});
+		case "ZOOMED_IN":
+			return Object.assign({}, state, {
+				zoomed_in: !state.zoomed_in,
+			});
 		default:
 			return state;
 	}
