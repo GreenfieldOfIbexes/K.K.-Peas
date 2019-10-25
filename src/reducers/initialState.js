@@ -39,7 +39,7 @@ const mainProduct = Object.assign({}, emptyProduct, {
 
 const productQuestion = {
 	question_id: 0,
-	question_body: "",
+	question_body: "???",
 	question_date: "",
 	asker_name: "",
 	question_helpfulness: 0,

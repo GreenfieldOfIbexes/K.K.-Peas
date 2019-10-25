@@ -1,11 +1,21 @@
-import React, { Component } from 'react';
-import Question from './Question';
+import React, { Component } from "react";
+import Question from "./Question";
 
 export class QuestionsList extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {};
+	}
+
 	render() {
 		return (
 			<div>
-				<h1>A list of all questions!</h1>
+				<p>
+					{this.props.productQuestions.map((question, index) => {
+						return <Question key={index} question={question} />;
+					})}
+				</p>
 			</div>
 		);
 	}

@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProductDashboard.css";
-import Stars from "../../R_R/stars";
+import Stars from "../../R_R/Stars";
 import ProductInteractionContainer from "../../../containers/Overview/ProductInteractionContainer";
 import $ from "jquery";
 
