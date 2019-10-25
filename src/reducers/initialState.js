@@ -32,6 +32,7 @@ const emptyProduct = {
 
 const mainProduct = Object.assign({}, emptyProduct, {
 	avg_review: 0,
+	ratings_count: 0,
 	reviews: {},
 	reviewMetaData: {},
 });
@@ -50,6 +51,8 @@ const view = {
 	picture_index: 0,
 	style_index: 0,
 	max_picture_index: 0,
+	fullscreen_picture: false,
+	zoomed_in: false,
 };
 
 const initialState = {
