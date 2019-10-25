@@ -4,6 +4,7 @@ import store from "../../store";
 import pictureIndexChange from "../../actions/pictureIndexChange";
 import fullScreenToggle from "../../actions/fullScreenToggle";
 import zoomedIn from "../../actions/zoomedIn";
+import carouselArrowClick from "../../actions/carouselArrowClick";
 import $ from "jquery";
 
 const mapStateToProps = ({ mainProduct, view }, ownProps) => ({
@@ -30,15 +31,31 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 		console.log("full screen getting toggled!");
 		dispatch(fullScreenToggle());
 	},
-	fullscreenPictureClickHandler: () => {
-		console.log("click on pictures");
+	fullscreenPictureClickHandler: (e) => {
+		console.log("click on pictures", e);
 		if (store.getState().view.fullscreen_picture) {
 			dispatch(zoomedIn());
-			// handling the background-position changing in proportion to the mouse movement
-			$(".picture").on("mousemove", (e) => {
-				console.log($(this));
-			});
+			if (store.getState().view.zoomed_in) {
+				// handling the background-position changing in proportion to the mouse movement
+				$(
+					`.picture[data-picture-index=${store.getState().view.picture_index}]`,
+				).mousemove((e) => {
+					// calculate actual percentage distance from top and left
+					const leftPercentage = (e.pageX / window.innerWidth) * 100;
+					const topPercentage = (e.pageY / window.innerHeight) * 100;
+					// change the currently viewed photo's background-position to mimic that
+					e.target.style.backgroundPosition = `${leftPercentage}% ${topPercentage}%`;
+				});
+			} else {
+				$(".picture")
+					.off("mousemove")
+					.css("background-position", "center");
+			}
 		}
+	},
+	arrowClickHandler: (direction) => {
+		// if full screen, set zoomed_in to false
+		dispatch(carouselArrowClick(direction));
 	},
 });
 

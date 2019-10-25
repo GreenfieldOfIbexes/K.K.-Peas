@@ -19,17 +19,20 @@ class Pictures extends React.Component {
 	}
 
 	componentDidMount() {
-		const { changePicture } = this.props;
+		const { changePicture, view, arrowClickHandler } = this.props;
 		setTimeout(function() {
 			$(".slick-prev").on(
 				"click tap",
-				_.debounce(() => changePicture("left"), 525),
+				_.debounce(() => {
+					changePicture("left");
+					arrowClickHandler("left");
+				}, 525),
 			);
 			$(".slick-next").on(
 				"click tap",
 				_.debounce(() => {
-					console.log("next");
 					changePicture("right");
+					arrowClickHandler("right");
 				}, 525),
 			);
 		}, 1000);
@@ -64,7 +67,8 @@ class Pictures extends React.Component {
 						console.log("initial register of full screen click");
 						fullScreenHandler();
 					}}>
-					<i className="material-icons">fullscreen</i>
+					<i className="material-icons open">fullscreen</i>
+					<i className="material-icons close">close</i>
 				</div>
 				<Slider {...carouselSettings} className="carousel">
 					{mainProduct.styles[view.style_index].photos.map((picture, index) => {
@@ -74,6 +78,7 @@ class Pictures extends React.Component {
 						return (
 							<div className="picture-container" key={index}>
 								<div
+									data-picture-index={index}
 									className={[
 										"picture",
 										view.zoomed_in && view.picture_index === index

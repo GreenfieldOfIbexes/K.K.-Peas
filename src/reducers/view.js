@@ -29,6 +29,10 @@ const view = (state = initialState.view, action) => {
 			return Object.assign({}, state, {
 				zoomed_in: !state.zoomed_in,
 			});
+		case "CAROUSEL_ARROW_CLICK":
+			return Object.assign({}, state, {
+				zoomed_in: false,
+			});
 		default:
 			return state;
 	}
