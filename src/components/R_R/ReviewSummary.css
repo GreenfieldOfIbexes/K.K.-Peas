@@ -1,0 +1,14 @@
+.summary-row {
+    display: flex;
+    justify-content: stretch;
+    flex-direction: row;
+}
+
+.item {
+    flex: content;
+    flex-grow: 0
+}
+
+.item-graph {
+    flex-grow: 1
+}
