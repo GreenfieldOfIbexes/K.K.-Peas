@@ -11,8 +11,7 @@ class ReviewList extends React.Component{
                 </div>
             )
         } else {
-            var review = this.props.reviews.results[0]
-        }
+           
     return (
         <div className="reviews">
             {this.props.reviews.results.map((review) =>{
@@ -21,6 +20,7 @@ class ReviewList extends React.Component{
         </div>
     )
     }
+}
 }
 
 export default ReviewList;

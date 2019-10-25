@@ -2,20 +2,29 @@ import Redux from "redux";
 import initialState from "./initialState";
 
 function ratingsCount(ratings) {
-	return ratings[1] + ratings[2] + ratings[3] + ratings[4] + ratings[5];
+	var count = 0;
+	 for(var i=1; i <=5; i++){
+		if(ratings[i] === undefined){
+			continue;
+		} else {
+			count += (ratings[i])
+		}
+	}
+	return count;
 }
 
 const getAvgRating = (ratings) => {
-	const totalStars =
-		ratings[1] +
-		ratings[2] * 2 +
-		ratings[3] * 3 +
-		ratings[4] * 4 +
-		ratings[5] * 5;
+	var totalStars = 0;
+	for(var i=1; i <=5; i++){
+		if(ratings[i] === undefined){
+			continue;
+		} else {
+			totalStars += (ratings[i] * i)
+		}
+	}
 	const totalRatings = ratingsCount(ratings);
 	return totalStars / totalRatings;
 };
-
 const mainProduct = (state = initialState.mainProduct, action) => {
 	switch (action.type) {
 		case "NEW_MAIN_PRODUCT":
