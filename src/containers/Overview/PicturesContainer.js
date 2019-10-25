@@ -46,6 +46,11 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 					// change the currently viewed photo's background-position to mimic that
 					e.target.style.backgroundPosition = `${leftPercentage}% ${topPercentage}%`;
 				});
+				$(".fullscreen-button .close").on("click tap", () => {
+					$(".picture")
+						.off("mousemove")
+						.css("background-position", "center");
+				});
 			} else {
 				$(".picture")
 					.off("mousemove")
