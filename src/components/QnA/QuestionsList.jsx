@@ -10,12 +10,10 @@ export class QuestionsList extends Component {
 
 	render() {
 		return (
-			<div>
-				<p>
-					{this.props.productQuestions.map((question, index) => {
-						return <Question key={index} question={question} />;
-					})}
-				</p>
+			<div className="questionsList_container">
+				{this.props.productQuestions.map((question, index) => {
+					return <Question key={index} question={question} />;
+				})}
 			</div>
 		);
 	}
