@@ -1,8 +1,8 @@
 import React from 'react'
-import {Container, Row, Col, ProgressBar} from "react-bootstrap"
+import {ProgressBar} from "react-bootstrap"
 import Stars from './Stars.jsx'
 import Gauge from "./Gauge/Gauge.jsx"
-
+import './ReviewSummary.css'
 
 class ReviewSummary extends React.Component {    
     render() {
@@ -36,38 +36,38 @@ class ReviewSummary extends React.Component {
        }
         return (
         <>
-            <Row style={{margin: "0px 0px 20px 0px"}}>
-                <Col md="auto" style={{margin: "2px 20px 2px 2px", fontSize: "50px", fontWeight: "bold"}}>
+            <div className="summary-row" style={{margin: "0px 0px 20px 0px"}}>
+                <div style={{margin: "2px 20px 2px 2px", fontSize: "50px", fontWeight: "bold"}}>
                     {this.props.avg_review}
-                </Col>
-                <Col md="auto" style={{margin: "20px 2px 2px 0px"}}>
+                </div>
+                <div style={{margin: "20px 2px 2px 0px"}}>
                     <Stars rating={this.props.avg_review} size={"40px"}/>
-                </Col>
-            </Row>
+                </div>
+            </div>
             
             {ratingsArray.map((rating) =>{
                 return (
-                <Row key={rating[0]}>
-                    <Col md="auto" style={{margin: "0px 2px 4px 0px"}}>
+                <div className='summary-row' key={rating[0]}>
+                    <div className="item" style={{margin: "0px 2px 4px 0px"}}>
                         {rating[0]} Stars  
-                    </Col>
-                    <Col md={4} style={{margin: "4px 0px 4px 4px"}}>
+                    </div>
+                    <div className="item-graph"  style={{margin: "4px 0px 4px 4px"}}>
                         <ProgressBar now={(rating[1]/total) * 100} variant="success"/>
-                    </Col>
+                    </div>
                     
-                    <Col md={1} style={{margin: "0px"}}>
+                    <div className="item"  style={{margin: "0px"}}>
                         ({rating[1]})
-                    </Col>
-                </Row>)
+                    </div>
+                </div>)
                 }                    
             )}
             {charArray.map((char) => {
                 return (
-                <Row style={{marginTop: "20px"}}>
-                    <Col md={6}>
+                <div className='summary-row' style={{marginTop: "20px"}}>
+                    <div className="item-graph" >
                         <Gauge labels={char[2]} characteristic={char[1]} value={char[0]}/>
-                    </Col>
-                </Row>
+                    </div>
+                </div>
                 )
                     })}
         </>

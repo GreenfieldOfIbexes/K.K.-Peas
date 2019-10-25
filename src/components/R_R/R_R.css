@@ -1,7 +1,22 @@
 .summary-container{
     display: flex;
+    width: 20%;
+    flex:1;
+    flex-direction: column;
+    padding-right: 50px;
 }
 
 .list-container{
     display: flex;
+    flex: 2;
+    flex-direction: column;
+}
+
+#R_R {
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content:stretch;
 }

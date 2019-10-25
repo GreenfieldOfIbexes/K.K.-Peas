@@ -1,11 +1,41 @@
 
+.review-row{
+    display: flex;
+    justify-content: stretch;
+}
+
 .no-review {
     justify-content: center;
     font-weight: bold;
 }
 
 .review-header-container {
-    justify-content: space-between;
     display: flex;
-    width: 100%
+    justify-content: space-between;
+    flex: 1;
+}
+
+.reviews {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.review-title {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.review-description {
+    display: flex;
+    padding-top: 20px;
+}
+
+.review-line {
+    display:flex;
+    justify-content: stretch;
+    height: 1px;
+    background: black;
+    margin: 20px 0px 20px 0px;
 }
