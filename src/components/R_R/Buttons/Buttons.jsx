@@ -18,20 +18,16 @@ class Buttons extends React.Component {
             Length: null,
             Fit: null
         }
-        this.addReview = this.addReview.bind(this)
-        this.getReviews = this.getReviews.bind(this)
+        this.open = this.open.bind(this)
         this.close = this.close.bind(this)
         this.handleChar = this.handleChar.bind(this)
         this.handleDescription = this.handleDescription.bind(this)
         this.handleTitle = this.handleTitle.bind(this)
         this.handleUsername = this.handleUsername.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    getReviews() {
-
-    }
-
-    addReview() {
+    open() {
         this.setState({
             show:  true
         })
@@ -47,28 +43,44 @@ class Buttons extends React.Component {
         this.setState({
             userName: e.target.value
         })
-        console.log('username: ', e.target.value)
+        
     }
 
     handleTitle(e) {
         this.setState({
             title: e.target.value
         })
-        console.log("title: ", e.target.value)
+        
     }
 
     handleDescription(e) {
         this.setState({
             description: e.target.value
         })
-        console.log('description: ', e.target.value)
+      
     }
 
     handleChar(e, char){
         var obj = {};
         obj[e.target.name] = e.target.value;
         this.setState(obj)
-        console.log("e and char: ", e.target.value, e.target.name)
+        
+    }
+
+    handleSubmit(e) {
+        e.preventDefault()
+        this.setState({
+            show: false,
+            starValue: 0,
+            userName: '',
+            Size: null,
+            Width: null,
+            Comfort: null,
+            Quality: null,
+            Length: null,
+            Fit: null
+        })
+        this.close()
     }
 
 
@@ -164,12 +176,12 @@ class Buttons extends React.Component {
                 </Modal.Body>
                 <Modal.Footer>
                     <button onClick={this.close}>Close</button>
-                    <button>Submit</button>
+                    <button onClick={this.handleSubmit}>Submit</button>
                 </Modal.Footer>
             </Modal>
 
             <button className="review-button" onClick={this.getReviews}>More Reviews</button>
-            <button className="review-button" onClick={this.addReview}>Add Review</button>
+            <button className="review-button" onClick={this.open}>Add Review</button>
         </div>
         )
     }
