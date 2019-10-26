@@ -19,3 +19,9 @@
     display: flex;
     justify-content:stretch;
 }
+
+.review-buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10%;
+}
