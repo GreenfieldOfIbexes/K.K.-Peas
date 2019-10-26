@@ -3,6 +3,8 @@ import './Buttons.css'
 import {Modal, Form} from 'react-bootstrap'
 import Stars from '../Stars.jsx'
 
+
+
 class Buttons extends React.Component {
     constructor(props){
         super(props)
@@ -25,6 +27,10 @@ class Buttons extends React.Component {
         this.handleTitle = this.handleTitle.bind(this)
         this.handleUsername = this.handleUsername.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+
+        
+
+       
     }
 
     open() {
@@ -60,7 +66,7 @@ class Buttons extends React.Component {
       
     }
 
-    handleChar(e, char){
+    handleChar(e){
         var obj = {};
         obj[e.target.name] = e.target.value;
         this.setState(obj)
@@ -85,7 +91,6 @@ class Buttons extends React.Component {
 
 
     render() {
-        console.log("buttons props:", this.props.reviews)
         const characteristics = ["Size", "Width", "Comfort", "Quality", "Length", "Fit"]
         return (
         <div className="review-buttons">
@@ -170,7 +175,7 @@ class Buttons extends React.Component {
                             <div style={{width: '100%'}}>Rating</div>
                         </Form.Group>
                         <div style={{justifyContent: 'center', display: "flex"}}>
-                            <Stars value={this.state.starValue}/>
+                            <Stars value={this.state.starValue} select={true}/>
                         </div>
                     </Form>
                 </Modal.Body>
