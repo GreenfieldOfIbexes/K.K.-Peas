@@ -1,7 +1,9 @@
 .product-dashboard {
 	padding: 0 0 0 20px;
 }
-
+.product-dashboard.fullscreen {
+	margin: 0 0 0 50%;
+}
 .product-name {
 	font-weight: 600;
 	font-size: 200%;
@@ -24,4 +26,14 @@ a.all-reviews {
 	text-decoration: underline;
 	color: unset;
 	cursor: pointer;
+}
+.social-buttons {
+	display: flex;
+	align-items: center;
+	margin: 20px 0 0;
+}
+.social-buttons .social-icon img {
+	height: 40px;
+	width: auto;
+	margin: 0 20px 0 0;
 }

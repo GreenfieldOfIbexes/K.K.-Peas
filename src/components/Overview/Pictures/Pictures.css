@@ -42,7 +42,6 @@
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
-	transition: 0.2s;
 }
 .pictures-container.fullscreen .picture {
 	height: 90vh;
