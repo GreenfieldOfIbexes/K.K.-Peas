@@ -19,6 +19,7 @@ export class Search extends Component {
 					value={this.state.value}
 					placeholder="HAVE A QUESTION? SEARCH FOR ANSWER..."
 				/>
+				<i class="material-icons">search</i>
 			</div>
 		);
 	}
