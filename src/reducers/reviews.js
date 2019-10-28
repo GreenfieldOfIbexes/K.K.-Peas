@@ -13,4 +13,4 @@ const reviews = (state = {}, action) => {
 	}
 };
 
-export default reviews
+export default reviews;

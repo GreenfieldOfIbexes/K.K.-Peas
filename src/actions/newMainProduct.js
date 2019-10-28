@@ -1,27 +1,42 @@
 import axios from "axios";
 import constants from "../constants.js";
-import getProductInfo from "./makeProductObj-possibleRefile.js";
-import $ from "jquery";
+import getProductInfo from "./getProductInfo.js";
+import getQuestions from "./getQuestions.js";
+import getReviews from "./getReviews.js";
+import getRelatedProducts from "./getRelatedProducts.js";
 
-const newMainProduct = (productId) => async (dispatch) => {
-	const productInfo = await getProductInfo(productId);
-	// dispatch the action object
-	dispatch({
-		type: "NEW_MAIN_PRODUCT",
-		...productInfo,
-	});
-	// update the meta tags (used for social share)
-	const { name, description, styles, id } = productInfo;
-	$(`meta[property="og:description"]`).attr("content", description);
-	$(`meta[property="og:title"]`).attr("content", name);
-	$(`meta[property="og:image"]`).attr(
-		"content",
-		styles.results[0].photos[0].url,
-	);
-	$(`meta[property="og:url"]`).attr(
-		"content",
-		`${constants.HOST_ROOT}/?product=${id}`,
-	);
+const newMainProduct = (product) => {
+	return async (dispatch) => {
+		let productId;
+
+		if (typeof product === "string" || typeof product === "number") {
+			productId = Number(product);
+			product = getProductInfo(productId);
+		} else {
+			productId = product.id;
+		}
+		dispatch(getQuestions(productId, 0));
+		dispatch(getReviews(productId, 0));
+		dispatch(getRelatedProducts(productId));
+
+		dispatch({
+			type: "MAIN_PRODUCT_INFO",
+			productDetails: await product,
+		});
+
+		// update the meta tags (used for social share)
+		const { name, description, styles, id } = productInfo;
+		$(`meta[property="og:description"]`).attr("content", description);
+		$(`meta[property="og:title"]`).attr("content", name);
+		$(`meta[property="og:image"]`).attr(
+			"content",
+			styles.results[0].photos[0].url,
+		);
+		$(`meta[property="og:url"]`).attr(
+			"content",
+			`${constants.HOST_ROOT}/?product=${id}`,
+		);
+	};
 };
 
 export default newMainProduct;

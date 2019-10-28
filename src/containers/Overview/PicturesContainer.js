@@ -14,6 +14,7 @@ const mapStateToProps = ({ mainProduct, view }, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
 	changePicture: (change) => {
+		debugger;
 		const currentIndex = store.getState().view.picture_index;
 		const maxIndex = store.getState().view.max_picture_index;
 		if (change === "right") {

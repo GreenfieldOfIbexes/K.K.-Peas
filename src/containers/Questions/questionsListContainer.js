@@ -1,9 +1,11 @@
 import QuestionsList from "../../components/QnA/QuestionsList.jsx";
 import { connect } from "react-redux";
 
-const mapStateToProps = ({ productQuestions }, ownProps) => ({
-	productQuestions,
-});
+const mapStateToProps = (state, ownProps) => {
+	return {
+		questions: state.questions,
+	};
+};
 
 // const mapDispatchToProps = (dispatch, ownProps) => ({
 // 	intendedMethodNameInComponent: (someInfoFromComponent) => {

@@ -1,8 +1,8 @@
-import React from 'react'
-import {ProgressBar} from "react-bootstrap"
-import Stars from './Stars.jsx'
-import Gauge from "./Gauge/Gauge.jsx"
-import './ReviewSummary.css'
+import React from "react";
+import { ProgressBar } from "react-bootstrap";
+import Stars from "./Stars.jsx";
+import Gauge from "./Gauge/Gauge.jsx";
+import "./ReviewSummary.css";
 
 class ReviewSummary extends React.Component {    
     render() {

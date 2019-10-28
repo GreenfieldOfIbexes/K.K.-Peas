@@ -1,4 +1,14 @@
+const relatedProducts = [];
+
+const reviews = [];
+
+const outfitProducts = [];
+
+const questions = [];
+
 const emptyProduct = {
+	reviewMetadata: {},
+	avgRating: 0,
 	id: 0,
 	name: "",
 	slogan: "",
@@ -11,31 +21,28 @@ const emptyProduct = {
 			value: "",
 		},
 	],
-	styles: [
-		{
-			style_id: 0,
-			name: "",
-			original_price: "",
-			"default?": 0,
-			photos: [
-				{
-					thumbnail_url: "",
-					url: "",
+	styles: {
+		product_id: 0,
+		results: [
+			{
+				style_id: 0,
+				name: "",
+				original_price: "",
+				sale_price: "",
+				"default?": 0,
+				photos: [
+					{
+						thumbnail_url: "",
+						url: "",
+					},
+				],
+				skus: {
+					XS: 0,
 				},
-			],
-			skus: {
-				XS: 0,
 			},
-		},
-	],
+		],
+	},
 };
-
-const mainProduct = Object.assign({}, emptyProduct, {
-	avg_review: 0,
-	ratings_count: 0,
-	reviews: {},
-	reviewMetaData: {},
-});
 
 const productQuestion = {
 	question_id: 0,
@@ -55,10 +62,14 @@ const view = {
 	zoomed_in: false,
 };
 
+const mainProduct = Object.assign({}, emptyProduct, {});
+
 const initialState = {
 	mainProduct,
-	productQuestion,
-	emptyProduct,
+	relatedProducts,
+	reviews,
+	outfitProducts,
+	questions,
 	view,
 };
 

@@ -6,6 +6,7 @@ import QnA from "./QnA/QnA.jsx";
 import DeckContainer from "../containers/DeckContainer.js";
 import InteractionTracker from "./InteractionTracker";
 import { testRelatedProducts } from "../../tests/testProducts.js";
+import newMainProduct from "../actions/newMainProduct.js";
 
 export class App extends Component {
 	render() {

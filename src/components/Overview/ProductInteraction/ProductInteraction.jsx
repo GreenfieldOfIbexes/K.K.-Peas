@@ -16,7 +16,7 @@ const ProductInteraction = ({
 	cartHandler,
 	addToOutfitHandler,
 }) => {
-	const currentStyle = mainProduct.styles[view.style_index];
+	const currentStyle = mainProduct.styles.results[view.style_index];
 
 	const default_size_select = "Select Size";
 
@@ -48,7 +48,7 @@ const ProductInteraction = ({
 		<div className="product-interaction">
 			<div className="style-name">Style: {currentStyle.name}</div>
 			<div className="style-selectors wrapper">
-				{mainProduct.styles.map((style, index) => {
+				{mainProduct.styles.results.map((style, index) => {
 					const backgroundImageStyle = {
 						backgroundImage: `url(${style.photos[0].thumbnail_url})`,
 					};
