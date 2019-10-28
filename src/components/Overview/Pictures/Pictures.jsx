@@ -49,7 +49,7 @@ class Pictures extends React.Component {
 
 		const thumbnailArrowStyle = {
 			visibility:
-				mainProduct.styles[view.style_index].photos.length > 7
+				mainProduct.styles.results[view.style_index].photos.length > 7
 					? "visible"
 					: "hidden",
 		};
@@ -71,25 +71,27 @@ class Pictures extends React.Component {
 					<i className="material-icons close">close</i>
 				</div>
 				<Slider {...carouselSettings} className="carousel">
-					{mainProduct.styles[view.style_index].photos.map((picture, index) => {
-						let backgroundImageStyle = {
-							backgroundImage: `url('${picture.url}')`,
-						};
-						return (
-							<div className="picture-container" key={index}>
-								<div
-									data-picture-index={index}
-									className={[
-										"picture",
-										view.zoomed_in && view.picture_index === index
-											? "zoomed-in"
-											: "zoomed-out",
-									].join(" ")}
-									style={backgroundImageStyle}
-									onClick={fullscreenPictureClickHandler}></div>
-							</div>
-						);
-					})}
+					{mainProduct.styles.results[view.style_index].photos.map(
+						(picture, index) => {
+							let backgroundImageStyle = {
+								backgroundImage: `url('${picture.url}')`,
+							};
+							return (
+								<div className="picture-container" key={index}>
+									<div
+										data-picture-index={index}
+										className={[
+											"picture",
+											view.zoomed_in && view.picture_index === index
+												? "zoomed-in"
+												: "zoomed-out",
+										].join(" ")}
+										style={backgroundImageStyle}
+										onClick={fullscreenPictureClickHandler}></div>
+								</div>
+							);
+						},
+					)}
 				</Slider>
 
 				<div className="thumbnails-wrapper">
@@ -106,7 +108,7 @@ class Pictures extends React.Component {
 						<i className="material-icons">keyboard_arrow_up</i>
 					</div>
 					<div className="thumbnails-container">
-						{mainProduct.styles[view.style_index].photos.map(
+						{mainProduct.styles.results[view.style_index].photos.map(
 							(picture, index) => {
 								let backgroundImageStyle = {
 									backgroundImage: `url('${picture.thumbnail_url}')`,

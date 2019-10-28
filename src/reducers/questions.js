@@ -1,9 +1,9 @@
 import Redux from "redux";
 import initialState from "./initialState";
 
-const productQuestions = (state = [initialState.productQuestion], action) => {
+const questions = (state = [initialState.questions], action) => {
 	switch (action.type) {
-		case "NEW_MAIN_PRODUCT":
+		case "UPDATE_QUESTIONS":
 			return action.questions;
 		// return Object.assign({}, state, action.questions);
 		default:
@@ -11,4 +11,4 @@ const productQuestions = (state = [initialState.productQuestion], action) => {
 	}
 };
 
-export default productQuestions;
+export default questions;

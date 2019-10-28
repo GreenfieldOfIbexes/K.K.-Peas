@@ -11,7 +11,7 @@ export class QuestionsList extends Component {
 	render() {
 		return (
 			<div className="questionsList_container">
-				{this.props.productQuestions.map((question, index) => {
+				{this.props.questions.map((question, index) => {
 					return <Question key={index} question={question} />;
 				})}
 			</div>
