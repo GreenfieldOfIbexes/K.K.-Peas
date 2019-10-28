@@ -22,8 +22,6 @@ const Review = props => {
         </div>
         <div className="review-line" />
         </>
-            
-        
     )
 }
 

@@ -5,7 +5,7 @@ import {Rating} from '@material-ui/lab'
 import axios from 'axios'
 import constants from '../../../constants.js'
 import Characteristics from './Characteristics.jsx'
-import GetReviews from './GetReviews.jsx'
+import GetReviewsContainer from '../../../containers/R_R/GetReviews.js'
 
 class Buttons extends React.Component {
     constructor(props){
@@ -196,7 +196,7 @@ class Buttons extends React.Component {
                 </Modal.Footer>
             </Modal>
 
-            <GetReviews />
+            <GetReviewsContainer id={this.props.reviews.product_id}/>
             <button className="review-button" onClick={this.open}>Add Review</button>
         </div>
         )
