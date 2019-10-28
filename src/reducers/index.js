@@ -1,13 +1,17 @@
 import { combineReducers } from "redux";
 import mainProduct from "./mainProduct.js";
 import relatedProducts from "./relatedProducts.js";
-import productQuestions from "./questions.js";
+import questions from "./questions.js";
+import reviews from "./reviews.js";
+import outfitProducts from "./outfitProducts.js";
 import view from "./view.js";
 
 var rootReducer = combineReducers({
 	mainProduct,
 	relatedProducts,
-	productQuestions,
+	reviews,
+	outfitProducts,
+	questions,
 	view,
 });
 

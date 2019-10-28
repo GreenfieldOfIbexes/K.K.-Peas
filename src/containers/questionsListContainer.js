@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 const mapStateToProps = (state, ownProps) => {
 	return {
-		productQuestions: state.productQuestions,
+		questions: state.questions,
 	};
 };
 

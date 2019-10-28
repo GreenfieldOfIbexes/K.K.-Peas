@@ -6,12 +6,12 @@ import $ from "jquery";
 
 // TODO: get reviews from store (should be done in the container) and add in the "read all # reviews" <p></p>
 const ProductDashboard = ({
-	mainProduct: { avg_review, category, name, styles, ratings_count },
+	mainProduct: { avgRating, category, name, styles, ratings_count },
 	view,
 }) => (
 	<div className="product-dashboard">
 		<div className="reviews wrapper">
-			<Stars rating={avg_review} />{" "}
+			<Stars rating={avgRating} />{" "}
 			<p
 				className="all-reviews"
 				onClick={() => {
@@ -30,17 +30,20 @@ const ProductDashboard = ({
 		<div className="product-name wrapper">{name}</div>
 		<div className="price wrapper">
 			Price:
-			{typeof parseInt(styles[view.style_index].sale_price) === "number" ? (
+			{typeof parseInt(styles.results[view.style_index].sale_price) ===
+			"number" ? (
 				<div className="prices">
-					<p className="sale-price">${styles[view.style_index].sale_price}</p>
+					<p className="sale-price">
+						${styles.results[view.style_index].sale_price}
+					</p>
 					<p className="original-price struckthrough">
-						${styles[view.style_index].original_price}
+						${styles.results[view.style_index].original_price}
 					</p>
 				</div>
 			) : (
 				<div className="prices">
 					<p className="original-price">
-						${styles[view.style_index].original_price}
+						${styles.results[view.style_index].original_price}
 					</p>
 				</div>
 			)}

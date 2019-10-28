@@ -1,4 +1,4 @@
-import getProductInfo from "../../src/actions/makeProductObj-possibleRefile.js";
+import getProductInfo from "../../src/actions/getProductInfo.js";
 import { testProduct } from "../testProducts.js";
 
 test("should get a product object when given id", async () => {

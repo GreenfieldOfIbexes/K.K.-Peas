@@ -1,6 +1,6 @@
 import Deck from "../components/related-compare/Deck.jsx";
 import { connect } from "react-redux";
-import updateRelatedProducts from "../actions/updateRelatedProducets.js";
+import getRelatedProducts from "../actions/getRelatedProducts.js";
 
 const mapStateToProps = (state, ownProps) => ({
 	products: state.relatedProducts,
@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
 	updateRelated: () => {
-		dispatch(updateRelatedProducts([2, 3, 8, 7]));
+		dispatch(getRelatedProducts([2, 3, 8, 7]));
 	},
 });
 
