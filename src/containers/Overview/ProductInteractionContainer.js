@@ -12,12 +12,14 @@ const mapStateToProps = ({ mainProduct, view }, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
 	updateStyle: (index) => dispatch(newStyle(index)),
-	cartHandler: (skuObj) => {
-		dispatch(addToCart(skuObj));
-		axios.post(`${constants.API_URL}/cart`, {
-			user_session: localStorage.getItem("user_session"),
-			product_id: skuObj.product_id,
-		});
+	cartHandler: (skuObj, noProducts) => {
+		if (noProducts === false) {
+			dispatch(addToCart(skuObj));
+			axios.post(`${constants.API_URL}/cart`, {
+				user_session: localStorage.getItem("user_session"),
+				product_id: skuObj.product_id,
+			});
+		}
 	},
 	addToOutfitHandler: (productObject) => {},
 });

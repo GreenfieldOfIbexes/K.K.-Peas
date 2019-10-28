@@ -45,6 +45,7 @@ export class Search extends Component {
 	render() {
 		return (
 			<div className="searchContainer">
+
 				<form className="searchContainer_form" onSubmit={this.handleSubmit}>
 					<input
 						className="searchContainer_searchBar"
@@ -61,6 +62,7 @@ export class Search extends Component {
 						</i>
 					</div>
 				</form>
+
 			</div>
 		);
 	}

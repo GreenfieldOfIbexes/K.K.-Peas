@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
+import constants from "../../../constants";
+import $ from "jquery";
 
 import "./ProductInteraction.css";
 
@@ -16,10 +18,13 @@ const ProductInteraction = ({
 }) => {
 	const currentStyle = mainProduct.styles[view.style_index];
 
-	const [choice, setChoice] = React.useState({
-		size: "Select Size",
+	const default_size_select = "Select Size";
+
+	const [choice, setChoice] = useState({
+		size: default_size_select,
 		count: "",
 		style_index: 0,
+		cart_clicked: false,
 	});
 
 	const styleChangeToState = (index) => {
@@ -29,10 +34,10 @@ const ProductInteraction = ({
 		}));
 	};
 
-	const changeState = (event, prop) => {
+	const changeState = (value, prop) => {
 		setChoice((oldValues) => {
 			const newValues = Object.create(oldValues);
-			newValues[prop] = event.target.value;
+			newValues[prop] = value;
 			return newValues;
 		});
 	};
@@ -56,52 +61,34 @@ const ProductInteraction = ({
 								styleChangeToState(index);
 							}}>
 							<div className="style-image" style={backgroundImageStyle}></div>
+							{view.style_index === index && (
+								<div className="selected-style border">
+									<div className="selected-style checkmark">
+										<i className="material-icons">check</i>
+									</div>
+								</div>
+							)}
 						</div>
 					);
 				})}
 			</div>
 			<div className="size-quantity wrapper">
+				{choice.cart_clicked && choice.size === default_size_select && (
+					<p className="error">Please select a size</p>
+				)}
 				<FormControl error={noProducts}>
 					<Select
 						value={choice.size}
 						displayEmpty={true}
 						onChange={(event) => {
-							changeState(event, "size");
+							changeState(event.target.value, "size");
 							if (choice.count === "") choice.count = 1;
 						}}
 						className="size select">
-						<MenuItem value="Select Size" disabled>
+						<MenuItem value={default_size_select} disabled>
 							Select Size
 						</MenuItem>
-						{[
-							"XXS",
-							"XS",
-							"S",
-							"M",
-							"L",
-							"XL",
-							"XXL",
-							"6",
-							"6.5",
-							"7",
-							"7.5",
-							"8",
-							"8.5",
-							"9",
-							"9.5",
-							"10",
-							"10.5",
-							"11",
-							"11.5",
-							"12",
-							"12.5",
-							"13",
-							"13.5",
-							"14",
-							"14.5",
-							"15",
-							"15.5",
-						].map((size) => {
+						{constants.SIZE_OPTIONS.map((size) => {
 							if (currentStyle.skus[size]) {
 								return (
 									<MenuItem name="size" value={size} key={size}>
@@ -117,7 +104,7 @@ const ProductInteraction = ({
 					value={choice.count}
 					displayEmpty={true}
 					onChange={(event) => {
-						changeState(event, "count");
+						changeState(event.target.value, "count");
 					}}
 					className="count select">
 					{(() => {
@@ -139,9 +126,16 @@ const ProductInteraction = ({
 			</div>
 			<div className="cart-outfit wrapper">
 				<div
-					className="add-to-cart"
+					className={noProducts ? "add-to-cart no-products" : "add-to-cart"}
 					onClick={() => {
-						cartHandler({ product_id: mainProduct.id });
+						changeState(true, "cart_clicked");
+						if (!noProducts) {
+							if (choice.size !== default_size_select) {
+								cartHandler({ product_id: mainProduct.id }, noProducts);
+							} else {
+								// display "please select a price"
+							}
+						}
 					}}>
 					Add to Cart
 				</div>

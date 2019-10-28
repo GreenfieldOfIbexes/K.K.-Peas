@@ -1,0 +1,5 @@
+.review-buttons {
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+}

@@ -1,7 +1,9 @@
 #Overview {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
-	margin: 20px 0;
+	margin: 20px auto;
+	max-width: 1120px;
 }
 .pictures-container {
 	width: 50%;
