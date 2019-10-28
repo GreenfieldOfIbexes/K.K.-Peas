@@ -4,10 +4,11 @@ import store from "../store";
 
 const view = (state = initialState.view, action) => {
 	switch (action.type) {
-		case "NEW_MAIN_PRODUCT":
+		case "MAIN_PRODUCT_INFO":
 			return Object.assign({}, state, {
 				style_index: 0,
-				max_picture_index: action.styles.results[0].photos.length - 1,
+				max_picture_index:
+					action.productDetails.styles.results[0].photos.length - 1,
 			});
 		case "THUMBNAIL_CLICK":
 			return Object.assign({}, state, {

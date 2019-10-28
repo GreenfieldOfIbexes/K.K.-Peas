@@ -1,5 +1,5 @@
 import Redux from "redux";
-// import initialState from "./initialState";
+import initialState from "./initialState";
 
 const questions = (state = [initialState.questions], action) => {
 	switch (action.type) {
