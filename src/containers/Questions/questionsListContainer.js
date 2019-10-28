@@ -1,11 +1,9 @@
-import QuestionsList from "../components/QnA/QuestionsList.jsx";
+import QuestionsList from "../../components/QnA/QuestionsList.jsx";
 import { connect } from "react-redux";
 
-const mapStateToProps = (state, ownProps) => {
-	return {
-		productQuestions: state.productQuestions,
-	};
-};
+const mapStateToProps = ({ productQuestions }, ownProps) => ({
+	productQuestions,
+});
 
 // const mapDispatchToProps = (dispatch, ownProps) => ({
 // 	intendedMethodNameInComponent: (someInfoFromComponent) => {
