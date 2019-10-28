@@ -7,9 +7,13 @@ import store from "../../store";
 import $ from "jquery";
 import "./Overview.css";
 
-const Overview = () => {
+const Overview = (props) => {
 	return (
-		<div id="Overview">
+		<div
+			id="Overview"
+			onClick={(e) => {
+				props.clickHandler(e, "Overview");
+			}}>
 			<PicturesContainer />
 			<ProductDashboardContainer />
 			<ProductDescriptionContainer />
