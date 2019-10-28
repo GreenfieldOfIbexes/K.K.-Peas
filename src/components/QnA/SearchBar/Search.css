@@ -1,5 +1,36 @@
-.searchContainer_searchBar {
-	width: 80%;
+.searchContainer {
+	display: flex;
+	border: solid black 1px;
+	justify-content: space-between;
+}
+
+.searchContainer_form {
 	height: 50px;
+	width: 100%;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+}
+
+::placeholder {
+	font-weight: bold;
+}
+.searchContainer_searchBar {
+	height: 50px;
+	width: 95%;
 	padding-left: 2%;
+	border: none;
+	outline-style: none;
+}
+
+.searchContainer_icon_div {
+	width: 5%;
+}
+
+.searchContainer_icon {
+	padding-top: 30%;
+}
+
+.searchContainer_icon_div:hover {
+	cursor: pointer;
 }

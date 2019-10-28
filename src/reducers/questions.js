@@ -1,11 +1,10 @@
 import Redux from "redux";
-import initialState from "./initialState";
+// import initialState from "./initialState";
 
 const questions = (state = [initialState.questions], action) => {
 	switch (action.type) {
 		case "UPDATE_QUESTIONS":
 			return action.questions;
-		// return Object.assign({}, state, action.questions);
 		default:
 			return state;
 	}

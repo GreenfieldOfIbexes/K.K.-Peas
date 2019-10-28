@@ -23,6 +23,19 @@ const newMainProduct = (product) => {
 			type: "MAIN_PRODUCT_INFO",
 			productDetails: await product,
 		});
+
+		// update the meta tags (used for social share)
+		const { name, description, styles, id } = productInfo;
+		$(`meta[property="og:description"]`).attr("content", description);
+		$(`meta[property="og:title"]`).attr("content", name);
+		$(`meta[property="og:image"]`).attr(
+			"content",
+			styles.results[0].photos[0].url,
+		);
+		$(`meta[property="og:url"]`).attr(
+			"content",
+			`${constants.HOST_ROOT}/?product=${id}`,
+		);
 	};
 };
 

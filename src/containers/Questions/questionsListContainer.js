@@ -1,4 +1,4 @@
-import QuestionsList from "../components/QnA/QuestionsList.jsx";
+import QuestionsList from "../../components/QnA/QuestionsList.jsx";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state, ownProps) => {

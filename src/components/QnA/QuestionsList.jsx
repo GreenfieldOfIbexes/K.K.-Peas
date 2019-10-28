@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import Question from "./Question";
+import Search from "./SearchBar/Search";
 
 export class QuestionsList extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {};
+		console.log("questionsListProps: ", this.props);
 	}
 
 	render() {
