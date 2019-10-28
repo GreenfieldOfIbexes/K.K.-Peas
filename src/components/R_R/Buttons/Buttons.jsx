@@ -18,6 +18,9 @@ class Buttons extends React.Component {
             characteristics: {},
             Title: '',
             description: '',
+            email: '',
+            recommend: null,
+            photos: []
         }
         this.open = this.open.bind(this)
         this.close = this.close.bind(this)
@@ -27,7 +30,9 @@ class Buttons extends React.Component {
         this.handleUsername = this.handleUsername.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleStarChange = this.handleStarChange.bind(this)
-        
+        this.handleRec = this.handleRec.bind(this)
+        this.handleEmail = this.handleEmail.bind(this)
+    
     }
 
     open() {
@@ -79,16 +84,29 @@ class Buttons extends React.Component {
         })
     }
 
+    handleEmail(e){
+        this.setState({
+            email: e.target.value
+        })
+    }
+
+    handleRec(e){
+        this.setState({
+            recommend: e.target.value
+        })
+    }
+
     handleSubmit(e) {
         e.preventDefault()
         const newReview = {
+            email: this.state.email,
             rating: this.state.starValue,
             summary: this.state.title,
             body: this.state.description,
             recommend: this.state.recommend,
             name: this.state.userName,
             email: this.state.email,
-            photos: this.state.photos || [],
+            photos: this.state.photos,
             characteristics: this.state.characteristics
         }
         console.log("new review: ", newReview)
@@ -98,12 +116,11 @@ class Buttons extends React.Component {
                 show: false,
                 starValue: null,
                 userName: '',
-                Size: null,
-                Width: null,
-                Comfort: null,
-                Quality: null,
-                Length: null,
-                Fit: null
+                characteristics: {},
+                Title: '',
+                description: '',
+                email: '',
+                recommend: null
             })
         })
         .catch((err) => {
@@ -129,12 +146,35 @@ class Buttons extends React.Component {
                             <Form.Control type="text" placeholder="Enter Username" onChange={this.handleUsername}/>
                         </Form.Group>
                         <Form.Group>
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control type="text" placeholder="Enter Email" onChange={this.handleEmail} />
+                        </Form.Group>
+                        <Form.Group>
                             <Form.Label>Title</Form.Label>
                             <Form.Control type="text" placeholder="Enter Review Title" onChange={this.handleTitle}/>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Description</Form.Label>
                             <Form.Control as="textarea" placeholder="Enter Review Description" onChange={this.handleDescription}/>
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Would you recommend this product?</Form.Label>
+                            <Form.Check
+                            type="radio"
+                            label="Yes"
+                            name='recommend'
+                            value={true}
+                            onClick={this.handleRec}
+                            inline
+                            />
+                            <Form.Check
+                            type="radio"
+                            label="No"
+                            name='recommend'
+                            value={false}
+                            onClick={this.handleRec}
+                            inline
+                            />
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Category Ratings</Form.Label>
