@@ -1,4 +1,4 @@
-import QuestionsList from "../../components/QnA/QuestionsList.jsx";
+import QnA from "../../components/QnA/QnA";
 import { connect } from "react-redux";
 
 const mapStateToProps = ({ productQuestions }, ownProps) => ({
@@ -14,7 +14,7 @@ const mapStateToProps = ({ productQuestions }, ownProps) => ({
 const QuestionsContainer = connect(
 	mapStateToProps,
 	// mapDispatchToProps,
-)(QuestionsList);
+)(QnA);
 
 export default QuestionsContainer;
 
