@@ -1,7 +1,7 @@
 import React from 'react'
 import ReviewListContainer from '../../containers/R_R/ReviewListContainer.js'
 import SummaryContainer from '../../containers/R_R/ReviewSummaryContainer.js'
-import {Container, Row, Col} from 'react-bootstrap'
+import ButtonsContainer from '../../containers/R_R/ButtonsContainer.js'
 import './R_R.css'
 
 const R_R = () => (
@@ -11,6 +11,9 @@ const R_R = () => (
 		</div>
 		<div className="list-container">
 			<ReviewListContainer />
+			<div className="review-buttons-container">
+				<ButtonsContainer />
+			</div>
 		</div>
 	</div>
 );
