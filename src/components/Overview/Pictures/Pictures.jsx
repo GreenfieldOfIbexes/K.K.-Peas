@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "./Pictures.css";
-import mainProduct from "../../../reducers/mainProduct";
 import $ from "jquery";
 import _ from "lodash";
 
