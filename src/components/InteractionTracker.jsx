@@ -8,12 +8,16 @@ class InteractionTracker extends React.Component {
 		this.postInteractionToAPI = this.postInteractionToAPI.bind(this);
 	}
 
-	postInteractionToAPI(e) {
-		var time = Date.now();
-		var widget = this.props.widget;
-		var element = e.target;
-		console.log("Posting to API:", element, widget, time);
-		axios.post(`${constants.HOST_ROOT}/interactions`, {
+	postInteractionToAPI(e, widget) {
+		var time = Date.now().toString();
+		var element = {
+			classList: [...e.target.classList].join(" "),
+			dataset: e.target.dataset,
+			id: e.target.id,
+			innerHTML: e.target.innerHTML,
+			outerHTML: e.target.outerHTML,
+		};
+		axios.post(`${constants.API_URL}/interactions`, {
 			element,
 			widget,
 			time,
@@ -21,13 +25,8 @@ class InteractionTracker extends React.Component {
 	}
 
 	render() {
-		{
-			this.props.children;
-		}
+		return this.props.children(this.postInteractionToAPI);
 	}
 }
 
-// Example:
-<InteractionTracker widget={"Overview"} onClick={postInteractionToAPI}>
-	<Overview />
-</InteractionTracker>;
+export default InteractionTracker;
