@@ -5,7 +5,7 @@ import {Rating} from '@material-ui/lab'
 import axios from 'axios'
 import constants from '../../../constants.js'
 import Characteristics from './Characteristics.jsx'
-
+import GetReviews from './GetReviews.jsx'
 
 class Buttons extends React.Component {
     constructor(props){
@@ -159,22 +159,24 @@ class Buttons extends React.Component {
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Would you recommend this product?</Form.Label>
-                            <Form.Check
-                            type="radio"
-                            label="Yes"
-                            name='recommend'
-                            value={true}
-                            onClick={this.handleRec}
-                            inline
-                            />
-                            <Form.Check
-                            type="radio"
-                            label="No"
-                            name='recommend'
-                            value={false}
-                            onClick={this.handleRec}
-                            inline
-                            />
+                            <div display="flex" style={{justifyContent: "space-around", width: "100%"}}>
+                                <Form.Check
+                                type="radio"
+                                label="Yes"
+                                name='recommend'
+                                value={1}
+                                onClick={this.handleRec}
+                                inline
+                                />
+                                <Form.Check
+                                type="radio"
+                                label="No"
+                                name='recommend'
+                                value={0}
+                                onClick={this.handleRec}
+                                inline
+                                />
+                            </div>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Category Ratings</Form.Label>
@@ -194,7 +196,7 @@ class Buttons extends React.Component {
                 </Modal.Footer>
             </Modal>
 
-            <button className="review-button" onClick={this.getReviews}>More Reviews</button>
+            <GetReviews />
             <button className="review-button" onClick={this.open}>Add Review</button>
         </div>
         )
