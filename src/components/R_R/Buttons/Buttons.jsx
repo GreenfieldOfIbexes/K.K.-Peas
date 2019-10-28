@@ -1,8 +1,10 @@
 import React from 'react'
 import './Buttons.css'
 import {Modal, Form} from 'react-bootstrap'
-import Stars from '../Stars.jsx'
-
+import {Rating} from '@material-ui/lab'
+import axios from 'axios'
+import constants from '../../../constants.js'
+import Characteristics from './Characteristics.jsx'
 
 
 class Buttons extends React.Component {
@@ -11,14 +13,11 @@ class Buttons extends React.Component {
 
         this.state={
             show: false,
-            starValue: 0,
+            starValue: null,
             userName: '',
-            Size: null,
-            Width: null,
-            Comfort: null,
-            Quality: null,
-            Length: null,
-            Fit: null
+            characteristics: {},
+            Title: '',
+            description: '',
         }
         this.open = this.open.bind(this)
         this.close = this.close.bind(this)
@@ -27,10 +26,8 @@ class Buttons extends React.Component {
         this.handleTitle = this.handleTitle.bind(this)
         this.handleUsername = this.handleUsername.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-
+        this.handleStarChange = this.handleStarChange.bind(this)
         
-
-       
     }
 
     open() {
@@ -67,32 +64,57 @@ class Buttons extends React.Component {
     }
 
     handleChar(e){
-        var obj = {};
-        obj[e.target.name] = e.target.value;
-        this.setState(obj)
+        var obj = this.state.characteristics;
+        obj[e.target.id] = e.target.value
+        console.log('id: ', obj)
+        this.setState({
+            characteristics: obj
+        })
         
+    }
+
+    handleStarChange(e){
+        this.setState({
+            starValue: e.target.value
+        })
     }
 
     handleSubmit(e) {
         e.preventDefault()
-        this.setState({
-            show: false,
-            starValue: 0,
-            userName: '',
-            Size: null,
-            Width: null,
-            Comfort: null,
-            Quality: null,
-            Length: null,
-            Fit: null
+        const newReview = {
+            rating: this.state.starValue,
+            summary: this.state.title,
+            body: this.state.description,
+            recommend: this.state.recommend,
+            name: this.state.userName,
+            email: this.state.email,
+            photos: this.state.photos || [],
+            characteristics: this.state.characteristics
+        }
+        console.log("new review: ", newReview)
+        axios.post(`${constants.API_URL}/reviews/${this.props.reviews.product_id}`, newReview)
+        .then(() => {
+            this.setState({
+                show: false,
+                starValue: null,
+                userName: '',
+                Size: null,
+                Width: null,
+                Comfort: null,
+                Quality: null,
+                Length: null,
+                Fit: null
+            })
+        })
+        .catch((err) => {
+            console.log('error in new review post: ', err)
         })
         this.close()
     }
 
 
     render() {
-        const characteristics = ["Size", "Width", "Comfort", "Quality", "Length", "Fit"]
-        return (
+       return (
         <div className="review-buttons">
             <Modal show={this.state.show} onHide={this.close}>
                 <Modal.Header closeButton>
@@ -116,66 +138,13 @@ class Buttons extends React.Component {
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Category Ratings</Form.Label>
-                            {characteristics.map((char) =>{
-                                return (
-                                    <Form.Group>
-                                        <Form.Label style={{marginRight: "100%", marginLeft: "5%"}}>{char}:</Form.Label>
-                                            <div style={{display: "flex", justifyContent: 'center'}}>
-                                                <Form.Check
-                                                type="radio"
-                                                label="1"
-                                                name={char}
-                                                id="formHorizontalRadios1"
-                                                value={1}
-                                                onClick={this.handleChar}
-                                                inline
-                                                />
-                                                <Form.Check
-                                                type="radio"
-                                                label="2"
-                                                name={char}
-                                                id="formHorizontalRadios1"
-                                                value={2}
-                                                onClick={this.handleChar}
-                                                inline
-                                                />
-                                                <Form.Check
-                                                type="radio"
-                                                label="3"
-                                                name={char}
-                                                id="formHorizontalRadios1"
-                                                value={3}
-                                                onClick={this.handleChar}
-                                                inline
-                                                />
-                                                <Form.Check
-                                                type="radio"
-                                                label="4"
-                                                name={char}
-                                                id="formHorizontalRadios1"
-                                                value={4}
-                                                onClick={this.handleChar}
-                                                inline
-                                                />
-                                                <Form.Check
-                                                type="radio"
-                                                label="5"
-                                                name={char}
-                                                id="formHorizontalRadios1"
-                                                value={5}
-                                                onClick={this.handleChar}
-                                                inline
-                                                />
-                                            </div>
-                                    </Form.Group>
-                                )
-                            })}
+                            <Characteristics chars={this.props.reviews} handleChar={this.handleChar}/>
                         </Form.Group>
                         <Form.Group style={{justifyContent: 'center', display: "flex"}}>
                             <div style={{width: '100%'}}>Rating</div>
                         </Form.Group>
                         <div style={{justifyContent: 'center', display: "flex"}}>
-                            <Stars value={this.state.starValue} select={true}/>
+                            <Rating size="small" onChange={this.handleStarChange} value={this.state.starValue}/>
                         </div>
                     </Form>
                 </Modal.Body>

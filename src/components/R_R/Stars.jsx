@@ -9,14 +9,6 @@ import {useEffect} from 'react'
 // give prop spacing ("#px") for distance between stars
 
 const Stars = props => {
-    if(props.select){
-    useEffect(() => {
-        $(".star-container").hover(() => {
-            console.log('hover')
-            $(".star-container").css("fill", 'red !important')
-        })
-    })
-    }
     return (
         <StarRatings
             rating={props.rating || DEFAULT_RATING}

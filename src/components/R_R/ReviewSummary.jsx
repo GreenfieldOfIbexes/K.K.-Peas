@@ -9,11 +9,10 @@ class ReviewSummary extends React.Component {
        const ratings = this.props.reviewMetaData.ratings;
        const ratingsArray = [];
        var total = 0;
+       const avg = this.props.avg_review.toFixed(1)
        for(var keys in ratings){
-          
-               ratingsArray.push([keys, ratings[keys]]);
-               total += ratings[keys];
-           
+            ratingsArray.push([keys, ratings[keys]]);
+            total += ratings[keys];
        }
        const characteristics = this.props.reviewMetaData.characteristics
        const charArray = []
@@ -39,7 +38,7 @@ class ReviewSummary extends React.Component {
         <>
             <div className="summary-row" style={{margin: "0px 0px 20px 0px"}}>
                 <div style={{margin: "2px 20px 2px 2px", fontSize: "50px", fontWeight: "bold"}}>
-                    {this.props.avg_review}
+                    {avg}
                 </div>
                 <div style={{margin: "20px 2px 2px 0px"}}>
                     <Stars rating={this.props.avg_review} size={"40px"}/>
