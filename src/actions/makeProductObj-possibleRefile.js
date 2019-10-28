@@ -29,7 +29,7 @@ const getProductInfo = async (productId) => {
 			reviews: productInfo[2].data,
 			reviewMetaData: productInfo[3].data,
 			related: productInfo[4].data,
-			questions: productInfo[5].data.results,
+			questions: productInfo[5].data,
 		};
 	} catch (err) {
 		console.error(err);
