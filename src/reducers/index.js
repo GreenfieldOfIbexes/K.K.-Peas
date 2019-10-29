@@ -5,7 +5,7 @@ import questions from "./questions.js";
 import reviews from "./reviews.js";
 import outfitProducts from "./outfitProducts.js";
 import view from "./view.js";
-import reviews from './reviews.js';
+
 
 var rootReducer = combineReducers({
 	mainProduct,

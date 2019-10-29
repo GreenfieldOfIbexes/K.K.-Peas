@@ -32,6 +32,8 @@ class Buttons extends React.Component {
         this.handleStarChange = this.handleStarChange.bind(this)
         this.handleRec = this.handleRec.bind(this)
         this.handleEmail = this.handleEmail.bind(this)
+
+        console.log('props in buttons', this.props)
     
     }
 
@@ -71,7 +73,6 @@ class Buttons extends React.Component {
     handleChar(e){
         var obj = this.state.characteristics;
         obj[e.target.id] = e.target.value
-        console.log('id: ', obj)
         this.setState({
             characteristics: obj
         })
@@ -109,8 +110,7 @@ class Buttons extends React.Component {
             photos: this.state.photos,
             characteristics: this.state.characteristics
         }
-        console.log("new review: ", newReview)
-        axios.post(`${constants.API_URL}/reviews/${this.props.reviews.product_id}`, newReview)
+        // axios.post(`${constants.API_URL}/reviews/${this.props.reviews.product_id}`, newReview)
         .then(() => {
             this.setState({
                 show: false,
@@ -131,6 +131,7 @@ class Buttons extends React.Component {
 
 
     render() {
+        
        return (
         <div className="review-buttons">
             <Modal show={this.state.show} onHide={this.close}>
@@ -196,7 +197,7 @@ class Buttons extends React.Component {
                 </Modal.Footer>
             </Modal>
 
-            <GetReviewsContainer id={this.props.reviews.product_id}/>
+            <GetReviewsContainer />
             <button className="review-button" onClick={this.open}>Add Review</button>
         </div>
         )

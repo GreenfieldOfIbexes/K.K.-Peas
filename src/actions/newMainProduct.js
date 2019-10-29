@@ -16,7 +16,7 @@ const newMainProduct = (product) => {
 			productId = product.id;
 		}
 		dispatch(getQuestions(productId, 0));
-		dispatch(getReviews(productId, 0));
+		dispatch(getReviews(productId));
 		dispatch(getRelatedProducts(productId));
 
 		dispatch({
