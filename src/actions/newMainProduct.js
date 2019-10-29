@@ -4,6 +4,7 @@ import getProductInfo from "./getProductInfo.js";
 import getQuestions from "./getQuestions.js";
 import getReviews from "./getReviews.js";
 import getRelatedProducts from "./getRelatedProducts.js";
+import $ from 'jquery'
 
 const newMainProduct = (product) => {
 	return async (dispatch) => {
@@ -25,7 +26,7 @@ const newMainProduct = (product) => {
 		});
 
 		// update the meta tags (used for social share)
-		const { name, description, styles, id } = productInfo;
+		const { name, description, styles, id } = product;
 		$(`meta[property="og:description"]`).attr("content", description);
 		$(`meta[property="og:title"]`).attr("content", name);
 		$(`meta[property="og:image"]`).attr(

@@ -8,15 +8,8 @@ const mapStateToProps = (state, ownProps) => {
 	};
 };
 
-// const mapDispatchToProps = (dispatch, ownProps) => ({
-//     intendedMethodNameInComponent: (someInfoFromComponent) => {
-//         dispatch(someActionObject(someInfoFromComponent));
-//     },
-// });
-
 const SummaryContainer = connect(
 	mapStateToProps,
-	// mapDispatchToProps,
 )(ReviewSummary);
 
 export default SummaryContainer;

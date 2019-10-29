@@ -12,7 +12,6 @@ class GetReviews extends React.Component {
     }
 
     addReviews(id){
-        console.log('props:', this.props)
         this.props.addReviews(id, 1, this.state.count)
         const obj = {page: this.state.count + 2}
         this.setState(obj)
