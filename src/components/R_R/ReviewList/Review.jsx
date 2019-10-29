@@ -6,7 +6,7 @@ import './Review.css'
 const Review = props => {
     return (
         <>
-        <div key={props.review.product_id} className='review-header-container'>
+        <div className='review-header-container'>
             <div>
                 <Stars rating={props.review.rating} />
             </div>
@@ -22,8 +22,6 @@ const Review = props => {
         </div>
         <div className="review-line" />
         </>
-            
-        
     )
 }
 
