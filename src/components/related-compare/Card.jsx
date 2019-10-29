@@ -23,7 +23,7 @@ const Card = (props) => {
 				}}>
 				Update Outfit
 			</button>
-			<Stars />
+			<Stars rating={props.product.avgRating} />
 		</>
 	);
 };
