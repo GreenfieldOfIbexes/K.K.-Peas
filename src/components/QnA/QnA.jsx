@@ -32,12 +32,30 @@ const QnA = (props) => {
 	}, [props.questions.results]);
 	console.log({ displayedQuestions });
 
+	const showMoreOnClick = () => {
+		console.log("clicked");
+		if (props.questions.results.length > displayedQuestions.length) {
+			updateDisplayedQuestions(
+				displayedQuestions.concat(
+					props.questions.results.slice(
+						displayedQuestions.length,
+						displayedQuestions.length + 2,
+					),
+				),
+			);
+		} else {
+			console.log("no more questions");
+		}
+	};
 	return (
 		<div className="qNaContainer">
 			<br />
 			<h5 className="qNaContainer_title">QUESTIONS & ANSWERS</h5>
 			<Search />
-			<QuestionsList questions={displayedQuestions} />
+			<QuestionsList
+				questions={displayedQuestions}
+				showMore={showMoreOnClick}
+			/>
 		</div>
 	);
 };
