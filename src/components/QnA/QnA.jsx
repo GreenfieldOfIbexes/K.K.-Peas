@@ -22,7 +22,6 @@ import "./style.css";
 // }
 
 const QnA = (props) => {
-	console.log({ props });
 	const [displayedQuestions, updateDisplayedQuestions] = useState([
 		props.questions.results,
 	]);
@@ -30,10 +29,8 @@ const QnA = (props) => {
 	useEffect(() => {
 		updateDisplayedQuestions(props.questions.results.slice(0, 4));
 	}, [props.questions.results]);
-	console.log({ displayedQuestions });
 
 	const showMoreOnClick = () => {
-		console.log("clicked");
 		if (props.questions.results.length > displayedQuestions.length) {
 			updateDisplayedQuestions(
 				displayedQuestions.concat(
