@@ -131,7 +131,11 @@ const ProductInteraction = ({
 						changeState(true, "cart_clicked");
 						if (!noProducts) {
 							if (choice.size !== default_size_select) {
-								cartHandler({ product_id: mainProduct.id }, noProducts);
+								cartHandler(
+									{ product_id: mainProduct.id },
+									window.localStorage.getItem("user_session"),
+									noProducts,
+								);
 							} else {
 								// display "please select a price"
 							}

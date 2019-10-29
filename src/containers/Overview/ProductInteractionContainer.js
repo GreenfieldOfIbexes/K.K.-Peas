@@ -10,15 +10,17 @@ const mapStateToProps = ({ mainProduct, view }, ownProps) => ({
 	view,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+export const mapDispatchToProps = (dispatch, ownProps) => ({
 	updateStyle: (index) => dispatch(newStyle(index)),
-	cartHandler: (skuObj, noProducts) => {
+	cartHandler: (skuObj, user_session, noProducts) => {
 		if (noProducts === false) {
-			dispatch(addToCart(skuObj));
+			const actionObject = addToCart(skuObj);
+			dispatch(actionObject);
 			axios.post(`${constants.API_URL}/cart`, {
-				user_session: localStorage.getItem("user_session"),
 				product_id: skuObj.product_id,
+				user_session,
 			});
+			return actionObject;
 		}
 	},
 	addToOutfitHandler: (productObject) => {},

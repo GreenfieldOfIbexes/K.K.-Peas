@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="product-description"
+>
+  <div
+    className="description"
+  >
+    The So Fatigues will wake you up and fit you in. This high energy camo will have you blending in to even the wildest surroundings.
+  </div>
+  <div
+    className="separator"
+  />
+  <div
+    className="features"
+  >
+    <div
+      className="feature"
+    >
+      <i
+        className="material-icons"
+      >
+        check
+      </i>
+      <span
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+      >
+        _
+      </span>
+      Buttons
+      : 
+      Brass
+    </div>
+  </div>
+</div>
+`;
