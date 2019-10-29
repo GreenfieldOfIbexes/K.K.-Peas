@@ -1,24 +1,16 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Question from "./Question";
 import Buttons from "./Buttons";
 
-export class QuestionsList extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {};
-	}
-
-	render() {
-		return (
-			<div className="questionsList_container">
-				{this.props.questions.map((question, index) => {
-					return <Question key={index} question={question} />;
-				})}
-				<Buttons />
-			</div>
-		);
-	}
-}
+const QuestionsList = ({ questions, showMore }) => {
+	return (
+		<div className="questionsList_container">
+			{questions.map((question, index) => {
+				return <Question key={index} question={question} />;
+			})}
+			<Buttons showMore={showMore} />
+		</div>
+	);
+};
 
 export default QuestionsList;

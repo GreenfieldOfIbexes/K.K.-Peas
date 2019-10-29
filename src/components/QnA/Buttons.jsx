@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-const Buttons = () => {
+const Buttons = ({ showMore }) => {
 	return (
 		<div className="buttons_container">
-			<button className="buttons buttons_showMore">
+			<button className="buttons buttons_showMore" onClick={showMore}>
 				MORE ANSWERED QUESTIONS
 			</button>
 			<button className="buttons buttons_addOne">
