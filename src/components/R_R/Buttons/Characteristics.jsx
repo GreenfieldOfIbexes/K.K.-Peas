@@ -3,9 +3,10 @@ import {Form} from 'react-bootstrap'
 
 const Characteristics = props => {
     const characteristics = []
-    for(var char in props.chars.characteristics){
-        characteristics.push([char, props.chars.characteristics[char].id])
-    }
+    console.log('props', props)
+    // for(var char in props.reviews.characteristics){
+    //     characteristics.push([char, props.reviews.characteristics[char].id])
+    // }
     return (
         <>
         {characteristics.map((char) =>{

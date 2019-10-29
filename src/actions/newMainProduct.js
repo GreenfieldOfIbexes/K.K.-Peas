@@ -26,7 +26,7 @@ const newMainProduct = (product) => {
 		});
 
 		// update the meta tags (used for social share)
-		const { name, description, styles, id } = product;
+		const { name, description, styles, id } = await product;
 		$(`meta[property="og:description"]`).attr("content", description);
 		$(`meta[property="og:title"]`).attr("content", name);
 		$(`meta[property="og:image"]`).attr(

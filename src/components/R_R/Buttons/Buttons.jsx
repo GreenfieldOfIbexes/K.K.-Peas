@@ -180,13 +180,13 @@ class Buttons extends React.Component {
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Category Ratings</Form.Label>
-                            <Characteristics chars={this.props.reviews} handleChar={this.handleChar}/>
+                            <Characteristics reviews={this.props.reviews} handleChar={this.handleChar}/>
                         </Form.Group>
                         <Form.Group style={{justifyContent: 'center', display: "flex"}}>
                             <div style={{width: '100%'}}>Rating</div>
                         </Form.Group>
                         <div style={{justifyContent: 'center', display: "flex"}}>
-                            <Rating size="small" onChange={this.handleStarChange} value={this.state.starValue}/>
+                            <Rating size="small" name="rating" onChange={this.handleStarChange} value={this.state.starValue}/>
                         </div>
                     </Form>
                 </Modal.Body>
