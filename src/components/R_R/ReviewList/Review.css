@@ -39,3 +39,23 @@
     background: black;
     margin: 20px 0px 20px 0px;
 }
+
+.helpful {
+    display: flex;
+    font-size: 100%;
+    cursor: pointer;
+}
+
+.report {
+    display: flex;
+    font-size: 100%;
+    cursor: pointer;
+    color: rgb(221, 65, 36);
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 5%;
+}
