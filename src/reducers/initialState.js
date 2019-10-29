@@ -4,7 +4,7 @@ const reviews = [];
 
 const outfitProducts = [];
 
-const questions = [];
+const questions = { product_id: 0, results: [] };
 
 const emptyProduct = {
 	reviewMetadata: {},
