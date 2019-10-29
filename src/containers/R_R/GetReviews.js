@@ -4,6 +4,7 @@ import getReviews from "../../actions/getReviews.js"
 
 const mapStateToProps = (state, ownProps) => ({
     reviews: state.reviews,
+    sort: state.sort
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
