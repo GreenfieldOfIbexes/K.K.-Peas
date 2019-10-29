@@ -2,8 +2,8 @@ import React from "react";
 import Stars from "../R_R/Stars.jsx";
 import newMainProduct from "../../actions/newMainProduct.js";
 import store from "../../store.js";
+import updateOutfit from "../../actions/updateOutfit.js";
 
-//TO-DO: implement sale price formatting
 const Card = (props) => {
 	return (
 		<>
@@ -13,13 +13,13 @@ const Card = (props) => {
 			<p>{"$" + props.product.styles.results[0].original_price} </p>
 			<button
 				onClick={() => {
-					store.dispatch(newMainProduct(props.product));
+					props.newMainProduct(props.product);
 				}}>
 				Check it out!
 			</button>
 			<button
 				onClick={() => {
-					store.dispatch(updateOutfit(props.product));
+					props.updateOutfit(props.product);
 				}}>
 				Update Outfit
 			</button>

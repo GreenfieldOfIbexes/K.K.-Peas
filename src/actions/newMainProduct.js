@@ -1,4 +1,5 @@
 import axios from "axios";
+import $ from "jquery";
 import constants from "../constants.js";
 import getProductInfo from "./getProductInfo.js";
 import getQuestions from "./getQuestions.js";
@@ -25,7 +26,7 @@ const newMainProduct = (product) => {
 		});
 
 		// update the meta tags (used for social share)
-		const { name, description, styles, id } = productInfo;
+		const { name, description, styles, id } = await product;
 		$(`meta[property="og:description"]`).attr("content", description);
 		$(`meta[property="og:title"]`).attr("content", name);
 		$(`meta[property="og:image"]`).attr(
