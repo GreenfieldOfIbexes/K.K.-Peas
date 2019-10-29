@@ -6,7 +6,7 @@ import getQuestions from "./getQuestions.js";
 import getReviews from "./getReviews.js";
 import getMetaData from "./getMetaData.js";
 import getRelatedProducts from "./getRelatedProducts.js";
-import $ from 'jquery'
+
 
 const newMainProduct = (product) => {
 	return async (dispatch) => {
