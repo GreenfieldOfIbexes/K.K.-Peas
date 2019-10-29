@@ -33,7 +33,7 @@ class Buttons extends React.Component {
         this.handleRec = this.handleRec.bind(this)
         this.handleEmail = this.handleEmail.bind(this)
 
-    
+        
     }
 
     open() {
@@ -121,6 +121,7 @@ class Buttons extends React.Component {
                 email: '',
                 recommend: null
             })
+            this.props.getMetaData(this.props.reviews.product)
         })
         .catch((err) => {
             console.log('error in new review post: ', err)
@@ -130,7 +131,7 @@ class Buttons extends React.Component {
 
 
     render() {
-        
+       
        return (
         <div className="review-buttons">
             <Modal show={this.state.show} onHide={this.close}>
@@ -180,7 +181,7 @@ class Buttons extends React.Component {
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Category Ratings</Form.Label>
-                            <Characteristics reviews={this.props.reviews} handleChar={this.handleChar}/>
+                            <Characteristics reviews={this.props.metaData} handleChar={this.handleChar}/>
                         </Form.Group>
                         <Form.Group style={{justifyContent: 'center', display: "flex"}}>
                             <div style={{width: '100%'}}>Rating</div>

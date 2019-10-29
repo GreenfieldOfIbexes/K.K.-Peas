@@ -13,7 +13,7 @@ class GetReviews extends React.Component {
 
     addReviews(id){
         this.props.addReviews(id, 1, this.state.count)
-        const obj = {page: this.state.count + 2}
+        const obj = {count: this.state.count + 2}
         this.setState(obj)
     }
     render() {

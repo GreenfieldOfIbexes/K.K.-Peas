@@ -5,7 +5,7 @@ import store from "./store";
 import newMainProduct from "./actions/newMainProduct";
 import { Provider } from "react-redux";
 import queryString from "querystring";
-import getReviews from "./actions/getReviews.js";
+
 
 let productId = queryString.parse(location.search)["?product"] || 1;
 
