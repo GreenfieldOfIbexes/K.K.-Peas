@@ -24,13 +24,14 @@ import "./style.css";
 const QnA = (props) => {
 	console.log({ props });
 	const [displayedQuestions, updateDisplayedQuestions] = useState([
-		props.questions,
+		props.questions.results,
 	]);
 
 	useEffect(() => {
-		updateDisplayedQuestions(props.questions.slice(0, 4));
-	}, [props.question]);
+		updateDisplayedQuestions(props.questions.results.slice(0, 4));
+	}, [props.questions.results]);
 	console.log({ displayedQuestions });
+
 	return (
 		<div className="qNaContainer">
 			<br />
