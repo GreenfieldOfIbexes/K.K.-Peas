@@ -75,7 +75,6 @@ const ProductDashboard = ({
 			/>
 			<PinterestShareButton
 				url={window.location.href}
-				media={styles[0].photos[0].url}
 				description={"my description"}
 				children={<img src="assets/badgeRGB-244px.png" />}
 				className="social-icon"
