@@ -1,10 +1,12 @@
 import ReviewSummary from "../../components/R_R/ReviewSummary.jsx";
 import { connect } from "react-redux";
 
-const mapStateToProps = (state, ownProps) => ({
-    avg_review: state.mainProduct.avg_review,
-    reviewMetaData: state.mainProduct.reviewMetaData
-});
+const mapStateToProps = (state, ownProps) => {
+	return {
+		avg_review: state.mainProduct.avgRating,
+		reviewMetaData: state.mainProduct.reviewMetadata,
+	};
+};
 
 // const mapDispatchToProps = (dispatch, ownProps) => ({
 //     intendedMethodNameInComponent: (someInfoFromComponent) => {
@@ -13,8 +15,8 @@ const mapStateToProps = (state, ownProps) => ({
 // });
 
 const SummaryContainer = connect(
-    mapStateToProps,
-    // mapDispatchToProps,
+	mapStateToProps,
+	// mapDispatchToProps,
 )(ReviewSummary);
 
-export default SummaryContainer
+export default SummaryContainer;
