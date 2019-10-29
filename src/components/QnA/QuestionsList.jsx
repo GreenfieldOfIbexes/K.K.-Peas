@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Question from "./Question";
+import Buttons from "./Buttons";
 
 export class QuestionsList extends Component {
 	constructor(props) {
@@ -14,6 +15,7 @@ export class QuestionsList extends Component {
 				{this.props.questions.map((question, index) => {
 					return <Question key={index} question={question} />;
 				})}
+				<Buttons />
 			</div>
 		);
 	}

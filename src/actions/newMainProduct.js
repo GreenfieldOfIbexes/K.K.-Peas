@@ -4,7 +4,9 @@ import constants from "../constants.js";
 import getProductInfo from "./getProductInfo.js";
 import getQuestions from "./getQuestions.js";
 import getReviews from "./getReviews.js";
+import getMetaData from "./getMetaData.js";
 import getRelatedProducts from "./getRelatedProducts.js";
+
 
 const newMainProduct = (product) => {
 	return async (dispatch) => {
@@ -17,8 +19,9 @@ const newMainProduct = (product) => {
 			productId = product.id;
 		}
 		dispatch(getQuestions(productId, 0));
-		dispatch(getReviews(productId, 0));
+		dispatch(getReviews(productId));
 		dispatch(getRelatedProducts(productId));
+		dispatch(getMetaData(productId));
 
 		dispatch({
 			type: "MAIN_PRODUCT_INFO",
