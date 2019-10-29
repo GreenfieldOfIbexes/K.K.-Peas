@@ -13,9 +13,15 @@ const Card = (props) => {
 			<p>{"$" + props.product.styles.results[0].original_price} </p>
 			<button
 				onClick={() => {
-					store.dispatch(newMainProduct(props.product.id));
+					store.dispatch(newMainProduct(props.product));
 				}}>
 				Check it out!
+			</button>
+			<button
+				onClick={() => {
+					store.dispatch(updateOutfit(props.product));
+				}}>
+				Update Outfit
 			</button>
 			<Stars />
 		</>
