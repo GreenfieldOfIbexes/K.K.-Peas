@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import getRelatedProducts from "../actions/getRelatedProducts.js";
 
 const mapStateToProps = (state, ownProps) => ({
+	mainProduct: state.mainProduct,
 	products: state.relatedProducts,
 });
 
