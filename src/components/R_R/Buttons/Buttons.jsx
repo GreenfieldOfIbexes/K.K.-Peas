@@ -198,7 +198,7 @@ class Buttons extends React.Component {
             </Modal>
 
             <GetReviewsContainer id={this.props.reviews.product}/>
-            <button className="review-button" onClick={this.open}>Add Review</button>
+            <div className="review-button review-button-style" onClick={this.open}>Add Review</div>
         </div>
         )
     }

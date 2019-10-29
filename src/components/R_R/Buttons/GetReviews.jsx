@@ -29,8 +29,8 @@ class GetReviews extends React.Component {
     render() {
         return (
             <>
-            <button className="review-button" onClick={() => this.addReviews(this.props.id)}>More Reviews</button>
-            {(this.state.count) ? <button className="review-button" onClick={() => this.collapse(this.props.id)}></button>}
+            <div className="review-button review-button-style" onClick={() => this.addReviews(this.props.id)}>More Reviews</div>
+            {(this.state.count > 2) ? <div className="review-button review-button-style" onClick={() => this.collapse(this.props.id)}>Collapse</div> : <div/>}
             </>
         )
     }
