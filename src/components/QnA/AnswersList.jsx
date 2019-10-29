@@ -1,27 +1,18 @@
-import React, { Component } from "react";
 import Answer from "./Answer.jsx";
+import React from "react";
 
-export class Answers extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {};
-		this.arrayfyObject = this.arrayfyObject.bind(this);
-	}
-
-	arrayfyObject(obj) {
+const AnswersList = ({ answers }) => {
+	const arrayfyAnswersObject = (obj) => {
 		return Object.entries(obj);
-	}
+	};
 
-	render() {
-		return (
-			<div className="answersList_container">
-				{this.arrayfyObject(this.props.answers).map((answer, index) => {
-					return <Answer key={index} answer={answer[1]} />;
-				})}
-			</div>
-		);
-	}
-}
+	return (
+		<div className="answersList_container">
+			{arrayfyAnswersObject(answers).map((answer, index) => {
+				return <Answer key={index} answer={answer[1]} />;
+			})}
+		</div>
+	);
+};
 
-export default Answers;
+export default AnswersList;

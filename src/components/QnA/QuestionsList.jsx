@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import Question from "./Question";
-import Search from "./SearchBar/Search";
+import Buttons from "./Buttons";
 
 export class QuestionsList extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {};
-		console.log("questionsListProps: ", this.props);
 	}
 
 	render() {
@@ -16,6 +15,7 @@ export class QuestionsList extends Component {
 				{this.props.questions.map((question, index) => {
 					return <Question key={index} question={question} />;
 				})}
+				<Buttons />
 			</div>
 		);
 	}
