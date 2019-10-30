@@ -2,6 +2,7 @@ import React from 'react'
 import Stars from '../Stars.jsx'
 import Helpful from './Helpful.jsx'
 import Report from './Report.jsx'
+import Photos from './Photos.jsx'
 import './Review.css'
 
 
@@ -22,6 +23,9 @@ const Review = props => {
         <div className="review-description">
             {props.review.body}
         </div>
+        {props.review.photos.map((photo) =>{
+            return <Photos photo={photo}/>
+        })}
         <div className="footer">
             <div className="helpful">
                 <Helpful review={props.review}/>
