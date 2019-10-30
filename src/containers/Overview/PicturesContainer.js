@@ -7,25 +7,30 @@ import zoomedIn from "../../actions/zoomedIn";
 import carouselArrowClick from "../../actions/carouselArrowClick";
 import $ from "jquery";
 
+function _changePicture(change, dispatch) {
+	const currentIndex = store.getState().view.picture_index;
+	const maxIndex = store.getState().view.max_picture_index;
+	if (change === "right") {
+		const newIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
+		dispatch(pictureIndexChange(newIndex));
+	} else if (change === "left") {
+		const newIndex = currentIndex > 0 ? currentIndex - 1 : maxIndex;
+		dispatch(pictureIndexChange(newIndex));
+	} else if (typeof change === "number") {
+		dispatch(pictureIndexChange(change));
+	}
+}
+
 const mapStateToProps = ({ mainProduct, view }, ownProps) => ({
-	mainProduct,
-	view,
+	styles: mainProduct.styles.results,
+	style_index: view.style_index,
+	picture_index: view.picture_index,
+	max_picture_index: view.max_picture_index,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
 	changePicture: (change) => {
-		debugger;
-		const currentIndex = store.getState().view.picture_index;
-		const maxIndex = store.getState().view.max_picture_index;
-		if (change === "right") {
-			const newIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
-			dispatch(pictureIndexChange(newIndex));
-		} else if (change === "left") {
-			const newIndex = currentIndex > 0 ? currentIndex - 1 : maxIndex;
-			dispatch(pictureIndexChange(newIndex));
-		} else if (typeof change === "number") {
-			dispatch(pictureIndexChange(change));
-		}
+		_changePicture(change, dispatch);
 	},
 	fullScreenHandler: () => {
 		dispatch(fullScreenToggle());
@@ -60,6 +65,19 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 	arrowClickHandler: (direction) => {
 		// if full screen, set zoomed_in to false
 		dispatch(carouselArrowClick(direction));
+		_changePicture(direction, dispatch);
+		let $newPicture = $(
+			`.feature-photo[data-photo-index=${store.getState().view.picture_index}]`,
+		);
+		let $parent = $(".pictures");
+		let leftScroll = $newPicture.position().left;
+		let currentScrollDistance = $parent.scrollLeft();
+		$parent.animate(
+			{
+				scrollLeft: leftScroll + currentScrollDistance,
+			},
+			500,
+		);
 	},
 });
 

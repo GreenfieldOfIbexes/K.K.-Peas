@@ -76,53 +76,53 @@ const ProductInteraction = ({
 				{choice.cart_clicked && choice.size === default_size_select && (
 					<p className="error">Please select a size</p>
 				)}
-				<FormControl error={noProducts}>
-					<Select
-						value={choice.size}
-						displayEmpty={true}
-						onChange={(event) => {
-							changeState(event.target.value, "size");
-							if (choice.count === "") choice.count = 1;
-						}}
-						className="size select">
-						<MenuItem value={default_size_select} disabled>
-							Select Size
-						</MenuItem>
-						{constants.SIZE_OPTIONS.map((size) => {
-							if (currentStyle.skus[size]) {
-								return (
-									<MenuItem name="size" value={size} key={size}>
-										{size}
-									</MenuItem>
-								);
-							}
-						})}
-					</Select>
-					{noProducts && <FormHelperText>Out of stock</FormHelperText>}
-				</FormControl>
-				<Select
+				<select
+					value={choice.size}
+					displayEmpty={true}
+					onChange={(event) => {
+						changeState(event.target.value, "size");
+						if (choice.count === "") choice.count = 1;
+					}}
+					className="size select">
+					<option value={default_size_select}>Select Size</option>
+					{constants.SIZE_OPTIONS.map((size) => {
+						if (currentStyle.skus[size]) {
+							return (
+								<option name="size" value={size} key={size}>
+									{size}
+								</option>
+							);
+						}
+					})}
+					{noProducts && <p class="error">Out of stock</p>}
+				</select>
+				<select
 					value={choice.count}
 					displayEmpty={true}
 					onChange={(event) => {
 						changeState(event.target.value, "count");
 					}}
-					className="count select">
+					className="count select"
+					disabled={choice.size === default_size_select ? true : false}>
+					<option value="-" disabled selected>
+						-
+					</option>
 					{(() => {
-						var menuItems = [];
+						var options = [];
 						for (
 							let i = 0;
 							i < Math.min(currentStyle.skus[choice.size], 15);
 							i++
 						) {
-							menuItems.push(
-								<MenuItem name="count" value={i + 1} key={i}>
+							options.push(
+								<option name="count" value={i + 1} key={i}>
 									{i + 1}
-								</MenuItem>,
+								</option>,
 							);
 						}
-						return menuItems;
+						return options;
 					})()}
-				</Select>
+				</select>
 			</div>
 			<div className="cart-outfit wrapper">
 				<div
