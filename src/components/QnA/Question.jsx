@@ -5,7 +5,7 @@ const Question = ({ question }) => {
 	return (
 		<div className="questionsContainer">
 			<p className="questionsContainer_question">Q: {question.question_body}</p>
-			{/* <AnswersList answers={question.answers} /> */}
+			<AnswersList answers={question.answers} />
 		</div>
 	);
 };
