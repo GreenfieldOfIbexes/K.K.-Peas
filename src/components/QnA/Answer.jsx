@@ -1,30 +1,22 @@
 import React from "react";
 import Moment from "moment";
+import Photos from "./Photos";
+import Helpfulness from "./Helpfulness";
+import Report from "./Report";
 
 const Answer = ({ answer = {} }) => {
-	let date = answer.date.slice(0, 10);
 	return (
 		<div className="answerContainer">
-			<p className="answerContainer_answer">
-				<span className="answer_a">A:</span> {answer.body}
-			</p>
-			<div className="photos_container">
-				{answer.photos
-					? answer.photos.map((photo, i) => {
-							return <img key={i} src={photo} className="answer_image" />;
-					  })
-					: ""}
-			</div>
+			<p className="answerContainer_answer">{answer.body}</p>
+			<Photos photos={answer.photos} />
 			<div className="answer_extras_container">
 				<div className="answer_details">
 					<p>by {answer.answerer_name}, &nbsp;</p>
-					<p> {Moment(answer.date).format("ll")} |</p>
+					<p> {Moment(answer.date).format("ll")} &nbsp;</p>
 				</div>
-				<div className="answer_helpulness">
-					<p>&nbsp; helpful? |</p>
-				</div>
-				<div className="answer_Report">
-					<p>&nbsp; Report</p>
+				<div className="answer_functionalDetails">
+					<Helpfulness helpfulnessCount={answer.helpfulness} />
+					<Report />
 				</div>
 			</div>
 		</div>
