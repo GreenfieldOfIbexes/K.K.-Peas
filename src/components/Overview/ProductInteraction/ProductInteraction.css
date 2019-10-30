@@ -50,6 +50,18 @@
 .size-quantity > div {
 	min-width: 180px;
 }
+select {
+	word-wrap: normal;
+	background: white;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border-radius: 0;
+	border: none;
+	border-bottom: 2px solid black;
+	width: 180px;
+	margin: 0 20px 0 0;
+	outline: none;
+}
 .add-to-cart,
 .add-to-outfit {
 	padding: 10px 0;
