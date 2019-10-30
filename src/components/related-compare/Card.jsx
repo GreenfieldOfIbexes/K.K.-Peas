@@ -6,7 +6,7 @@ import updateOutfit from "../../actions/updateOutfit.js";
 
 const Card = (props) => {
 	return (
-		<>
+		<div>
 			<img src={props.product.styles.results[0].photos[0].thumbnail_url} />
 			<p>{props.product.category}</p>
 			<h2>{props.product.name}</h2>
@@ -24,7 +24,7 @@ const Card = (props) => {
 				Update Outfit
 			</button>
 			<Stars rating={props.product.avgRating} />
-		</>
+		</div>
 	);
 };
 
