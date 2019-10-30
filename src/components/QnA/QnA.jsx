@@ -26,6 +26,13 @@ const QnA = (props) => {
 		props.questions.results,
 	]);
 
+	const isEmptyObj = (obj) => {
+		for (var key in obj) {
+			if (obj.hasOwnProperty(key)) return false;
+		}
+		return true;
+	};
+
 	useEffect(() => {
 		updateDisplayedQuestions(props.questions.results.slice(0, 4));
 	}, [props.questions.results]);
@@ -44,6 +51,7 @@ const QnA = (props) => {
 			console.log("no more questions");
 		}
 	};
+
 	return (
 		<div className="qNaContainer">
 			<br />
