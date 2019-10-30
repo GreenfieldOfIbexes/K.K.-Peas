@@ -25,7 +25,9 @@ const AnswersList = ({ answers }) => {
 					return <Answer key={index} answer={answer} />;
 				})}
 				{allAnswers.length > 2 ? (
-					<button onClick={showMoreAnswersOnClick} className="answersList_btn">
+					<button
+						onClick={showMoreAnswersOnClick}
+						className="answersList_btn all_btns">
 						LOAD MORE ANSWERS
 					</button>
 				) : (

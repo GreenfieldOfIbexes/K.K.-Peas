@@ -32,6 +32,12 @@
 	color: rgb(73, 73, 73);
 }
 
+.answersList_container {
+	display: block;
+	height: 250px;
+	overflow: scroll;
+}
+
 .answer_a {
 	font-weight: bold;
 	font-size: 20px;
@@ -127,4 +133,8 @@
 	padding-right: 2px;
 	padding-left: 0px;
 	text-decoration: underline;
+}
+
+.all_btns:focus {
+	outline: none;
 }

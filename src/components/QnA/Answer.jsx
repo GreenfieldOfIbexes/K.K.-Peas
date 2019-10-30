@@ -15,7 +15,7 @@ const Answer = ({ answer = {} }) => {
 					<p> {Moment(answer.date).format("ll")} &nbsp;</p>
 				</div>
 				<div className="answer_functionalDetails">
-					<Helpfulness helpful={answer.helpfulness} />
+					<Helpfulness helpfulnessCount={answer.helpfulness} />
 					<Report />
 				</div>
 			</div>

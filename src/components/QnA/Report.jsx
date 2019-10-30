@@ -16,9 +16,9 @@ const Report = () => {
 	return (
 		<div onClick={handleClick}>
 			{text ? (
-				<button className="report_btn">Reported</button>
+				<button className="report_btn all_btns">Reported</button>
 			) : (
-				<button className="report_btn">Report</button>
+				<button className="report_btn all_btns">Report</button>
 			)}
 		</div>
 	);
