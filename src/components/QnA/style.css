@@ -64,3 +64,19 @@
 	height: 60px;
 	background-color: rgba(255, 255, 255, 0.932);
 }
+
+.answer_extras_container {
+	display: flex;
+	flex-direction: row;
+}
+
+.answer_details {
+	display: flex;
+	flex-direction: row;
+}
+
+.answer_image {
+	width: 150px;
+	height: 80px;
+	margin-right: 3%;
+}
