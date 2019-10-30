@@ -2,9 +2,9 @@ import React from "react";
 import Moment from "moment";
 import Photos from "./Photos";
 import Helpfulness from "./Helpfulness";
+import Report from "./Report";
 
 const Answer = ({ answer = {} }) => {
-	let date = answer.date.slice(0, 10);
 	return (
 		<div className="answerContainer">
 			<p className="answerContainer_answer">{answer.body}</p>
@@ -15,12 +15,8 @@ const Answer = ({ answer = {} }) => {
 					<p> {Moment(answer.date).format("ll")} &nbsp;</p>
 				</div>
 				<div className="answer_functionalDetails">
-					<div className="answer_helpulness">
-						<Helpfulness helpful={answer.helpfulness} />
-					</div>
-					<div className="answer_Report">
-						<p>&nbsp; Report</p>
-					</div>
+					<Helpfulness helpful={answer.helpfulness} />
+					<Report />
 				</div>
 			</div>
 		</div>

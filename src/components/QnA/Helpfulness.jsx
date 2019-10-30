@@ -18,6 +18,7 @@ const Helpfulness = ({ helpful }) => {
 				</button>
 				({counter})
 			</p>
+			&nbsp;|&nbsp;
 		</div>
 	);
 };
