@@ -1,6 +1,14 @@
 .review-buttons {
     display: flex;
-    width: 35%;
+    width: 100%;
+    height: 60%;
     justify-content: space-between;
 }
 
+.review-button-style{
+    padding: 10px 0;
+    width: 180px;
+    border: 1.5px solid black;
+    text-align: center;
+    cursor: pointer;
+}
