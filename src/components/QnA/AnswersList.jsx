@@ -18,17 +18,22 @@ const AnswersList = ({ answers }) => {
 	};
 
 	return (
-		<div className="answersList_container">
-			{displayedAnswers.map((answer, index) => {
-				return <Answer key={index} answer={answer} />;
-			})}
-			{allAnswers.length > 2 ? (
-				<button onClick={showMoreAnswersOnClick} className="answersList_btn">
-					LOAD MORE ANSWERS
-				</button>
-			) : (
-				""
-			)}
+		<div className="answersList_mainContainer">
+			<span className="answer_a">A:&nbsp;</span>
+			<div className="answersList_container">
+				{displayedAnswers.map((answer, index) => {
+					return <Answer key={index} answer={answer} />;
+				})}
+				{allAnswers.length > 2 ? (
+					<button
+						onClick={showMoreAnswersOnClick}
+						className="answersList_btn all_btns">
+						LOAD MORE ANSWERS
+					</button>
+				) : (
+					""
+				)}
+			</div>
 		</div>
 	);
 };
