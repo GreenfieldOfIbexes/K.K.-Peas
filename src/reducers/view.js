@@ -7,25 +7,25 @@ const view = (state = initialState.view, action) => {
 		case "MAIN_PRODUCT_INFO":
 			return Object.assign({}, state, {
 				style_index: 0,
-				max_picture_index:
+				max_photo_index:
 					action.productDetails.styles.results[0].photos.length - 1,
 			});
 		case "THUMBNAIL_CLICK":
 			return Object.assign({}, state, {
-				picture_index: action.picture_index,
+				photo_index: action.photo_index,
 			});
-		case "PICTURE_INDEX_CHANGE":
+		case "photo_INDEX_CHANGE":
 			return Object.assign({}, state, {
-				picture_index: action.newIndex,
+				photo_index: action.newIndex,
 			});
 		case "NEW_STYLE":
 			return Object.assign({}, state, {
 				style_index: action.style_index,
-				max_picture_index: action.max_picture_index,
+				max_photo_index: action.max_photo_index,
 			});
 		case "FULL_SCREEN_TOGGLE":
 			return Object.assign({}, state, {
-				fullscreen_picture: !state.fullscreen_picture,
+				fullscreen_photo: !state.fullscreen_photo,
 				zoomed_in: false,
 			});
 		case "ZOOMED_IN":

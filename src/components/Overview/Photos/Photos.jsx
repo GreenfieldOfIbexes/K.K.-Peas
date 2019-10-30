@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import Slider from "react-slick";
-import "./Pictures.css";
+import "./Photos.css";
 import $ from "jquery";
 import _ from "lodash";
+import fullScreenToggle from "../../../actions/fullScreenToggle";
 
 // thumbnails
 // onClick={() => {
@@ -16,20 +17,28 @@ import _ from "lodash";
 // 	);
 // }}>
 
-const Pictures = ({
+const photos = ({
 	styles,
 	style_index,
-	picture_index,
-	max_picture_index,
-	changePicture,
+	photo_index,
+	max_photo_index,
+	changephoto,
 	arrowClickHandler,
+	zoomed_in,
+	fullscreen_photo,
+	fullscreenphotoClickHandler,
+	fullScreenHandler,
 }) => {
+	let PhotosContainerClasses = ["photo-container"];
+	zoomed_in ? PhotosContainerClasses.push("zoomed-in") : null;
+	fullscreen_photo ? PhotosContainerClasses.push("fullscreen") : null;
+
 	return (
-		<div className="picture-container">
+		<div className={PhotosContainerClasses.join(" ")}>
 			<div className="thumbnails-container">
 				{styles[style_index].photos.map((photo, index) => {
 					let classes =
-						picture_index === index ? "thumbnail active" : "thumbnail";
+						photo_index === index ? "thumbnail active" : "thumbnail";
 					return (
 						<div className={classes} key={index} data-thumbnail-index={index}>
 							<img src={photo.thumbnail_url}></img>
@@ -44,11 +53,11 @@ const Pictures = ({
 				}}>
 				arrow_left
 			</i>
-			<div className="pictures">
+			<div className="photos" onClick={fullScreenHandler}>
 				{styles[style_index].photos.map((photo, index) => {
 					return (
 						<div className="feature-photo" key={index} data-photo-index={index}>
-							<img src={photo.url}></img>
+							<img src={photo.url} onClick={fullscreenphotoClickHandler}></img>
 						</div>
 					);
 				})}
@@ -63,7 +72,7 @@ const Pictures = ({
 			<div className="dots">
 				{(() => {
 					let dots = [];
-					for (let i = 0; i < max_picture_index; i++) {
+					for (let i = 0; i < max_photo_index; i++) {
 						dots.push(
 							<div key={i} className="dot">
 								dot
@@ -77,4 +86,4 @@ const Pictures = ({
 	);
 };
 
-export default Pictures;
+export default photos;

@@ -16,7 +16,7 @@ const ProductDashboard = ({
 }) => (
 	<div
 		className={
-			view.fullscreen_picture
+			view.fullscreen_photo
 				? "product-dashboard fullscreen"
 				: "product-dashboard"
 		}>

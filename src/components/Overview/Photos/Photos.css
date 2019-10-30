@@ -1,5 +1,5 @@
 /* GENERAL */
-.picture-container {
+.photo-container {
 	position: relative;
 	height: 500px;
 }
@@ -34,14 +34,14 @@
 }
 
 /* FEATURE PHOTOS */
-.pictures {
+.photos {
 	display: flex;
 	overflow: hidden;
 	max-width: 500px;
 	overflow-y: hidden;
 	overflow-x: scroll;
 }
-.fullscreen .pictures {
+.fullscreen .photos {
 	background: rgba(0, 0, 0, 0.65);
 	max-width: 100vw;
 }
@@ -64,12 +64,22 @@
 }
 
 .feature-photo img {
-	object-fit: contain;
 	width: 100%;
+	cursor: pointer;
+}
+
+.fullscreen .feature-photo img {
+	cursor: zoom-in;
+	height: 100%;
+	width: auto;
+}
+
+.fullscreen.zoomed-in .feature-photo img {
+	cursor: zoom-out;
 }
 
 /* ARROWS */
-.picture-container i.material-icons {
+.photo-container i.material-icons {
 	position: absolute;
 	top: 48%;
 	z-index: 100;

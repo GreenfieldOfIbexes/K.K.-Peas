@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import PicturesContainer from "../../containers/Overview/PicturesContainer";
+import PhotosContainer from "../../containers/Overview/PhotosContainer";
 import ProductDashboardContainer from "../../containers/Overview/ProductDashboardContainer";
 import ProductDescriptionContainer from "../../containers/Overview/ProductDescriptionContainer";
 import constants from "../../constants";
@@ -14,7 +14,7 @@ const Overview = (props) => {
 			onClick={(e) => {
 				props.clickHandler(e, "Overview");
 			}}>
-			<PicturesContainer />
+			<PhotosContainer />
 			<ProductDashboardContainer />
 			<ProductDescriptionContainer />
 		</div>

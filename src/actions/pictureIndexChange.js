@@ -1,8 +1,8 @@
-const pictureIndexChange = (newIndex) => {
+const photoIndexChange = (newIndex) => {
 	return {
-		type: "PICTURE_INDEX_CHANGE",
+		type: "photo_INDEX_CHANGE",
 		newIndex,
 	};
 };
 
-export default pictureIndexChange;
+export default photoIndexChange;
