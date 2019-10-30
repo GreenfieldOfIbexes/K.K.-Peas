@@ -30,7 +30,7 @@ const QnA = (props) => {
 		updateDisplayedQuestions(props.questions.results.slice(0, 4));
 	}, [props.questions.results]);
 
-	const showMoreOnClick = () => {
+	const showMoreQuestionsOnClick = () => {
 		if (props.questions.results.length > displayedQuestions.length) {
 			updateDisplayedQuestions(
 				displayedQuestions.concat(
@@ -51,7 +51,7 @@ const QnA = (props) => {
 			<Search />
 			<QuestionsList
 				questions={displayedQuestions}
-				showMore={showMoreOnClick}
+				showMoreQuestions={showMoreQuestionsOnClick}
 			/>
 		</div>
 	);
