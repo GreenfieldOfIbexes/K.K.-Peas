@@ -73,9 +73,16 @@
 .answer_extras_container {
 	display: flex;
 	flex-direction: row;
+	font-size: 13px;
 }
 
 .answer_details {
+	display: flex;
+	flex-direction: row;
+	font-weight: lighter;
+}
+
+.answer_functionalDetails {
 	display: flex;
 	flex-direction: row;
 }
@@ -90,4 +97,17 @@
 .photos_container {
 	display: flex;
 	flex-direction: row;
+}
+
+.Helpfulness_container {
+	display: flex;
+	flex-direction: row;
+}
+
+.helpfulness_btn {
+	-webkit-appearance: unset;
+	border: none;
+	padding-right: 2px;
+	padding-left: 0px;
+	text-decoration: underline;
 }
