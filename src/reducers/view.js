@@ -1,6 +1,5 @@
 import Redux from "redux";
 import initialState from "./initialState";
-import store from "../store";
 
 const view = (state = initialState.view, action) => {
 	switch (action.type) {

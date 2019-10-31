@@ -8,37 +8,35 @@ import {
 	TwitterShareButton,
 	PinterestShareButton,
 } from "react-share";
+import mainProduct from "../../../reducers/mainProduct";
 
-// TODO: get reviews from store (should be done in the container) and add in the "read all # reviews" <p></p>
+// The component
 const ProductDashboard = ({
 	mainProduct: { avgRating, category, name, styles, reviewMetadata },
 	view,
 }) => {
+	// Get ratings count - used for conditionally rendering the reviews part, and then actually displaying the proper number of ratings
 	const ratings_count = reviewMetadata.ratings
 		? Object.values(reviewMetadata.ratings).reduce((a, b) => a + b, 0)
 		: 0;
 
+	// Behavoir to run when you click on "See all # reviews"
+	const scrollToRatingsAndReviews = () => {
+		const R_R_position = $("#R_R").offset().top;
+		$("html, body").animate(
+			{
+				scrollTop: R_R_position,
+			},
+			500,
+		);
+	};
+
 	return (
-		<div
-			className={
-				view.fullscreen_photo
-					? "product-dashboard fullscreen"
-					: "product-dashboard"
-			}>
+		<div className="product-dashboard">
 			{ratings_count > 0 && (
 				<div className="reviews wrapper">
 					<Stars rating={avgRating} />{" "}
-					<p
-						className="all-reviews"
-						onClick={() => {
-							const R_R_position = $("#R_R").offset().top;
-							$("html, body").animate(
-								{
-									scrollTop: R_R_position,
-								},
-								500,
-							);
-						}}>
+					<p className="all-reviews" onClick={scrollToRatingsAndReviews}>
 						Read all {ratings_count} reviews
 					</p>
 				</div>
@@ -85,6 +83,7 @@ const ProductDashboard = ({
 					description={"my description"}
 					children={<img src="assets/badgeRGB-244px.png" />}
 					className="social-icon"
+					media={styles.results[view.style_index].photos[0].url}
 				/>
 			</div>
 		</div>
