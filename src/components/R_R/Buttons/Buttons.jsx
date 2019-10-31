@@ -6,6 +6,7 @@ import axios from 'axios'
 import constants from '../../../constants.js'
 import Characteristics from './Characteristics.jsx'
 import GetReviewsContainer from '../../../containers/R_R/GetReviews.js'
+import Drop from './Drop.jsx'
 
 class Buttons extends React.Component {
     constructor(props){
@@ -32,7 +33,7 @@ class Buttons extends React.Component {
         this.handleStarChange = this.handleStarChange.bind(this)
         this.handleRec = this.handleRec.bind(this)
         this.handleEmail = this.handleEmail.bind(this)
-
+        this.handlePhotos = this.handlePhotos.bind(this)
         
     }
 
@@ -94,6 +95,13 @@ class Buttons extends React.Component {
         this.setState({
             recommend: e.target.value
         })
+    }
+
+    handlePhotos(photoArray){
+        const obj={
+            photos: photoArray
+        }
+        this.setState(obj)
     }
 
     handleSubmit(e) {
@@ -189,6 +197,7 @@ class Buttons extends React.Component {
                         <div style={{justifyContent: 'center', display: "flex"}}>
                             <Rating size="small" name="rating" onChange={this.handleStarChange} value={this.state.starValue}/>
                         </div>
+                        <Drop state={this.state.photos} handlePhotos={this.handlePhotos}/>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
