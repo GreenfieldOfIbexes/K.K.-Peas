@@ -1,5 +1,21 @@
-.card {
+.deck .card {
+    /* position: fixed; */
+    width: 350px;
+    min-width: 350px;
+}
+
+.material-icons {
     position: absolute;
-    width: 500px;
-    min-width: 500px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.pricing {
+    float: left;
+}
+
+.crossout-price {
+    color: red;
+    text-decoration: line-through;
 }
