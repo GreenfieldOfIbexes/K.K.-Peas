@@ -5,7 +5,8 @@ import questions from "./questions.js";
 import reviews from "./reviews.js";
 import outfitProducts from "./outfitProducts.js";
 import view from "./view.js";
-import metaData from './metaData';
+import metaData from "./metaData";
+import comparisonProduct from "./comparisonProduct.js";
 
 var rootReducer = combineReducers({
 	mainProduct,
@@ -15,6 +16,7 @@ var rootReducer = combineReducers({
 	outfitProducts,
 	questions,
 	view,
+	comparisonProduct,
 });
 
 export default rootReducer;

@@ -71,6 +71,7 @@ const initialState = {
 	outfitProducts,
 	questions,
 	view,
+	emptyProduct,
 };
 
 export default initialState;

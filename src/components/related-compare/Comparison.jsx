@@ -2,14 +2,17 @@ import React from "react";
 import CardContainer from "../../containers/CardContainer.js";
 
 const Comparison = (props) => {
-	if (props.mainProduct === undefined || props.compareProduct === undefined) {
+	if (
+		props.mainProduct === undefined ||
+		props.comparisonProduct === undefined
+	) {
 		return null;
 	}
 	let featureComparison = {};
 	props.mainProduct.features.forEach((featureItem) => {
 		featureComparison[featureItem.feature] = [featureItem.value, null];
 	});
-	props.compareProduct.features.forEach((featureItem) => {
+	props.comparisonProduct.features.forEach((featureItem) => {
 		if (featureComparison[featureItem.feature] === undefined) {
 			featureComparison[featureItem.feature] = [null, featureItem.value];
 		} else {
@@ -22,7 +25,7 @@ const Comparison = (props) => {
 				<tr>
 					<th>{props.mainProduct.name}</th>
 					<th></th>
-					<th>{props.compareProduct.name}</th>
+					<th>{props.comparisonProduct.name}</th>
 				</tr>
 				{Object.keys(featureComparison).map((feature) => (
 					<tr>
