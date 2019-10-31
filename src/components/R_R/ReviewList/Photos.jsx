@@ -31,7 +31,7 @@ class Photos extends React.Component{
     render() {
         return (
             <>
-                <div className='review-photos-modal' style={{display: this.state.display}} onHide={this.close}>
+                <div className='review-photos-modal' style={{display: this.state.display}}>
                     <div className='review-photos-content'>
                         <div className='review-photos-close' onClick={this.close}>x</div>
                         <img src={this.props.photo.url}/>
