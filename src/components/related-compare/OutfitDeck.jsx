@@ -6,7 +6,7 @@ import "./Deck.css";
 
 const Deck = (props) => {
 	return (
-		<div class="deck">
+		<div class="deck card-deck">
 			{props.products.map((product) => (
 				<CardContainer product={product} class="card" icon="clear" />
 			))}
