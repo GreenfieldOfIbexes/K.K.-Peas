@@ -6,11 +6,10 @@ import "./Deck.css";
 
 const Deck = (props) => {
 	return (
-		<div class="deck card-deck">
+		<div className="deck card-deck">
 			{props.products.map((product) => (
 				<CardContainer product={product} class="card" icon="clear" />
 			))}
-			<ComparisonContainer />
 		</div>
 	);
 };
