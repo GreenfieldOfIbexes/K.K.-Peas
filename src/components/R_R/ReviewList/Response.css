@@ -1,0 +1,21 @@
+.review-response{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    width: 80%;
+    padding: 2%;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+}
+
+.review-response-text{
+    display: flex;
+    background-color: rgba(128,128,128, .6);
+    justify-content: center;
+    padding: 2%
+}
+
+.review-response-footer{
+    align-self: flex-start
+}

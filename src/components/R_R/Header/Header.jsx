@@ -23,7 +23,7 @@ class Header extends React.Component {
         return (
             <div>
                 Sort by:  
-                <Select value={this.state.sort} onChange={this.handleChange}>
+                <Select style={{paddingLeft: '2%'}}value={this.state.sort} onChange={this.handleChange}>
                     <option value="relevant">Relevant</option>
                     <option value="newest">Newest</option>
                     <option value="helpful">Helpful</option>
