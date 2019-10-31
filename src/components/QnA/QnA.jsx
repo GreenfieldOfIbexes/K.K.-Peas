@@ -44,6 +44,7 @@ const QnA = (props) => {
 			console.log("no more questions");
 		}
 	};
+
 	return (
 		<div className="qNaContainer">
 			<br />

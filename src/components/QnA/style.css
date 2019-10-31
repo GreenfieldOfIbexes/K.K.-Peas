@@ -28,14 +28,23 @@
 
 .answersList_mainContainer {
 	display: flex;
-	flex-direction: row;
 	color: rgb(73, 73, 73);
+	min-height: 0;
 }
 
 .answersList_container {
-	display: block;
-	height: 250px;
-	overflow: scroll;
+	-webkit-flex: 1 1 auto;
+	overflow-y: auto;
+	max-height: 250px;
+	/* -webkit-flex: 1 1 auto;
+	overflow-y: auto;
+	height: 0px; */
+	/* flex-grow: 1;
+	overflow: auto;
+	min-height: 0; */
+	/* display: flex; */
+	/* height: 250; */
+	/* overflow: scroll; */
 }
 
 .answer_a {

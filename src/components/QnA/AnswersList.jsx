@@ -17,24 +17,37 @@ const AnswersList = ({ answers }) => {
 		updateDisplayedAllAnswers(allAnswers);
 	};
 
+	const isEmptyObj = (obj) => {
+		for (var key in obj) {
+			if (obj.hasOwnProperty(key)) return false;
+		}
+		return true;
+	};
+
 	return (
-		<div className="answersList_mainContainer">
-			<span className="answer_a">A:&nbsp;</span>
-			<div className="answersList_container">
-				{displayedAnswers.map((answer, index) => {
-					return <Answer key={index} answer={answer} />;
-				})}
-				{allAnswers.length > 2 ? (
-					<button
-						onClick={showMoreAnswersOnClick}
-						className="answersList_btn all_btns">
-						LOAD MORE ANSWERS
-					</button>
-				) : (
-					""
-				)}
-			</div>
-		</div>
+		<React.Fragment>
+			{allAnswers.length > 0 ? (
+				<div className="answersList_mainContainer">
+					<span className="answer_a">A:&nbsp;</span>
+					<div className="answersList_container">
+						{displayedAnswers.map((answer, index) => {
+							return <Answer key={index} answer={answer} />;
+						})}
+						{allAnswers.length > 2 ? (
+							<button
+								onClick={showMoreAnswersOnClick}
+								className="answersList_btn all_btns">
+								LOAD MORE ANSWERS
+							</button>
+						) : (
+							""
+						)}
+					</div>
+				</div>
+			) : (
+				""
+			)}
+		</React.Fragment>
 	);
 };
 
