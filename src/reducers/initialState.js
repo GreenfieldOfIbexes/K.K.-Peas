@@ -55,10 +55,10 @@ const productQuestion = {
 };
 
 const view = {
-	picture_index: 0,
+	photo_index: 0,
 	style_index: 0,
-	max_picture_index: 0,
-	fullscreen_picture: false,
+	max_photo_index: 0,
+	fullscreen_photo: false,
 	zoomed_in: false,
 };
 

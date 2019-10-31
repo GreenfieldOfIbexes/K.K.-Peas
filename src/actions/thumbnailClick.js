@@ -1,6 +1,6 @@
 const thumbnailClick = (index) => ({
 	type: "THUMBNAIL_CLICK",
-	picture_index: index,
+	photo_index: index,
 });
 
 export default thumbnailClick;

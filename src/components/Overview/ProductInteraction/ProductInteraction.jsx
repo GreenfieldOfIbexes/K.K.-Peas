@@ -42,7 +42,10 @@ const ProductInteraction = ({
 		});
 	};
 
-	const noProducts = Object.keys(currentStyle.skus).length > 0 ? false : true;
+	// Determine whether or not there are no products
+	const firstSku = Object.keys(currentStyle.skus)[0];
+	const noProducts =
+		firstSku === undefined || firstSku === "null" ? true : false;
 
 	return (
 		<div className="product-interaction">
@@ -50,7 +53,8 @@ const ProductInteraction = ({
 			<div className="style-selectors wrapper">
 				{mainProduct.styles.results.map((style, index) => {
 					const backgroundImageStyle = {
-						backgroundImage: `url(${style.photos[0].thumbnail_url})`,
+						backgroundImage: `url(${style.photos[0].thumbnail_url ||
+							"https://www.hertrack.com/wp-content/uploads/2018/10/no-image.jpg"})`,
 					};
 					return (
 						<div
