@@ -1,10 +1,7 @@
-import React, { useEffect } from "react";
-import PicturesContainer from "../../containers/Overview/PicturesContainer";
+import React from "react";
+import PhotosContainer from "../../containers/Overview/PhotosContainer";
 import ProductDashboardContainer from "../../containers/Overview/ProductDashboardContainer";
 import ProductDescriptionContainer from "../../containers/Overview/ProductDescriptionContainer";
-import constants from "../../constants";
-import store from "../../store";
-import $ from "jquery";
 import "./Overview.css";
 
 const Overview = (props) => {
@@ -14,7 +11,7 @@ const Overview = (props) => {
 			onClick={(e) => {
 				props.clickHandler(e, "Overview");
 			}}>
-			<PicturesContainer />
+			<PhotosContainer />
 			<ProductDashboardContainer />
 			<ProductDescriptionContainer />
 		</div>

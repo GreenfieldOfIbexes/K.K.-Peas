@@ -1,7 +1,7 @@
 .product-description {
 	display: flex;
 	justify-content: space-between;
-	margin: 20px auto 0;
+	margin: 80px auto 0;
 	width: 100%;
 }
 .product-description .separator {

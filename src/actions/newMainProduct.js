@@ -1,9 +1,12 @@
 import axios from "axios";
+import $ from "jquery";
 import constants from "../constants.js";
 import getProductInfo from "./getProductInfo.js";
 import getQuestions from "./getQuestions.js";
 import getReviews from "./getReviews.js";
+import getMetaData from "./getMetaData.js";
 import getRelatedProducts from "./getRelatedProducts.js";
+
 
 const newMainProduct = (product) => {
 	return async (dispatch) => {
@@ -16,8 +19,9 @@ const newMainProduct = (product) => {
 			productId = product.id;
 		}
 		dispatch(getQuestions(productId, 0));
-		dispatch(getReviews(productId, 0));
+		dispatch(getReviews(productId));
 		dispatch(getRelatedProducts(productId));
+		dispatch(getMetaData(productId));
 
 		dispatch({
 			type: "MAIN_PRODUCT_INFO",
@@ -25,7 +29,7 @@ const newMainProduct = (product) => {
 		});
 
 		// update the meta tags (used for social share)
-		const { name, description, styles, id } = productInfo;
+		const { name, description, styles, id } = await product;
 		$(`meta[property="og:description"]`).attr("content", description);
 		$(`meta[property="og:title"]`).attr("content", name);
 		$(`meta[property="og:image"]`).attr(

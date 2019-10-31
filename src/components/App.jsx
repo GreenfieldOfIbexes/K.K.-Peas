@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Overview from "./Overview/Overview.jsx";
 import R_R from "./R_R/R_R.jsx";
-import QnA from "./QnA/QnA.jsx";
+import QnAContainer from "../containers/Questions/qnaContainer";
 import DeckContainer from "../containers/DeckContainer.js";
 import InteractionTracker from "./InteractionTracker";
 import { testRelatedProducts } from "../../tests/testProducts.js";
 import newMainProduct from "../actions/newMainProduct.js";
+import OutfitDeckContainer from "../containers/OutfitDeckContainer.js";
 
 export class App extends Component {
 	render() {
@@ -17,8 +18,12 @@ export class App extends Component {
 						<React.Fragment>
 							<Overview clickHandler={postInteractionToAPI} />
 							<R_R clickHandler={postInteractionToAPI} />
-							<QnA clickHandler={postInteractionToAPI} />
-							<DeckContainer clickHandler={postInteractionToAPI} />
+							<QnAContainer clickHandler={postInteractionToAPI} />
+							<DeckContainer clickHandler={postInteractionToAPI} icon="star" />
+							<OutfitDeckContainer
+								clickHandler={postInteractionToAPI}
+								icon="clear"
+							/>
 						</React.Fragment>
 					)}
 				</InteractionTracker>

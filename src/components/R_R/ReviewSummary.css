@@ -12,3 +12,7 @@
 .item-graph {
     flex-grow: 1
 }
+
+.summary-stars{
+    flex-shrink: 1
+}

@@ -4,9 +4,9 @@ import './Review.css'
 
 class ReviewList extends React.Component{
     render() {
-        if(this.props.reviews.results === undefined){
+        if(!this.props.reviews.results){
             return (
-                <div className="no-review">
+                <div className="no-review" style={{display: 'flex', justifyContent: "center", width: '100%'}}>
                     No Reviews
                 </div>
             )
@@ -15,7 +15,7 @@ class ReviewList extends React.Component{
     return (
         <div className="reviews">
             {this.props.reviews.results.map((review) =>{
-                return <Review review={review}/>
+                return <Review key={review.review_id} review={review}/>
             })}
         </div>
     )

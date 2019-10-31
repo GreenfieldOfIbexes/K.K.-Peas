@@ -3,12 +3,14 @@ import './Gauge.css'
 
 const Gauge = props => {
     const percent = "" + (props.value / 5) * 100 + "%"
+    var key = 0;
     return(
         <>
         <h6 className="char">{props.characteristic}</h6>
         <div className="labels">
             {props.labels.map((label) => {
-                return <div className="label" >{label}</div>
+                key += 1;
+                return <div key={key} className="label" >{label}</div>
             })}
         </div>
         <div className="gauge">

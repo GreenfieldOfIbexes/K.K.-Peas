@@ -1,19 +1,16 @@
 import React from "react";
-import Card from "./Card.jsx";
+import CardContainer from "../../containers/CardContainer.js";
+import ComparisonContainer from "../../containers/ComparisonContainer.js";
+import "./Deck.css";
 
 const Deck = (props) => {
 	return (
-		<>
-			<button
-				onClick={() => {
-					props.updateRelated([2, 3, 8, 7]);
-				}}>
-				Update Related Products
-			</button>
+		<div class="deck">
 			{props.products.map((product) => (
-				<Card product={product} />
+				<CardContainer product={product} class="card" icon="star" />
 			))}
-		</>
+			<ComparisonContainer />
+		</div>
 	);
 };
 

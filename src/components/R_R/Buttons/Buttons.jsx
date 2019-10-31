@@ -1,7 +1,12 @@
 import React from 'react'
 import './Buttons.css'
 import {Modal, Form} from 'react-bootstrap'
-import Stars from '../Stars.jsx'
+import {Rating} from '@material-ui/lab'
+import axios from 'axios'
+import constants from '../../../constants.js'
+import Characteristics from './Characteristics.jsx'
+import GetReviewsContainer from '../../../containers/R_R/GetReviews.js'
+import Drop from './Drop.jsx'
 
 class Buttons extends React.Component {
     constructor(props){
@@ -9,14 +14,14 @@ class Buttons extends React.Component {
 
         this.state={
             show: false,
-            starValue: 0,
+            starValue: null,
             userName: '',
-            Size: null,
-            Width: null,
-            Comfort: null,
-            Quality: null,
-            Length: null,
-            Fit: null
+            characteristics: {},
+            Title: '',
+            description: '',
+            email: '',
+            recommend: null,
+            photos: []
         }
         this.open = this.open.bind(this)
         this.close = this.close.bind(this)
@@ -25,6 +30,11 @@ class Buttons extends React.Component {
         this.handleTitle = this.handleTitle.bind(this)
         this.handleUsername = this.handleUsername.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleStarChange = this.handleStarChange.bind(this)
+        this.handleRec = this.handleRec.bind(this)
+        this.handleEmail = this.handleEmail.bind(this)
+        this.handlePhotos = this.handlePhotos.bind(this)
+        
     }
 
     open() {
@@ -60,34 +70,77 @@ class Buttons extends React.Component {
       
     }
 
-    handleChar(e, char){
-        var obj = {};
-        obj[e.target.name] = e.target.value;
-        this.setState(obj)
+    handleChar(e){
+        var obj = this.state.characteristics;
+        obj[e.target.id] = e.target.value
+        this.setState({
+            characteristics: obj
+        })
         
+    }
+
+    handleStarChange(e){
+        this.setState({
+            starValue: e.target.value
+        })
+    }
+
+    handleEmail(e){
+        this.setState({
+            email: e.target.value
+        })
+    }
+
+    handleRec(e){
+        this.setState({
+            recommend: e.target.value
+        })
+    }
+
+    handlePhotos(photoArray){
+        const obj={
+            photos: photoArray
+        }
+        this.setState(obj)
     }
 
     handleSubmit(e) {
         e.preventDefault()
-        this.setState({
-            show: false,
-            starValue: 0,
-            userName: '',
-            Size: null,
-            Width: null,
-            Comfort: null,
-            Quality: null,
-            Length: null,
-            Fit: null
+        const newReview = {
+            email: this.state.email,
+            rating: this.state.starValue,
+            summary: this.state.title,
+            body: this.state.description,
+            recommend: this.state.recommend,
+            name: this.state.userName,
+            email: this.state.email,
+            photos: this.state.photos,
+            characteristics: this.state.characteristics
+        }
+        axios.post(`${constants.API_URL}/reviews/${this.props.reviews.product}`, newReview)
+        .then(() => {
+            this.setState({
+                show: false,
+                starValue: null,
+                userName: '',
+                characteristics: {},
+                Title: '',
+                description: '',
+                email: '',
+                recommend: null
+            })
+            this.props.getMetaData(this.props.reviews.product)
+        })
+        .catch((err) => {
+            console.log('error in new review post: ', err)
         })
         this.close()
     }
 
 
     render() {
-        console.log("buttons props:", this.props.reviews)
-        const characteristics = ["Size", "Width", "Comfort", "Quality", "Length", "Fit"]
-        return (
+       
+       return (
         <div className="review-buttons">
             <Modal show={this.state.show} onHide={this.close}>
                 <Modal.Header closeButton>
@@ -102,6 +155,10 @@ class Buttons extends React.Component {
                             <Form.Control type="text" placeholder="Enter Username" onChange={this.handleUsername}/>
                         </Form.Group>
                         <Form.Group>
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control type="text" placeholder="Enter Email" onChange={this.handleEmail} />
+                        </Form.Group>
+                        <Form.Group>
                             <Form.Label>Title</Form.Label>
                             <Form.Control type="text" placeholder="Enter Review Title" onChange={this.handleTitle}/>
                         </Form.Group>
@@ -110,68 +167,37 @@ class Buttons extends React.Component {
                             <Form.Control as="textarea" placeholder="Enter Review Description" onChange={this.handleDescription}/>
                         </Form.Group>
                         <Form.Group>
+                            <Form.Label>Would you recommend this product?</Form.Label>
+                            <div display="flex" style={{justifyContent: "space-around", width: "100%"}}>
+                                <Form.Check
+                                type="radio"
+                                label="Yes"
+                                name='recommend'
+                                value={1}
+                                onClick={this.handleRec}
+                                inline
+                                />
+                                <Form.Check
+                                type="radio"
+                                label="No"
+                                name='recommend'
+                                value={0}
+                                onClick={this.handleRec}
+                                inline
+                                />
+                            </div>
+                        </Form.Group>
+                        <Form.Group>
                             <Form.Label>Category Ratings</Form.Label>
-                            {characteristics.map((char) =>{
-                                return (
-                                    <Form.Group>
-                                        <Form.Label style={{marginRight: "100%", marginLeft: "5%"}}>{char}:</Form.Label>
-                                            <div style={{display: "flex", justifyContent: 'center'}}>
-                                                <Form.Check
-                                                type="radio"
-                                                label="1"
-                                                name={char}
-                                                id="formHorizontalRadios1"
-                                                value={1}
-                                                onClick={this.handleChar}
-                                                inline
-                                                />
-                                                <Form.Check
-                                                type="radio"
-                                                label="2"
-                                                name={char}
-                                                id="formHorizontalRadios1"
-                                                value={2}
-                                                onClick={this.handleChar}
-                                                inline
-                                                />
-                                                <Form.Check
-                                                type="radio"
-                                                label="3"
-                                                name={char}
-                                                id="formHorizontalRadios1"
-                                                value={3}
-                                                onClick={this.handleChar}
-                                                inline
-                                                />
-                                                <Form.Check
-                                                type="radio"
-                                                label="4"
-                                                name={char}
-                                                id="formHorizontalRadios1"
-                                                value={4}
-                                                onClick={this.handleChar}
-                                                inline
-                                                />
-                                                <Form.Check
-                                                type="radio"
-                                                label="5"
-                                                name={char}
-                                                id="formHorizontalRadios1"
-                                                value={5}
-                                                onClick={this.handleChar}
-                                                inline
-                                                />
-                                            </div>
-                                    </Form.Group>
-                                )
-                            })}
+                            <Characteristics reviews={this.props.metaData} handleChar={this.handleChar}/>
                         </Form.Group>
                         <Form.Group style={{justifyContent: 'center', display: "flex"}}>
                             <div style={{width: '100%'}}>Rating</div>
                         </Form.Group>
                         <div style={{justifyContent: 'center', display: "flex"}}>
-                            <Stars value={this.state.starValue}/>
+                            <Rating size="small" name="rating" onChange={this.handleStarChange} value={this.state.starValue}/>
                         </div>
+                        <Drop state={this.state.photos} handlePhotos={this.handlePhotos}/>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
@@ -180,8 +206,8 @@ class Buttons extends React.Component {
                 </Modal.Footer>
             </Modal>
 
-            <button className="review-button" onClick={this.getReviews}>More Reviews</button>
-            <button className="review-button" onClick={this.open}>Add Review</button>
+            <GetReviewsContainer id={this.props.reviews.product}/>
+            <div className="review-button review-button-style" onClick={this.open}>Add Review</div>
         </div>
         )
     }

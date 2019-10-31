@@ -1,15 +1,26 @@
-import React, { Component } from "react";
+import React from "react";
+import Moment from "moment";
+import Photos from "./Photos";
+import Helpfulness from "./Helpfulness";
+import Report from "./Report";
 
-export class Answer extends Component {
-	render() {
-		return (
-			<div className="answerContainer">
-				<p className="answerContainer_answer">
-					<span className="answer_a">A:</span> {this.props.answer.body}
-				</p>
+const Answer = ({ answer = {} }) => {
+	return (
+		<div className="answerContainer">
+			<p className="answerContainer_answer">{answer.body}</p>
+			<Photos photos={answer.photos} />
+			<div className="answer_extras_container">
+				<div className="answer_details">
+					<p>by {answer.answerer_name}, &nbsp;</p>
+					<p> {Moment(answer.date).format("ll")} &nbsp;</p>
+				</div>
+				<div className="answer_functionalDetails">
+					<Helpfulness helpfulnessCount={answer.helpfulness} />
+					<Report />
+				</div>
 			</div>
-		);
-	}
-}
+		</div>
+	);
+};
 
 export default Answer;
