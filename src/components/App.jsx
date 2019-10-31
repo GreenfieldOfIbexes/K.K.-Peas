@@ -7,6 +7,7 @@ import DeckContainer from "../containers/DeckContainer.js";
 import InteractionTracker from "./InteractionTracker";
 import { testRelatedProducts } from "../../tests/testProducts.js";
 import newMainProduct from "../actions/newMainProduct.js";
+import OutfitDeckContainer from "../containers/OutfitDeckContainer.js";
 
 export class App extends Component {
 	render() {
@@ -18,7 +19,11 @@ export class App extends Component {
 							<Overview clickHandler={postInteractionToAPI} />
 							<R_R clickHandler={postInteractionToAPI} />
 							<QnAContainer clickHandler={postInteractionToAPI} />
-							<DeckContainer clickHandler={postInteractionToAPI} />
+							<DeckContainer clickHandler={postInteractionToAPI} icon="star" />
+							<OutfitDeckContainer
+								clickHandler={postInteractionToAPI}
+								icon="clear"
+							/>
 						</React.Fragment>
 					)}
 				</InteractionTracker>

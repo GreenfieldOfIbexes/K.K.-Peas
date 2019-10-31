@@ -1,0 +1,5 @@
+.deck {
+    display: flex;
+    overflow-x: scroll;
+    position: relative;
+}

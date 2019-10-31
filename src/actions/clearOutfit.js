@@ -1,4 +1,4 @@
-const updateOutfit = (product) => {
+const clearOutfit = () => {
 	return {
 		type: "CLEAR_OUTFIT",
 	};
