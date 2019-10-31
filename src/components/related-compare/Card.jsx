@@ -47,19 +47,26 @@ const Card = (props) => {
 		);
 	}
 	return (
-		<div class="card">
-			<img src={props.product.styles.results[0].photos[0].thumbnail_url} />
-			<p>{props.product.category}</p>
-			<h2>{props.product.name}</h2>
-			{pricing}
-			{icon}
-			<button
-				onClick={() => {
-					props.updateOutfit(props.product);
-				}}>
-				Update Outfit
-			</button>
-			<Stars rating={props.product.avgRating} />
+		<div class="product-card">
+			<div
+				className="product-image"
+				style={{
+					backgroundImage: `url(${props.product.styles.results[0].photos[0].thumbnail_url})`,
+				}}
+			/>
+			<div className="bottom-content">
+				<p>{props.product.category}</p>
+				<h2>{props.product.name}</h2>
+				{pricing}
+				{icon}
+				<button
+					onClick={() => {
+						props.updateOutfit(props.product);
+					}}>
+					Update Outfit
+				</button>
+				<Stars rating={props.product.avgRating} />
+			</div>
 		</div>
 	);
 };

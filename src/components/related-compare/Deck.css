@@ -1,5 +1,6 @@
-.deck {
-    display: flex;
-    overflow-x: scroll;
-    position: relative;
+.card-deck {
+	display: flex;
+	overflow-x: scroll;
+	position: relative;
+	flex-wrap: nowrap;
 }
