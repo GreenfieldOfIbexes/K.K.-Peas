@@ -23,16 +23,23 @@ const view = (state = initialState.view, action) => {
 				style_index: action.style_index,
 				max_photo_index: action.max_photo_index,
 			});
-		case "FULL_SCREEN_TOGGLE":
+		case "CAROUSEL_ARROW_CLICK":
 			return Object.assign({}, state, {
-				fullscreen_photo: !state.fullscreen_photo,
 				zoomed_in: false,
 			});
-		case "ZOOMED_IN":
+		case "OPEN_FULL_SCREEN":
 			return Object.assign({}, state, {
-				zoomed_in: !state.zoomed_in,
+				fullscreen_photo: true,
 			});
-		case "CAROUSEL_ARROW_CLICK":
+		case "CLOSE_FULL_SCREEN":
+			return Object.assign({}, state, {
+				fullscreen_photo: false,
+			});
+		case "ZOOM_IN_ON_FEATURE_PHOTO":
+			return Object.assign({}, state, {
+				zoomed_in: true,
+			});
+		case "ZOOM_OUT_ON_FEATURE_PHOTO":
 			return Object.assign({}, state, {
 				zoomed_in: false,
 			});
