@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import QuestionFormModal from "./QuestionFormModal";
 
 const Buttons = ({ showMoreQuestions }) => {
 	return (
@@ -8,9 +9,10 @@ const Buttons = ({ showMoreQuestions }) => {
 				onClick={showMoreQuestions}>
 				MORE ANSWERED QUESTIONS
 			</button>
-			<button className="buttons buttons_addOne all_btns">
+			<QuestionFormModal />
+			{/* <button className="buttons buttons_addOne all_btns">
 				ADD A QUESTION <span className="buttons_addOne_plus"> +</span>
-			</button>
+			</button> */}
 		</div>
 	);
 };
