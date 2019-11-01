@@ -2,6 +2,8 @@
 const webpack = require("webpack");
 // Just required to join the pathnames in output
 const path = require("path");
+// For minifying the CSS
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
 	// Entry is where webpack starts its search process for the code to bundle. It should be the beginning of your CLIENT side JS - not the JS that runs your server/db
@@ -24,11 +26,16 @@ const config = {
 			},
 			{
 				test: /\.css$/,
-				use: ["style-loader", "css-loader"],
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+					},
+					"css-loader",
+				],
 			},
 		],
 	},
-	
+	plugins: [new MiniCssExtractPlugin()],
 	watch: true,
 	watchOptions: {
 		ignored: /node_modules/,
