@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import store from "../../store";
 import Axios from "axios";
 import constants from "../../constants";
+import getQuestions from "../../actions/getQuestions";
 
-const QuestionForm = ({ question }) => {
+const QuestionForm = ({
+	question,
+	handleClose,
+	updateSortedQuestions,
+	sortedQuestions,
+}) => {
 	const [body, updateQuestionStr] = useState("");
 	const [name, updateNicknameStr] = useState("");
 	const [email, updateEmailStr] = useState("");
@@ -15,10 +21,14 @@ const QuestionForm = ({ question }) => {
 			name,
 			email,
 		};
-		return Axios.post(
+		Axios.post(
 			`${constants.API_URL}/qa/${store.getState().mainProduct.id}`,
 			questionObj,
-		);
+		).then(() => {
+			store.dispatch(getQuestions(store.getState().mainProduct.id));
+		});
+
+		handleClose();
 	};
 
 	return (

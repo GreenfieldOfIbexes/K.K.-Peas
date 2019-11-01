@@ -48,11 +48,7 @@ export default function SimpleModal({ question }) {
 			<button type="button" className="addAnswer_btn" onClick={handleOpen}>
 				Add Answer
 			</button>
-			<Modal
-				aria-labelledby="simple-modal-title"
-				aria-describedby="simple-modal-description"
-				open={open}
-				onClose={handleClose}>
+			<Modal open={open} onClose={handleClose}>
 				<div style={modalStyle} className={classes.paper}>
 					<AnswerForm question={question} handleClose={handleClose} />
 				</div>

@@ -19,7 +19,6 @@
 	display: flex;
 	justify-content: space-between;
 }
-
 .questionContainer_header_buttons {
 	display: flex;
 }
@@ -47,7 +46,7 @@
 	display: flex;
 	color: rgb(73, 73, 73);
 	min-height: 0;
-	width: 90%;
+	width: 95%;
 }
 
 .answersList_container {
@@ -78,6 +77,7 @@
 
 .buttons_addOne {
 	margin-left: 2%;
+	width: max-content;
 }
 
 .buttons_addOne_plus {

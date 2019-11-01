@@ -17,10 +17,12 @@ const AnswerForm = ({ question, handleClose }) => {
 			email,
 			photos,
 		};
-		return Axios.post(
+		Axios.post(
 			`${constants.API_URL}/qa/${question.question_id}/answers`,
 			answer,
 		);
+
+		handleClose();
 	};
 
 	const img = (event) => {
