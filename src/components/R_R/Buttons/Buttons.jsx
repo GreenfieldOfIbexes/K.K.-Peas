@@ -130,6 +130,7 @@ class Buttons extends React.Component {
                 recommend: null
             })
             this.props.getMetaData(this.props.metaData.product_id)
+            this.props.getReviews(this.props.metaData.product_id)
         })
         .catch((err) => {
             console.log('error in new review post: ', err)

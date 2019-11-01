@@ -7,9 +7,9 @@ const getReviews = (id, page = 1) => async (dispatch) => {
     var storage = []
     info = await axios.get(`${constants.API_URL}/reviews/${id}/list?page=${page}&count=10000000&sort=${store.getState().sort}`);
 
-        if(store.getState().starFilter[0]){
+        if(JSON.stringify(store.getState().starFilter) !== '{}'){
             for(var review of info.data.results){
-                for(var stars of store.getState().starFilter){
+                for(var stars in store.getState().starFilter){
                     if(review.rating + '' === stars){
                         storage.push(review)
                     }
@@ -18,8 +18,6 @@ const getReviews = (id, page = 1) => async (dispatch) => {
         } else {
             storage = info.data.results
         }
-
-    console.log('storage', storage)
 
     dispatch({
         type: 'GET_REVIEWS',

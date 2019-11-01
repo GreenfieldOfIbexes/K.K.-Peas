@@ -20,7 +20,7 @@ const newMainProduct = (product) => {
 		} else {
 			productId = product.id;
 		}
-		dispatch(starFilter([]))
+		dispatch(starFilter({}))
 		dispatch(reviewCount())
 		dispatch(getQuestions(productId, 0));
 		dispatch(getReviews(productId));
