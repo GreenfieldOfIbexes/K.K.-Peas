@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import constants from "../../../constants";
+import $ from "jquery";
 
 import "./ProductInteraction.css";
 
@@ -143,6 +144,12 @@ const ProductInteraction = ({
 					className="add-to-outfit"
 					onClick={() => {
 						addToOutfitHandler(mainProduct);
+						$("html, body").animate(
+							{
+								scrollTop: $("html, body").height(),
+							},
+							500,
+						);
 					}}>
 					Add to Outfit
 				</div>
