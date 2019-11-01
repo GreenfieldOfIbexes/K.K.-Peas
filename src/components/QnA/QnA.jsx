@@ -8,16 +8,25 @@ const QnA = (props) => {
 		props.questions.results,
 	]);
 	const [filteredQuestion, updateFilteredQuestions] = useState([]);
+	const [sortedQuestion, updateSortedQuestions] = useState([]);
 
 	useEffect(() => {
-		updateDisplayedQuestions(props.questions.results.slice(0, 4));
-	}, [props.questions.results]);
+		updateSortedQuestions(
+			props.questions.results.sort((a, b) => {
+				return b.question_helpfulness - a.question_helpfulness;
+			}),
+		);
+	});
+
+	useEffect(() => {
+		updateDisplayedQuestions(sortedQuestion.slice(0, 4));
+	}, [sortedQuestion]);
 
 	const showMoreQuestionsOnClick = () => {
-		if (props.questions.results.length > displayedQuestions.length) {
+		if (sortedQuestion.length > displayedQuestions.length) {
 			updateDisplayedQuestions(
 				displayedQuestions.concat(
-					props.questions.results.slice(
+					sortedQuestion.slice(
 						displayedQuestions.length,
 						displayedQuestions.length + 2,
 					),
@@ -34,7 +43,7 @@ const QnA = (props) => {
 			<h5 className="qNaContainer_title">QUESTIONS & ANSWERS</h5>
 			<Search
 				filteredQuestion={filteredQuestion}
-				allQuestions={props.questions.results}
+				allQuestions={sortedQuestion}
 				updateFilteredQuestions={updateFilteredQuestions}
 				displayedQuestions={displayedQuestions}
 				updateDisplayedQuestions={updateDisplayedQuestions}

@@ -27,6 +27,9 @@
 .questionsList_container {
 	display: flex;
 	flex-direction: column;
+	-webkit-flex: 1 1 auto;
+	overflow-y: auto;
+	max-height: 700px;
 }
 
 .questionsContainer_question {
@@ -44,12 +47,13 @@
 	display: flex;
 	color: rgb(73, 73, 73);
 	min-height: 0;
+	width: 90%;
 }
 
 .answersList_container {
 	-webkit-flex: 1 1 auto;
 	overflow-y: auto;
-	max-height: 250px;
+	max-height: 300px;
 }
 
 .answer_a {
