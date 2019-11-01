@@ -51,3 +51,7 @@
 	color: red;
 	text-decoration: line-through;
 }
+
+.related-product-name {
+    cursor: pointer;
+}

@@ -1,20 +1,11 @@
 import initialState from "./initialState.js";
 import Redux from "redux";
+import outfitFromStorage from "../actions/outfitFromStorage.js";
 
-const outfitProducts = (state = initialState.outfitProducts, action) => {
-	let outfits;
+const outfitProducts = (state = outfitFromStorage(), action) => {
 	switch (action.type) {
 		case "UPDATE_OUTFIT":
-			outfits = state.slice();
-			outfits.push(action.product);
-			return outfits;
-		case "CLEAR_OUTFIT":
-			return initialState.outfitProducts;
-		case "REMOVE_FROM_OUTFIT":
-			outfits = state.slice();
-			return outfits.filter((outfit) => {
-				return outfit.id !== action.payload;
-			});
+			return action.payload;
 		default:
 			return state;
 	}
