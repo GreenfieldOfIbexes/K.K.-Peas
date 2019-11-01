@@ -52,19 +52,6 @@ const AnswersList = ({ answers }) => {
 								COLLAPSE
 							</button>
 						)}
-						{/* {displayedAnswers.length <= allAnswers.length ? (
-							<button
-								onClick={showMoreAnswersOnClick}
-								className="answersList_btn all_btns">
-								LOAD MORE ANSWERS
-							</button>
-						) : (
-							<button
-								onClick={showMoreAnswersOnClick}
-								className="answersList_btn all_btns">
-								COLLAPSE
-							</button>
-						)} */}
 					</div>
 				</div>
 			) : (
@@ -75,5 +62,3 @@ const AnswersList = ({ answers }) => {
 };
 
 export default AnswersList;
-
-// <button className="answersList_btn">LOAD MORE ANSWERS</button>

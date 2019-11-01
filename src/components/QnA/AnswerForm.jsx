@@ -86,7 +86,6 @@ const AnswerForm = ({ question, handleClose }) => {
 						placeholder="Example: jack543!"
 						value={name}
 						onChange={(e) => {
-							console.log("target name", e.target);
 							updateNicknameStr(e.target.value);
 						}}
 						required
@@ -100,7 +99,6 @@ const AnswerForm = ({ question, handleClose }) => {
 						placeholder="Example: jack@email.com"
 						value={email}
 						onChange={(e) => {
-							console.log("target email ", e.target);
 							updateEmailStr(e.target.value);
 						}}
 						required
