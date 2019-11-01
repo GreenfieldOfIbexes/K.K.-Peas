@@ -65,6 +65,11 @@ const Card = (props) => {
 					className="related-product-name"
 					onClick={() => {
 						props.newMainProduct(props.product);
+						window.history.pushState(
+							"string",
+							props.product.id,
+							`/?product=${props.product.id}`,
+						);
 						$("html, body").animate(
 							{
 								scrollTop: 0,
