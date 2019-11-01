@@ -120,7 +120,12 @@ const Photos = ({
 		for (let i = 0; i <= max_photo_index; i++) {
 			let classes = photo_index === i ? "dot active" : "dot";
 			dots.push(
-				<div key={i} className={classes}>
+				<div
+					key={i}
+					className={classes}
+					onClick={() => {
+						update_photo_index(i);
+					}}>
 					.
 				</div>,
 			);

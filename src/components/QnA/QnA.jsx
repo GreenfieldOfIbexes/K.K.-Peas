@@ -42,7 +42,11 @@ const QnA = (props) => {
 	};
 
 	return (
-		<div className="qNaContainer">
+		<div
+			className="qNaContainer"
+			onClick={(e) => {
+				props.clickHandler(e, "QnA");
+			}}>
 			<br />
 			<h5 className="qNaContainer_title">QUESTIONS & ANSWERS</h5>
 			<Search

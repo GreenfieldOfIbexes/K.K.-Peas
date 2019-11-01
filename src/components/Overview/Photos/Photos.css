@@ -176,6 +176,7 @@ i.arrow-right {
 	font-size: 64px;
 	line-height: 64px;
 	opacity: 0.5;
+	cursor: pointer;
 }
 .dot.active {
 	opacity: 1;
