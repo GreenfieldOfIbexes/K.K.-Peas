@@ -11,8 +11,8 @@ class Starfilter extends React.Component {
 
     handleClick(e){
         console.log('filter ', this.props.starFilters)
-        const filter = this.props.starFilters || []
-        filter.push(e.target.value)
+        const filter = this.props.starFilters
+        filter[e.target.value] = e.target.value
         this.props.updateFilter(filter)
         this.props.updateCount()
         this.props.getReviews(this.props.id)
