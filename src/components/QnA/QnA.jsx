@@ -8,7 +8,7 @@ const QnA = (props) => {
 		props.questions.results,
 	]);
 	const [filteredQuestion, updateFilteredQuestions] = useState([]);
-	const [sortedQuestion, updateSortedQuestions] = useState([]);
+	const [sortedQuestions, updateSortedQuestions] = useState([]);
 
 	useEffect(() => {
 		updateSortedQuestions(
@@ -19,14 +19,14 @@ const QnA = (props) => {
 	});
 
 	useEffect(() => {
-		updateDisplayedQuestions(sortedQuestion.slice(0, 4));
-	}, [sortedQuestion]);
+		updateDisplayedQuestions(sortedQuestions.slice(0, 4));
+	}, [sortedQuestions]);
 
 	const showMoreQuestionsOnClick = () => {
-		if (sortedQuestion.length > displayedQuestions.length) {
+		if (sortedQuestions.length > displayedQuestions.length) {
 			updateDisplayedQuestions(
 				displayedQuestions.concat(
-					sortedQuestion.slice(
+					sortedQuestions.slice(
 						displayedQuestions.length,
 						displayedQuestions.length + 2,
 					),
@@ -37,20 +37,27 @@ const QnA = (props) => {
 		}
 	};
 
+	const collapseQuestions = () => {
+		updateDisplayedQuestions(sortedQuestions.slice(0, 4));
+	};
+
 	return (
 		<div className="qNaContainer">
 			<br />
 			<h5 className="qNaContainer_title">QUESTIONS & ANSWERS</h5>
 			<Search
 				filteredQuestion={filteredQuestion}
-				allQuestions={sortedQuestion}
+				allQuestions={sortedQuestions}
 				updateFilteredQuestions={updateFilteredQuestions}
 				displayedQuestions={displayedQuestions}
 				updateDisplayedQuestions={updateDisplayedQuestions}
 			/>
 			<QuestionsList
-				questions={displayedQuestions}
+				displayedQuestions={displayedQuestions}
 				showMoreQuestions={showMoreQuestionsOnClick}
+				collapseQuestions={collapseQuestions}
+				sortedQuestions={sortedQuestions}
+				updateSortedQuestions={updateSortedQuestions}
 			/>
 		</div>
 	);

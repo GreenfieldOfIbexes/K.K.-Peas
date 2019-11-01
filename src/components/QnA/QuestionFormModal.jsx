@@ -29,7 +29,11 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function SimpleModal({ question }) {
+export default function SimpleModal({
+	question,
+	updateSortedQuestions,
+	sortedQuestions,
+}) {
 	const classes = useStyles();
 	// getModalStyle is not a pure function, we roll the style only on the first render
 	const [modalStyle] = React.useState(getModalStyle);
@@ -57,7 +61,12 @@ export default function SimpleModal({ question }) {
 				open={open}
 				onClose={handleClose}>
 				<div style={modalStyle} className={classes.paper}>
-					<QuestionForm question={question} />
+					<QuestionForm
+						question={question}
+						handleClose={handleClose}
+						sortedQuestions={sortedQuestions}
+						updateSortedQuestions={updateSortedQuestions}
+					/>
 				</div>
 			</Modal>
 		</div>
