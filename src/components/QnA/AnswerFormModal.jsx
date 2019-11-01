@@ -54,7 +54,7 @@ export default function SimpleModal({ question }) {
 				open={open}
 				onClose={handleClose}>
 				<div style={modalStyle} className={classes.paper}>
-					<AnswerForm question={question} />
+					<AnswerForm question={question} handleClose={handleClose} />
 				</div>
 			</Modal>
 		</div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import AnswerForm from "./AnswerForm";
+import QuestionForm from "./QuestionForm";
 
 function rand() {
 	return Math.round(Math.random() * 20) - 10;
@@ -21,7 +21,7 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
 	paper: {
 		position: "absolute",
-		width: 400,
+		width: 500,
 		backgroundColor: theme.palette.background.paper,
 		border: "2px solid #000",
 		boxShadow: theme.shadows[5],
@@ -57,8 +57,7 @@ export default function SimpleModal({ question }) {
 				open={open}
 				onClose={handleClose}>
 				<div style={modalStyle} className={classes.paper}>
-					<h1>Hello</h1>
-					{/* <AnswerForm question={question} /> */}
+					<QuestionForm question={question} />
 				</div>
 			</Modal>
 		</div>
