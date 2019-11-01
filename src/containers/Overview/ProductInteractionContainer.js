@@ -5,6 +5,7 @@ import addToCart from "../../actions/addToCart";
 import axios from "axios";
 import constants from "../../constants";
 import store from "../../store";
+import updateOutfit from "../../actions/updateOutfit.js";
 
 // Change the style index in store
 function updateStyle(index) {
@@ -25,7 +26,9 @@ function cartHandler(skuObj, user_session, noProducts) {
 	}
 }
 
-function addToOutfitHandler(productObject) {}
+function addToOutfitHandler(productObject) {
+	store.dispatch(updateOutfit(productObject));
+}
 
 // The boring redux stuff
 const mapStateToProps = ({ mainProduct, view }, ownProps) => ({
