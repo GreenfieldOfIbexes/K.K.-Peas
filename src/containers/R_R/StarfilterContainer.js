@@ -1,4 +1,4 @@
-import Starfilter from "../../components/R_R/Starfilter/Starfilter.js";
+import Starfilter from "../../components/R_R/Starfilter/Starfilter.jsx";
 import starFilter from "../../actions/starFilter.js"
 import getReviews from "../../actions/getReviews.js"
 import reviewCount from '../../actions/reviewCount.js'
@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 
 const mapStateToProps = (state, ownProps) => {
 	return {
-		starFilters: state.starFilters
+		starFilters: state.starFilter
 	};
 };
 

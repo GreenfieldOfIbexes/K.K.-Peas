@@ -117,7 +117,7 @@ class Buttons extends React.Component {
             photos: this.state.photos,
             characteristics: this.state.characteristics
         }
-        axios.post(`${constants.API_URL}/reviews/${this.props.reviews.product}`, newReview)
+        axios.post(`${constants.API_URL}/reviews/${this.props.metaData.product_id}`, newReview)
         .then(() => {
             this.setState({
                 show: false,
@@ -129,7 +129,7 @@ class Buttons extends React.Component {
                 email: '',
                 recommend: null
             })
-            this.props.getMetaData(this.props.reviews.product)
+            this.props.getMetaData(this.props.metaData.product_id)
         })
         .catch((err) => {
             console.log('error in new review post: ', err)
@@ -208,7 +208,7 @@ class Buttons extends React.Component {
                 </Modal.Footer>
             </Modal>
 
-            <GetReviewsContainer id={this.props.reviews.product}/>
+            <GetReviewsContainer id={this.props.metaData.product_id}/>
             <div className="review-button review-button-style" onClick={this.open}>Add Review</div>
         </div>
         )

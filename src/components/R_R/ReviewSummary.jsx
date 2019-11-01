@@ -2,7 +2,7 @@ import React from "react";
 import { ProgressBar } from "react-bootstrap";
 import Stars from "./Stars.jsx";
 import Gauge from "./Gauge/Gauge.jsx";
-import StarfilterContainer from "../../containers/StarfilterContainer.js"
+import StarfilterContainer from "../../containers/R_R/StarfilterContainer.js"
 import "./ReviewSummary.css";
 
 class ReviewSummary extends React.Component {    
@@ -46,6 +46,7 @@ class ReviewSummary extends React.Component {
                     break;
             } 
        }
+       var stars = 0;
         return (
         <>
             <div className="summary-row" style={{margin: "0px 0px 20px 0px"}}>
@@ -57,10 +58,11 @@ class ReviewSummary extends React.Component {
                 </div>
             </div>
             {ratingsArray.map((rating) =>{
+                stars += 1
                 return (
                 <div key={rating[0]} className='summary-row'>
                     <div className="item" style={{margin: "0px 2px 4px 0px"}}>
-                        <StarfilterContainer rating={rating}/>  
+                        <StarfilterContainer value={stars} rating={rating} id={this.props.reviewMetaData.product_id}/>  
                     </div>
                     <div className="item-graph"  style={{margin: "4px 0px 4px 4px"}}>
                         <ProgressBar now={(rating[1]/total) * 100} variant="success"/>

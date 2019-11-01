@@ -15,8 +15,8 @@ class Header extends React.Component {
             sort: e.target.value
         })
         this.props.sort(e.target.value)
+        this.props.updateCount()
         this.props.sortBy(this.props.id, e.target.value)
-        this.props.reviewCount()
                
     }
 

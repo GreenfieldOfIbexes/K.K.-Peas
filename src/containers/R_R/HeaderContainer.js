@@ -2,10 +2,10 @@ import Header from "../../components/R_R/Header/Header.jsx";
 import { connect } from "react-redux";
 import getReviews from "../../actions/getReviews.js";
 import sortAction from "../../actions/sort.js"
-import reviewCount from '../../action/reviewCount.js'
+import reviewCount from '../../actions/reviewCount.js'
 
 const mapStateToProps = (state, ownProps) => ({
-    id: state.reviews.product,
+    id: state.metaData.product_id,
     sort: state.sort,
     reviewCount: state.reviewCount
 });

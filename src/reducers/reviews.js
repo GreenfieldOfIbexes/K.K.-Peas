@@ -1,7 +1,7 @@
 const reviews = (state = {}, action) => {
 	switch (action.type) {
 		case "GET_REVIEWS":
-			return  state.reviews
+			return  action.reviews
 		default:
 			return state;
 	}
