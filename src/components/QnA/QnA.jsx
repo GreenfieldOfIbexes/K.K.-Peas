@@ -3,28 +3,11 @@ import QuestionsList from "./QuestionsList";
 import Search from "./SearchBar/Search";
 import "./style.css";
 
-// export class QnA extends Component {
-// 	constructor(props) {
-// 		super(props);
-
-// 		this.state = {
-// 			searchStr: "",
-// 			questionsCount: 4,
-// 			questionsStartingIndex: 0,
-// 			displayedQuestions: [],
-// 			filteredQuestions: [],
-// 		};
-
-// 	// function to filter questions onm search
-// 	// function to populate displayed
-// 	// handle submit for search form
-// 	// update Questions
-// }
-
 const QnA = (props) => {
 	const [displayedQuestions, updateDisplayedQuestions] = useState([
 		props.questions.results,
 	]);
+	const [filteredQuestion, updateFilteredQuestions] = useState([]);
 
 	useEffect(() => {
 		updateDisplayedQuestions(props.questions.results.slice(0, 4));
@@ -49,7 +32,13 @@ const QnA = (props) => {
 		<div className="qNaContainer">
 			<br />
 			<h5 className="qNaContainer_title">QUESTIONS & ANSWERS</h5>
-			<Search />
+			<Search
+				filteredQuestion={filteredQuestion}
+				allQuestions={props.questions.results}
+				updateFilteredQuestions={updateFilteredQuestions}
+				displayedQuestions={displayedQuestions}
+				updateDisplayedQuestions={updateDisplayedQuestions}
+			/>
 			<QuestionsList
 				questions={displayedQuestions}
 				showMoreQuestions={showMoreQuestionsOnClick}
