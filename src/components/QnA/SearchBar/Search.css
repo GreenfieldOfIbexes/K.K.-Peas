@@ -26,10 +26,11 @@
 
 .searchContainer_icon_div {
 	width: 5%;
+	padding: 5px;
 }
 
 .searchContainer_icon {
-	padding-top: 30%;
+	padding-top: 20%;
 }
 
 .searchContainer_icon_div:hover {

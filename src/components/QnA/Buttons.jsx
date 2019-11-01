@@ -10,9 +10,6 @@ const Buttons = ({ showMoreQuestions }) => {
 				MORE ANSWERED QUESTIONS
 			</button>
 			<QuestionFormModal />
-			{/* <button className="buttons buttons_addOne all_btns">
-				ADD A QUESTION <span className="buttons_addOne_plus"> +</span>
-			</button> */}
 		</div>
 	);
 };

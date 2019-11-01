@@ -17,6 +17,10 @@ const AnswersList = ({ answers }) => {
 		updateDisplayedAllAnswers(allAnswers);
 	};
 
+	const collapseAnswers = () => {
+		updateDisplayedAllAnswers(allAnswers.slice(0, 2));
+	};
+
 	const isEmptyObj = (obj) => {
 		for (var key in obj) {
 			if (obj.hasOwnProperty(key)) return false;
@@ -33,14 +37,20 @@ const AnswersList = ({ answers }) => {
 						{displayedAnswers.map((answer, index) => {
 							return <Answer key={index} answer={answer} />;
 						})}
-						{allAnswers.length > 2 ? (
+						{allAnswers.length <= 2 ? (
+							""
+						) : allAnswers.length > displayedAnswers.length ? (
 							<button
 								onClick={showMoreAnswersOnClick}
 								className="answersList_btn all_btns">
 								LOAD MORE ANSWERS
 							</button>
 						) : (
-							""
+							<button
+								onClick={collapseAnswers}
+								className="answersList_btn all_btns">
+								COLLAPSE
+							</button>
 						)}
 					</div>
 				</div>
@@ -52,5 +62,3 @@ const AnswersList = ({ answers }) => {
 };
 
 export default AnswersList;
-
-// <button className="answersList_btn">LOAD MORE ANSWERS</button>

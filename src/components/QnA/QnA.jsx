@@ -3,38 +3,30 @@ import QuestionsList from "./QuestionsList";
 import Search from "./SearchBar/Search";
 import "./style.css";
 
-// export class QnA extends Component {
-// 	constructor(props) {
-// 		super(props);
-
-// 		this.state = {
-// 			searchStr: "",
-// 			questionsCount: 4,
-// 			questionsStartingIndex: 0,
-// 			displayedQuestions: [],
-// 			filteredQuestions: [],
-// 		};
-
-// 	// function to filter questions onm search
-// 	// function to populate displayed
-// 	// handle submit for search form
-// 	// update Questions
-// }
-
 const QnA = (props) => {
 	const [displayedQuestions, updateDisplayedQuestions] = useState([
 		props.questions.results,
 	]);
+	const [filteredQuestion, updateFilteredQuestions] = useState([]);
+	const [sortedQuestion, updateSortedQuestions] = useState([]);
 
 	useEffect(() => {
-		updateDisplayedQuestions(props.questions.results.slice(0, 4));
-	}, [props.questions.results]);
+		updateSortedQuestions(
+			props.questions.results.sort((a, b) => {
+				return b.question_helpfulness - a.question_helpfulness;
+			}),
+		);
+	});
+
+	useEffect(() => {
+		updateDisplayedQuestions(sortedQuestion.slice(0, 4));
+	}, [sortedQuestion]);
 
 	const showMoreQuestionsOnClick = () => {
-		if (props.questions.results.length > displayedQuestions.length) {
+		if (sortedQuestion.length > displayedQuestions.length) {
 			updateDisplayedQuestions(
 				displayedQuestions.concat(
-					props.questions.results.slice(
+					sortedQuestion.slice(
 						displayedQuestions.length,
 						displayedQuestions.length + 2,
 					),
@@ -49,7 +41,13 @@ const QnA = (props) => {
 		<div className="qNaContainer">
 			<br />
 			<h5 className="qNaContainer_title">QUESTIONS & ANSWERS</h5>
-			<Search />
+			<Search
+				filteredQuestion={filteredQuestion}
+				allQuestions={sortedQuestion}
+				updateFilteredQuestions={updateFilteredQuestions}
+				displayedQuestions={displayedQuestions}
+				updateDisplayedQuestions={updateDisplayedQuestions}
+			/>
 			<QuestionsList
 				questions={displayedQuestions}
 				showMoreQuestions={showMoreQuestionsOnClick}

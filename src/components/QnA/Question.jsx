@@ -11,7 +11,12 @@ const Question = ({ question }) => {
 					Q: {question.question_body}
 				</p>
 				<div className="questionContainer_header_buttons">
-					<Helpfulness helpfulnessCount={question.question_helpfulness} />
+					<Helpfulness
+						question={question}
+						type="question"
+						id={question.question_id}
+						helpfulnessCount={question.question_helpfulness}
+					/>
 					<AnswerFormModal question={question} />
 				</div>
 			</div>

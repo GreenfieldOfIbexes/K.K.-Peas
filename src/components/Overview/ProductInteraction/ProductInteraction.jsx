@@ -112,7 +112,7 @@ const ProductInteraction = ({
 				<select
 					value={choice.size}
 					onChange={(e) => {
-						changeState(encodeURI.target.value, "size");
+						changeState(e.target.value, "size");
 						if (choice.count === "") choice.count = 1;
 					}}
 					className="size select">

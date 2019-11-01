@@ -33,6 +33,9 @@ a.all-reviews {
 	align-items: center;
 	margin: 20px 0 0;
 }
+.social-icon {
+	outline: none !important;
+}
 .social-buttons .social-icon img {
 	height: 40px;
 	width: auto;
