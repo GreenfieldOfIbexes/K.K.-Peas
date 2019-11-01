@@ -6,6 +6,8 @@ import getQuestions from "./getQuestions.js";
 import getReviews from "./getReviews.js";
 import getMetaData from "./getMetaData.js";
 import getRelatedProducts from "./getRelatedProducts.js";
+import reviewCount from './reviewCount.js'
+import starFilter from './starFilter.js'
 
 const newMainProduct = (product) => {
 	return async (dispatch) => {
@@ -17,6 +19,8 @@ const newMainProduct = (product) => {
 		} else {
 			productId = product.id;
 		}
+		dispatch(starFilter([]))
+		dispatch(reviewCount())
 		dispatch(getQuestions(productId, 0));
 		dispatch(getReviews(productId));
 		dispatch(getRelatedProducts(productId));

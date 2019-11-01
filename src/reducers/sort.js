@@ -1,4 +1,4 @@
-const reviews = (state = {}, action) => {
+const sort = (state = {}, action) => {
 	switch (action.type) {
 		case "SORT":
 			return  action.sort
@@ -7,4 +7,4 @@ const reviews = (state = {}, action) => {
 	}
 };
 
-export default reviews;
+export default sort;
