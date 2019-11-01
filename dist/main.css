@@ -353,6 +353,66 @@ select {
 	width: 50%;
 }
 
+.review-photos-modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+}
+
+  
+  /* Modal Content/Box */
+  .review-photos-content {
+    background-color: #fefefe;
+    margin-top: 5%;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    border: 1px solid #888;
+  }
+  
+  /* The Close Button */
+  .review-photos-close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+    bottom: 2%;
+    left: 2%
+  }
+  
+  .review-photos-close:hover,
+  .review-photos-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+.review-response{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    width: 80%;
+    padding: 2%;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+}
+
+.review-response-text{
+    display: flex;
+    background-color: rgba(128,128,128, .6);
+    justify-content: center;
+    padding: 2%
+}
+
+.review-response-footer{
+    align-self: flex-start
+}
 
 .review-row{
     display: flex;
