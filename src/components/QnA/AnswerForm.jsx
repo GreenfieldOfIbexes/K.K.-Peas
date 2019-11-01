@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import store from "../../store";
 import Axios from "axios";
 import constants from "../../constants";
+import getQuestions from "../../actions/getQuestions";
 
 const AnswerForm = ({ question, handleClose }) => {
 	const [body, updateAnswerStr] = useState("");
@@ -20,7 +21,9 @@ const AnswerForm = ({ question, handleClose }) => {
 		Axios.post(
 			`${constants.API_URL}/qa/${question.question_id}/answers`,
 			answer,
-		);
+		).then(() => {
+			store.dispatch(getQuestions(store.getState().mainProduct.id));
+		});
 
 		handleClose();
 	};

@@ -11,7 +11,12 @@ const Search = ({
 	const [searchStr, updateSearchStr] = useState("");
 
 	const handleChange = (e) => {
+		console.log({ searchStr });
 		updateSearchStr(e.target.value);
+
+		if (searchStr.length >= 3) {
+			handleSubmit(e);
+		}
 	};
 
 	const searchQuestions = () => {
@@ -25,9 +30,10 @@ const Search = ({
 	};
 
 	const handleSubmit = (e) => {
+		console.log("handle submit running");
 		e.preventDefault();
 
-		updateDisplayedQuestions(searchQuestions);
+		updateDisplayedQuestions(searchQuestions());
 	};
 
 	return (

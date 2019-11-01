@@ -21,13 +21,6 @@ const AnswersList = ({ answers }) => {
 		updateDisplayedAllAnswers(allAnswers.slice(0, 2));
 	};
 
-	const isEmptyObj = (obj) => {
-		for (var key in obj) {
-			if (obj.hasOwnProperty(key)) return false;
-		}
-		return true;
-	};
-
 	return (
 		<React.Fragment>
 			{allAnswers.length > 0 ? (
