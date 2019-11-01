@@ -32,7 +32,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 }
-.deck .material-icons {
+.Related-Container .material-icons {
 	position: absolute;
 	top: 10px;
 	right: 10px;
@@ -54,4 +54,22 @@
 
 .related-product-name {
     cursor: pointer;
+}
+
+.modalWindow .compare-table {
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 50px 0;
+    color: white;
+    margin: auto;
+    font-size: 24px;
+}
+
+.compare-table td {
+    padding: 10px 0;
+}
+
+.table-title {
+    color: white;
+    
 }

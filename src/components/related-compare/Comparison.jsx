@@ -30,9 +30,10 @@ const Comparison = (props) => {
 				}}>
 				clear
 			</i>
-			<table>
+			<h1 className="table-title">Features Comparison</h1>
+			<table className="compare-table">
 				<thead>
-					<tr>
+					<tr className="compare-row">
 						<th>{props.mainProduct.name}</th>
 						<th> </th>
 						<th>{props.comparisonProduct.name}</th>
@@ -40,7 +41,7 @@ const Comparison = (props) => {
 				</thead>
 				<tbody>
 					{Object.keys(featureComparison).map((feature) => (
-						<tr key={feature}>
+						<tr key={feature} className="compare-row">
 							<td>{featureComparison[feature][0]}</td>
 							<td>{feature}</td>
 							<td>{featureComparison[feature][1]}</td>
