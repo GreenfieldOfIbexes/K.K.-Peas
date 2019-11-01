@@ -11,7 +11,7 @@ const Characteristics = props => {
         <>
         {characteristics.map((char) =>{
             return (
-                <Form.Group>
+                <Form.Group required>
                     <Form.Label style={{marginRight: "100%", marginLeft: "5%"}}>{char[0]}:</Form.Label>
                         <div style={{display: "flex", justifyContent: 'center'}}>
                             <Form.Check

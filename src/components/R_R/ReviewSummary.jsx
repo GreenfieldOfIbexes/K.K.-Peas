@@ -2,6 +2,7 @@ import React from "react";
 import { ProgressBar } from "react-bootstrap";
 import Stars from "./Stars.jsx";
 import Gauge from "./Gauge/Gauge.jsx";
+import StarfilterContainer from "../../containers/StarfilterContainer.js"
 import "./ReviewSummary.css";
 
 class ReviewSummary extends React.Component {    
@@ -20,7 +21,11 @@ class ReviewSummary extends React.Component {
                 }
             }
        }
-       
+       const recommended = this.props.reviewMetaData.recommended
+       if(recommended){
+            var recommendedPercent = recommended["1"]/(recommended["0"] + recommended["1"] + recommended.null) * 100
+            recommendedPercent = Math.round(recommendedPercent)
+        }
        const characteristics = this.props.reviewMetaData.characteristics
        const charArray = []
        for(var key in characteristics){
@@ -51,12 +56,11 @@ class ReviewSummary extends React.Component {
                     <Stars rating={this.props.avg_review} size={"40px"}/>
                 </div>
             </div>
-            
             {ratingsArray.map((rating) =>{
                 return (
-                <div key={rating[0]} className='summary-row' key={rating[0]}>
+                <div key={rating[0]} className='summary-row'>
                     <div className="item" style={{margin: "0px 2px 4px 0px"}}>
-                        {rating[0]} Stars  
+                        <StarfilterContainer rating={rating}/>  
                     </div>
                     <div className="item-graph"  style={{margin: "4px 0px 4px 4px"}}>
                         <ProgressBar now={(rating[1]/total) * 100} variant="success"/>
@@ -77,6 +81,9 @@ class ReviewSummary extends React.Component {
                 </div>
                 )
                     })}
+            <div className="summary-row recommended">
+                {recommendedPercent}% of reviewers recommended this product
+            </div>
         </>
         )}
 }

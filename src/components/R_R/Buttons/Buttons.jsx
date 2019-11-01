@@ -152,23 +152,23 @@ class Buttons extends React.Component {
                     <Form>
                         <Form.Group>
                             <Form.Label>Username</Form.Label>
-                            <Form.Control type="text" placeholder="Enter Username" onChange={this.handleUsername}/>
+                            <Form.Control required type="text" placeholder="Enter Username" onChange={this.handleUsername}/>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Email</Form.Label>
-                            <Form.Control type="text" placeholder="Enter Email" onChange={this.handleEmail} />
+                            <Form.Control required type="text" placeholder="Enter Email" onChange={this.handleEmail} />
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Title</Form.Label>
-                            <Form.Control type="text" placeholder="Enter Review Title" onChange={this.handleTitle}/>
+                            <Form.Control required type="text" placeholder="Enter Review Title" onChange={this.handleTitle}/>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Description</Form.Label>
-                            <Form.Control as="textarea" placeholder="Enter Review Description" onChange={this.handleDescription}/>
+                            <Form.Control required as="textarea" placeholder="Enter Review Description" onChange={this.handleDescription}/>
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group className="review-form-buttons">
                             <Form.Label>Would you recommend this product?</Form.Label>
-                            <div display="flex" style={{justifyContent: "space-around", width: "100%"}}>
+                            <div display="flex">
                                 <Form.Check
                                 type="radio"
                                 label="Yes"
@@ -176,6 +176,7 @@ class Buttons extends React.Component {
                                 value={1}
                                 onClick={this.handleRec}
                                 inline
+                                required
                                 />
                                 <Form.Check
                                 type="radio"
@@ -184,18 +185,19 @@ class Buttons extends React.Component {
                                 value={0}
                                 onClick={this.handleRec}
                                 inline
+                                required
                                 />
                             </div>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Category Ratings</Form.Label>
+                            <Form.Label className="review-form-categoryTitle">Category Ratings</Form.Label>
                             <Characteristics reviews={this.props.metaData} handleChar={this.handleChar}/>
                         </Form.Group>
                         <Form.Group style={{justifyContent: 'center', display: "flex"}}>
                             <div style={{width: '100%'}}>Rating</div>
                         </Form.Group>
                         <div style={{justifyContent: 'center', display: "flex"}}>
-                            <Rating size="small" name="rating" onChange={this.handleStarChange} value={this.state.starValue}/>
+                            <Rating required size="small" name="rating" onChange={this.handleStarChange} value={this.state.starValue}/>
                         </div>
                         <Drop state={this.state.photos} handlePhotos={this.handlePhotos}/>
                     </Form>

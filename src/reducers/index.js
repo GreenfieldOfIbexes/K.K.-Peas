@@ -7,6 +7,8 @@ import outfitProducts from "./outfitProducts.js";
 import view from "./view.js";
 import metaData from "./metaData";
 import comparisonProduct from "./comparisonProduct.js";
+import reviewCount from "./reviewCount.js"
+import starFilter from './starFilter.js'
 
 var rootReducer = combineReducers({
 	mainProduct,
@@ -17,6 +19,8 @@ var rootReducer = combineReducers({
 	questions,
 	view,
 	comparisonProduct,
+	reviewCount,
+	starFilter
 });
 
 export default rootReducer;
