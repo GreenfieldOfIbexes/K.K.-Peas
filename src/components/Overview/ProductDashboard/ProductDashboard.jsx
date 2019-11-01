@@ -67,14 +67,14 @@ const ProductDashboard = ({
 			<div className="social-buttons">
 				<FacebookShareButton
 					url={window.location.href}
-					quote="my quote"
-					hashtag="#myhashtag"
+					quote={`I'm in love with ${name} - check it out!`}
+					hashtag="#fashonista"
 					children={<img src="assets/f_logo_RGB-Blue_100.png" />}
 					className="social-icon"
 				/>
 				<TwitterShareButton
 					url={window.location.href}
-					title="my title"
+					title={`I'm in love with ${name} - check it out!`}
 					children={<img src="assets/Twitter_Social_Icon_Circle_Color.png" />}
 					className="social-icon"
 				/>
