@@ -5,6 +5,7 @@ import store from "../../store.js";
 import updateOutfit from "../../actions/updateOutfit.js";
 import "./Card.css";
 import $ from "jquery";
+import util from "util";
 
 const Card = (props) => {
 	let icon;

@@ -7,7 +7,6 @@ import getReviews from "./getReviews.js";
 import getMetaData from "./getMetaData.js";
 import getRelatedProducts from "./getRelatedProducts.js";
 
-
 const newMainProduct = (product) => {
 	return async (dispatch) => {
 		let productId;
