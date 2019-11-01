@@ -30,7 +30,9 @@ const Comparison = (props) => {
 				}}>
 				clear
 			</i>
-			<h1 className="table-title">Features Comparison</h1>
+			<h1 className="table-title" style={{ textAlign: "center" }}>
+				Features Comparison
+			</h1>
 			<table className="compare-table">
 				<thead>
 					<tr className="compare-row">

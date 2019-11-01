@@ -2,6 +2,8 @@ import initialState from "../reducers/initialState.js";
 import axios from "axios";
 import constants from "../constants.js";
 
+const util = require("util");
+
 const getProductInfo = async (productId) => {
 	let product;
 	const productPromises = [];
