@@ -538,27 +538,49 @@ select {
 }
 
 .summary-row {
-    display: flex;
-    justify-content: stretch;
-    flex-direction: row;
+	display: flex;
+	justify-content: stretch;
+	flex-direction: row;
+	align-items: center;
+}
+
+.summary-row .item {
+	margin: 2px 2px 2px 0 !important;
+	width: 61px;
+}
+
+.summary-row .item button {
+	width: 61px;
+	background: none;
+	border-radius: 5px;
+	border: 1px solid #00000042;
+	transition: 0.5s;
+}
+.summary-row .item button:hover {
+	box-shadow: 0 0 3px #000000bd;
+}
+
+.summary-row .item-graph {
+	margin: 4px !important;
 }
 
 .item {
-    flex: content;
-    flex-grow: 0
+	flex: content;
+	flex-grow: 0;
 }
 
 .item-graph {
-    flex-grow: 1
+	flex-grow: 1;
 }
 
-.summary-stars{
-    flex-shrink: 1
+.summary-stars {
+	flex-shrink: 1;
 }
 
-.recommended{
-    margin-top: 5%
+.recommended {
+	margin-top: 5%;
 }
+
 .review-buttons {
     display: flex;
     width: 100%;
