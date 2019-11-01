@@ -1,5 +1,5 @@
 .product-dashboard {
-	margin: 0 0 0 20px;
+	margin: 0 0 0 auto;
 	max-width: 500px;
 }
 .product-dashboard.fullscreen {
@@ -32,6 +32,9 @@ a.all-reviews {
 	display: flex;
 	align-items: center;
 	margin: 20px 0 0;
+}
+.social-icon {
+	outline: none !important;
 }
 .social-buttons .social-icon img {
 	height: 40px;

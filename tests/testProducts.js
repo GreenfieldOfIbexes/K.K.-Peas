@@ -12,6 +12,10 @@ const testProduct = {
 			feature: "Buttons",
 			value: "Brass",
 		},
+		{
+			feature: "null",
+			value: "null",
+		},
 	],
 	styles: {
 		product_id: "1",

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import store from "../../../store";
 import "./Photos.css";
 import $ from "jquery";
 import _ from "lodash";
@@ -10,8 +9,6 @@ const Photos = ({
 	},
 	view: { style_index, max_photo_index },
 	scrollToPicture,
-	openFullScreen,
-	changeDisplayedPhoto,
 	zoomInOnPhoto,
 	zoomOutOnPhotos,
 }) => {
@@ -44,57 +41,107 @@ const Photos = ({
 	if (zoomed_in) PhotosContainerClasses += " zoomed-in";
 	if (fullscreen_photo) PhotosContainerClasses += " fullscreen";
 
-	// JSX for rendering
+	// HTML for the two arrows for the thumbnails container
+	const thumbnailArrows = ["left", "right"].map((direction) => (
+		<div
+			className={`thumbnail-arrow ${direction}`}
+			onClick={() => {
+				thumbnailShift(direction);
+			}}>
+			<i className="material-icons">{`arrow_${direction}`}</i>
+		</div>
+	));
+
+	// Array of HTML for the thumbnails
+	const thumbnails = styles[style_index].photos.map((photo, index) => (
+		<div
+			className={photo_index === index ? "thumbnail active" : "thumbnail"}
+			key={index}
+			data-thumbnail-index={index}
+			onClick={() => {
+				update_photo_index(index);
+			}}>
+			<img
+				src={
+					photo.thumbnail_url ||
+					"https://www.hertrack.com/wp-content/uploads/2018/10/no-image.jpg"
+				}></img>
+		</div>
+	));
+
+	// Everything that needs to happen when you leave fullscreen mode
+	const closeFullScreen = () => {
+		update_zoomed_in(false);
+		update_fullscreen_photo(false);
+		zoomOutOnPhotos();
+	};
+
+	// Handler for what should happen when you click an arrow for the main carousel. It expects either "left" or "right"
+	const arrowCarouselClick = (direction) => {
+		var newIndex =
+			direction === "left"
+				? photo_index > 0
+					? photo_index - 1
+					: max_photo_index
+				: photo_index < max_photo_index
+				? photo_index + 1
+				: 0;
+		update_photo_index(newIndex);
+		update_zoomed_in(false);
+		zoomOutOnPhotos();
+	};
+
+	// An array of the HTML for the featured photos in the carousel
+	const featurePhotos = styles[style_index].photos.map((photo, index) => {
+		return (
+			<div className="feature-photo" key={index} data-photo-index={index}>
+				<img
+					src={
+						photo.url ||
+						"https://www.hertrack.com/wp-content/uploads/2018/10/no-image.jpg"
+					}
+					onClick={() => {
+						if (fullscreen_photo) {
+							if (zoomed_in) {
+								zoomOutOnPhotos();
+							} else {
+								zoomInOnPhoto(index);
+							}
+							update_zoomed_in(!zoomed_in);
+						}
+					}}></img>
+			</div>
+		);
+	});
+
+	// An array of the HTML for the dots
+	const dotsArray = (() => {
+		let dots = [];
+		for (let i = 0; i <= max_photo_index; i++) {
+			let classes = photo_index === i ? "dot active" : "dot";
+			dots.push(
+				<div key={i} className={classes}>
+					.
+				</div>,
+			);
+		}
+		return dots;
+	})();
+
+	// The component
 	return (
 		<div className={PhotosContainerClasses}>
 			<div className="thumbnails-wrapper">
-				{styles[style_index].photos.length > 6 &&
-					["left", "right"].map((direction) => (
-						<div
-							className={`thumbnail-arrow ${direction}`}
-							onClick={() => {
-								thumbnailShift(direction);
-							}}>
-							<i className="material-icons">{`arrow_${direction}`}</i>
-						</div>
-					))}
-				<div className="thumbnails-container">
-					{styles[style_index].photos.map((photo, index) => (
-						<div
-							className={
-								photo_index === index ? "thumbnail active" : "thumbnail"
-							}
-							key={index}
-							data-thumbnail-index={index}
-							onClick={() => {
-								update_photo_index(index);
-							}}>
-							<img
-								src={
-									photo.thumbnail_url ||
-									"https://www.hertrack.com/wp-content/uploads/2018/10/no-image.jpg"
-								}></img>
-						</div>
-					))}
-				</div>
+				{styles[style_index].photos.length > 6 && thumbnailArrows}
+				<div className="thumbnails-container">{thumbnails}</div>
 			</div>
-			<div
-				className="fullscreen-close"
-				onClick={() => {
-					update_zoomed_in(false);
-					update_fullscreen_photo(false);
-					zoomOutOnPhotos();
-				}}>
+			<div className="fullscreen-close" onClick={closeFullScreen}>
 				<i className="material-icons">close</i>
 			</div>
 			<i
 				className="material-icons arrow-left"
 				onClick={() => {
-					update_photo_index(
-						photo_index > 0 ? photo_index - 1 : max_photo_index,
-					);
-					update_zoomed_in(false);
-					zoomOutOnPhotos();
+					arrowCarouselClick("left");
 				}}>
 				arrow_left
 			</i>
@@ -105,53 +152,16 @@ const Photos = ({
 						update_fullscreen_photo(true);
 					}
 				}}>
-				{styles[style_index].photos.map((photo, index) => {
-					return (
-						<div className="feature-photo" key={index} data-photo-index={index}>
-							<img
-								src={
-									photo.url ||
-									"https://www.hertrack.com/wp-content/uploads/2018/10/no-image.jpg"
-								}
-								onClick={() => {
-									if (fullscreen_photo) {
-										if (zoomed_in) {
-											zoomOutOnPhotos();
-										} else {
-											zoomInOnPhoto(index);
-										}
-										update_zoomed_in(!zoomed_in);
-									}
-								}}></img>
-						</div>
-					);
-				})}
+				{featurePhotos}
 			</div>
 			<i
 				className="material-icons arrow-right"
 				onClick={() => {
-					update_photo_index(
-						photo_index < max_photo_index ? photo_index + 1 : 0,
-					);
-					update_zoomed_in(false);
-					zoomOutOnPhotos();
+					arrowCarouselClick("right");
 				}}>
 				arrow_right
 			</i>
-			<div className="dots">
-				{(() => {
-					let dots = [];
-					for (let i = 0; i <= max_photo_index; i++) {
-						let classes = photo_index === i ? "dot active" : "dot";
-						dots.push(
-							<div key={i} className={classes}>
-								.
-							</div>,
-						);
-					}
-					return dots;
-				})()}
-			</div>
+			<div className="dots">{dotsArray}</div>
 		</div>
 	);
 };

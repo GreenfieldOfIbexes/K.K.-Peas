@@ -20,22 +20,35 @@ const Comparison = (props) => {
 		}
 	});
 	return (
-		<>
+		<div className="modalWindow">
+			<i
+				className="material-icons"
+				style={{ fontSize: "30px", color: "white" }}
+				onClick={() => {
+					document.getElementsByClassName("modalWindow")[0].style.display =
+						"none";
+				}}>
+				clear
+			</i>
 			<table>
-				<tr>
-					<th>{props.mainProduct.name}</th>
-					<th></th>
-					<th>{props.comparisonProduct.name}</th>
-				</tr>
-				{Object.keys(featureComparison).map((feature) => (
+				<thead>
 					<tr>
-						<td>{featureComparison[feature][0]}</td>
-						<td>{feature}</td>
-						<td>{featureComparison[feature][1]}</td>
+						<th>{props.mainProduct.name}</th>
+						<th> </th>
+						<th>{props.comparisonProduct.name}</th>
 					</tr>
-				))}
+				</thead>
+				<tbody>
+					{Object.keys(featureComparison).map((feature) => (
+						<tr key={feature}>
+							<td>{featureComparison[feature][0]}</td>
+							<td>{feature}</td>
+							<td>{featureComparison[feature][1]}</td>
+						</tr>
+					))}
+				</tbody>
 			</table>
-		</>
+		</div>
 	);
 };
 

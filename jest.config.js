@@ -72,7 +72,10 @@ module.exports = {
 	moduleFileExtensions: ["js", "json", "jsx", "ts", "tsx", "node"],
 
 	// A map from regular expressions to module names that allow to stub out resources with a single module
-	// moduleNameMapper: {},
+	moduleNameMapper: {
+		"\\.(css|less|sass|scss)$": "<rootDir>/tests/__mocks__/styleMock.js",
+		"\\.(gif|ttf|eot|svg)$": "<rootDir>/tests/__mocks__/fileMock.js",
+	},
 
 	// An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
 	// modulePathIgnorePatterns: [],
@@ -174,5 +177,5 @@ module.exports = {
 	// watchPathIgnorePatterns: [],
 
 	// Whether to use watchman for file crawling
-	// watchman: true,
+	// watchman: true,,
 };
