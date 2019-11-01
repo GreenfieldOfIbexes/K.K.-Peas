@@ -46,7 +46,7 @@ const Card = (props) => {
 			<i
 				className="material-icons"
 				style={{ fontSize: "30px", color: "red" }}
-				onClick={() => props.removeFromOutfit(props.product)}>
+				onClick={() => props.removeFromOutfit(props.product.id)}>
 				clear
 			</i>
 		);

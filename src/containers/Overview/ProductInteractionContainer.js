@@ -27,7 +27,7 @@ function cartHandler(skuObj, user_session, noProducts) {
 }
 
 function addToOutfitHandler(productObject) {
-	store.dispatch(updateOutfit(productObject));
+	store.dispatch(updateOutfit.addOutfitItem(productObject));
 }
 
 // The boring redux stuff

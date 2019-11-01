@@ -1,9 +1,8 @@
 import { connect } from "react-redux";
 import newMainProduct from "../actions/newMainProduct.js";
-import updateOutfit from "../actions/updateOutfit.js";
 import newComparisonProduct from "../actions/newComparisonProduct.js";
 import Card from "../components/related-compare/Card.jsx";
-import removeFromOutfit from "../actions/removeFromOutfit.js";
+import updateOutfit from "../actions/updateOutfit.js";
 
 // const mapStateToProps = (state, ownProps) => ({});
 
@@ -11,15 +10,14 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 	newMainProduct: (product) => {
 		dispatch(newMainProduct(product));
 	},
-	updateOutfit: (product) => {
-		dispatch(updateOutfit(product));
+	addToOutfit: (product) => {
+		dispatch(updateOutfit.addOutfitItem(product));
 	},
 	newComparisonProduct: (product) => {
 		dispatch(newComparisonProduct(product));
 	},
-	removeFromOutfit: (product) => {
-		console.log(product.id);
-		dispatch(removeFromOutfit(product.id));
+	removeFromOutfit: (productId) => {
+		dispatch(updateOutfit.removeOutfitItem(productId));
 	},
 });
 
