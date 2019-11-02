@@ -192,41 +192,34 @@ i.arrow-right {
 	margin: 0 0 0 auto;
 	max-width: 500px;
 }
-.product-dashboard.fullscreen {
-	margin: 0 0 0 50%;
-}
-.product-name {
+.product-dashboard .product-name {
 	font-weight: 600;
 	font-size: 200%;
 }
-
-.prices {
+.product-dashboard .prices {
 	display: flex;
 }
-
-.sale-price {
+.product-dashboard .sale-price {
 	color: red;
 	margin: 0 20px 0 0;
 }
-
-.struckthrough {
+.product-dashboard .struckthrough {
 	text-decoration: line-through;
 }
-
-a.all-reviews {
+.product-dashboard a.all-reviews {
 	text-decoration: underline;
 	color: unset;
 	cursor: pointer;
 }
-.social-buttons {
+.product-dashboard .social-buttons {
 	display: flex;
 	align-items: center;
 	margin: 20px 0 0;
 }
-.social-icon {
+.product-dashboard .social-icon {
 	outline: none !important;
 }
-.social-buttons .social-icon img {
+.product-dashboard .social-buttons .social-icon img {
 	height: 40px;
 	width: auto;
 	margin: 0 20px 0 0;

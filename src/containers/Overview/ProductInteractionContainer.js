@@ -4,19 +4,22 @@ import { connect } from "react-redux";
 import addToCart from "../../actions/addToCart";
 import axios from "axios";
 import constants from "../../constants";
-import store from "../../store";
 import updateOutfit from "../../actions/updateOutfit.js";
 
+/*
+	mapDispatchToProps passes "dispatch" down to the functions it contains. Keeping the function definitions outside of mapDispatchToProps allows for easier unit testing and greater modularity in general.
+*/
+
 // Change the style index in store
-function updateStyle(index) {
-	store.dispatch(newStyle(index));
+function _updateStyle(dispatch, index) {
+	dispatch(newStyle(index));
 }
 
 // Add something to the cart
-function cartHandler(skuObj, user_session, noProducts) {
+function _cartHandler(dispatch, skuObj, user_session, noProducts) {
 	// As long as a product is selected...
 	if (noProducts === false) {
-		store.dispatch(addToCart(skuObj));
+		dispatch(addToCart(skuObj));
 		// Post that bad larry to the Ay Pee Ayyeeeee!!!!!
 		axios.post(`${constants.API_URL}/cart`, {
 			product_id: skuObj.product_id,
@@ -26,20 +29,22 @@ function cartHandler(skuObj, user_session, noProducts) {
 	}
 }
 
-function addToOutfitHandler(productObject) {
-	store.dispatch(updateOutfit.addOutfitItem(productObject));
+// Adding the current product to the user's saved outfit
+function _addToOutfitHandler(dispatch, productObject) {
+	dispatch(updateOutfit.addOutfitItem(productObject));
 }
 
-// The boring redux stuff
 const mapStateToProps = ({ mainProduct, view }, ownProps) => ({
 	mainProduct,
 	view,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-	updateStyle,
-	cartHandler,
-	addToOutfitHandler,
+	updateStyle: (index) => _updateStyle(dispatch, index),
+	cartHandler: (skuObj, user_session, noProducts) =>
+		_cartHandler(dispatch, skuObj, user_session, noProducts),
+	addToOutfitHandler: (productObject) =>
+		_addToOutfitHandler(dispatch, productObject),
 });
 
 const ProductInteractionContainer = connect(

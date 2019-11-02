@@ -6,11 +6,6 @@ const mapStateToProps = ({ mainProduct, view }, ownProps) => ({
 	view,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({});
-
-const ProductDashboardContainer = connect(
-	mapStateToProps,
-	mapDispatchToProps,
-)(ProductDashboard);
+const ProductDashboardContainer = connect(mapStateToProps)(ProductDashboard);
 
 export default ProductDashboardContainer;
