@@ -45,6 +45,7 @@ Optimize for a modern, sleek, and high-performing user experience.
 
 ![alt text](./dist/assets/overview_module.gif)
 
-The overview module's main concern is providing an attractive UX that inspires interest, and an intuitive UI to make conversion seamless. All of its code was written in-house, with the exception of the social share buttons.
+The overview module provides an attractive UX that inspires interest, and an intuitive UI to make conversion seamless.
 
-Overview-specific code can be found in src/components/Overview and src/containers/Overview.
+- With the exception of the social share buttons, all code was written in-house
+- Special attention was paid to the carousel, which supports several navigation styles and zooming in/out
