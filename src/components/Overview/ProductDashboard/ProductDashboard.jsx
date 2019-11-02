@@ -8,9 +8,12 @@ import {
 	TwitterShareButton,
 	PinterestShareButton,
 } from "react-share";
-import mainProduct from "../../../reducers/mainProduct";
 
-// The component
+/*
+This component contains the entire right side of the overview module (everything except the carousel and the description/features at the bottom of the module).
+The style selectors, dropdowns, and buttons are all in their own component, listed here as ProudctInteractionContainer
+*/
+
 const ProductDashboard = ({
 	mainProduct: { avgRating, category, name, styles, reviewMetadata },
 	view,

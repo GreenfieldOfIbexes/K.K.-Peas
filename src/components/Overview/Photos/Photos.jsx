@@ -3,6 +3,7 @@ import "./Photos.css";
 import $ from "jquery";
 import _ from "lodash";
 
+
 const Photos = ({
 	mainProduct: {
 		styles: { results: styles },

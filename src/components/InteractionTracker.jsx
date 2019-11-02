@@ -2,6 +2,12 @@ import React from "react";
 import axios from "axios";
 import constants from "../constants";
 
+/*
+	When app is rendered, this is the only the component inside of it.
+	It's child (this.props.children) is a function that accepts a function
+	as an argument and returns every other module component's JSX, each
+	with the passed down function as the "clickHandler" prop
+*/
 class InteractionTracker extends React.Component {
 	constructor(props) {
 		super(props);
