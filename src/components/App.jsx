@@ -5,8 +5,6 @@ import R_R from "./R_R/R_R.jsx";
 import QnAContainer from "../containers/Questions/qnaContainer";
 import DeckContainer from "../containers/DeckContainer.js";
 import InteractionTracker from "./InteractionTracker";
-import { testRelatedProducts } from "../../tests/testProducts.js";
-import newMainProduct from "../actions/newMainProduct.js";
 import OutfitDeckContainer from "../containers/OutfitDeckContainer.js";
 import RelatedApp from "./related-compare/RelatedApp.jsx";
 
