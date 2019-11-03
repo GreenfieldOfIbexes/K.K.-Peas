@@ -49,3 +49,32 @@ The overview module provides an attractive UX that inspires interest, and an int
 
 - With the exception of the social share buttons, all code was written in-house
 - Special attention was paid to the carousel, which supports several navigation styles and zooming in/out
+
+## Questions And Answers:
+
+The questions and answers module extends the ability to view and search questions, ask questions, answer questions and provide feedback on questions about the current product.
+
+- All code for this component was written in-house as well, with the exception of the "add question", and "add answer" pop-up modal.
+
+#### Filesystem
+
+All client code is in the **src** directory, where we decided to split the work in four subdirectories, **actions**, **reducers** and **containers** for the Redux part, and **components** for React, to separate concerns.
+We agreed that it would be best to keep the Redux _store_ and React _index_ files in the root src directory.
+The **components**, and **containers** are split even farther with a directory for each separate widget.
+We decided to structure our widget components individually, with the consensus that each widget would have it's own CSS file.
+Some decided to break it event farther, into a directory for each individual component of their widget.
+
+This structure allows for easy efficient navigation between files, and avoidance of conflicts.
+
+    /src
+      |--actions
+      | |--actionName.js
+      |--components
+      | |--widgetName
+      | | |--componentName
+      | | |  |--componentName.jsx
+      | | |  |--componentName.css
+      | |--reducers
+      | |  |--reducerName.js
+      | |--containers
+      | |  |--containerName.js
