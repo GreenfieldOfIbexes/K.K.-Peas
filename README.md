@@ -61,8 +61,7 @@ The questions and answers module extends the ability to view and search question
 All client code is in the **src** directory, where we decided to split the work in four subdirectories, **actions**, **reducers** and **containers** for the Redux part, and **components** for React, to separate concerns.
 We agreed that it would be best to keep the Redux _store_ and React _index_ files in the root src directory.
 The **components**, and **containers** are split even farther with a directory for each separate widget.
-We decided to structure our widget components individually, with the consensus that each widget would have it's own CSS file.
-Some decided to break it event farther, into a directory for each individual component of their widget.
+We decided to structure our widget components individually, with the consensus that each component would have it's own CSS file.
 
 This structure allows for easy efficient navigation between files, and avoidance of conflicts.
 
@@ -78,3 +77,5 @@ This structure allows for easy efficient navigation between files, and avoidance
       | |  |--reducerName.js
       | |--containers
       | |  |--containerName.js
+      |--index.js
+      |--store.js
