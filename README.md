@@ -56,7 +56,7 @@ The questions and answers module extends the ability to view and search question
 
 - All code for this component was written in-house as well, with the exception of the "add question", and "add answer" pop-up modal.
 
-#### Filesystem
+## Filesystem
 
 All client code is in the **src** directory, where we decided to split the work in four subdirectories, **actions**, **reducers** and **containers** for the Redux part, and **components** for React, to separate concerns.
 We agreed that it would be best to keep the Redux _store_ and React _index_ files in the root src directory.
