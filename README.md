@@ -56,6 +56,12 @@ The questions and answers module extends the ability to view and search question
 
 - All code for this component was written in-house as well, with the exception of the "add question", and "add answer" pop-up modal.
 
+## Recommended and Outfit:
+
+The recommended products interface allows users to see products related to the one displayed on the page. These products are presented as "product cards" that contain summary information about the products and pictures of them. Users can also click on these products to compare their features with the features of the main product. A seperate section contains items that have been added to the user "outfit", which saves items the user is interested in. These outfit items persist across user sessions.-
+
+- All code for this section was written in-house
+
 ## Filesystem
 
 All client code is in the **src** directory, where we decided to split the work in four subdirectories, **actions**, **reducers** and **containers** for the Redux part, and **components** for React, to separate concerns.
@@ -79,3 +85,8 @@ This structure allows for easy efficient navigation between files, and avoidance
       | |  |--containerName.js
       |--index.js
       |--store.js
+
+
+## Deployment
+
+The whole client application was packaged and optimized to be served efficiently using babel through Webpack. The bundle was pushed into a Docker container which was deployed on an AWS free-tier EC2 instance. 
